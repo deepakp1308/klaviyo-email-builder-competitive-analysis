@@ -474,6 +474,83 @@
   .src-tag.src-slack { background: #FFEFE0; color: #9A4A00; }
   .src-tag.src-research { background: var(--chip); color: var(--chip-ink); }
 
+  /* Page 6 — HeyMarvin customer research synthesis */
+  .cust-cite {
+    display: inline-block; background: #F1F2F4; color: var(--ink-2);
+    font-size: 10.5px; font-weight: 600;
+    padding: 1px 6px; border-radius: 3px;
+    margin-right: 3px;
+  }
+  .cust-cite .ts { color: var(--muted); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+  .quote-card {
+    border-left: 3px solid var(--brand);
+    background: #FBFAFF; border-radius: 6px;
+    padding: 8px 12px; margin-bottom: 6px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 12.5px; color: var(--ink-2); line-height: 1.45;
+  }
+  .quote-card cite {
+    display: block; font-family: 'Inter', sans-serif;
+    font-size: 10.5px; color: var(--muted); margin-top: 4px; font-style: normal;
+  }
+  .quote-card cite strong { color: var(--ink-2); font-weight: 700; }
+
+  .shape {
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 10px; background: #fff;
+  }
+  .shape h4 {
+    margin: 0 0 4px; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .shape h4 .num-tag {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--brand); color: #fff;
+    font-size: 10px; font-weight: 800;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .shape p { font-size: 11px; margin: 0 0 4px; color: var(--ink-2); }
+  .shape .roster { font-size: 10.5px; color: var(--muted); font-style: italic; }
+
+  .bet {
+    border: 1px solid #ECE6FF; border-radius: 10px;
+    padding: 10px 12px; background: linear-gradient(180deg, #FBFAFF 0%, #FFFFFF 100%);
+    position: relative; padding-left: 38px;
+  }
+  .bet::before {
+    content: attr(data-rank);
+    position: absolute; left: 10px; top: 10px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--brand); color: #fff;
+    font-size: 11px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .bet h4 { margin: 0 0 4px; font-size: 13px; font-weight: 700; color: var(--ink); }
+  .bet .conf {
+    display: inline-block; font-size: 9.5px; font-weight: 800;
+    background: #E6F5EE; color: #036A4F;
+    padding: 1px 5px; border-radius: 3px; margin-left: 4px; letter-spacing: .04em;
+  }
+  .bet p { font-size: 11.5px; margin: 0 0 4px; color: var(--ink-2); }
+  .bet .ev { font-size: 10.5px; color: var(--muted); margin-top: 4px; }
+
+  .emo {
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 10px 12px; background: #fff;
+  }
+  .emo.emo-risk { background: #FFF5F2; border-color: #F4D2C5; }
+  .emo.emo-mid { background: #FFFAF0; border-color: #F5E2BD; }
+  .emo.emo-good { background: #F4FBF7; border-color: #CFE9DC; }
+  .emo h4 { margin: 0 0 4px; font-size: 12.5px; font-weight: 700; }
+  .emo .churn-line { font-size: 10.5px; font-weight: 700; color: var(--ink-2); margin-bottom: 4px; }
+  .emo p { font-size: 11px; margin: 0; color: var(--ink-2); }
+
+  .seg-table { font-size: 11.5px; }
+  .seg-table th { font-size: 10px; }
+  .seg-table td { padding: 6px 8px; }
+  .seg-table .seg-cell { font-size: 10.5px; line-height: 1.4; }
+
   /* Print */
   @media print {
     body { background: white; }
@@ -496,6 +573,7 @@
       <a class="btn" href="#page3">3 · Voice of Customer</a>
       <a class="btn" href="#page4">4 · Mailchimp Roadmap</a>
       <a class="btn" href="#page5">5 · HVC VOC Prioritization</a>
+      <a class="btn" href="#page6">6 · Customer Research (HeyMarvin)</a>
       <button class="btn primary" onclick="window.print()">Print / PDF</button>
     </div>
   </div>
@@ -507,7 +585,7 @@
   <section class="page" id="page1">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 5</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 6</div>
         <h1>Klaviyo's Email Builder</h1>
         <div class="subtitle">The WYSIWYG canvas inside Campaigns where ecommerce marketers compose, design, brand, and personalize one-off email campaigns — drag-and-drop blocks, sections, brand kit, and a stack of in-editor AI tools.</div>
       </div>
@@ -644,7 +722,7 @@
   <section class="page" id="page2">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 5</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 6</div>
         <h1>Differentiation, JTBD, Pricing &amp; Gaps</h1>
         <div class="subtitle">Where Klaviyo's email builder wins, who reaches for it and why, what it costs to unlock the AI layer, and what they still don't do well.</div>
       </div>
@@ -840,7 +918,7 @@
   <section class="page" id="page3">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 5</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 6</div>
         <h1>Voice of Customer — what people actually say</h1>
         <div class="subtitle">Sentiment synthesis from Reddit (r/Klaviyo, r/ecommerce, r/ShopifyAppDev, r/graphic_design), Klaviyo Community forum, G2, Capterra, Trustpilot, agency blogs, and YouTube tutorial commentary — strictly about the <strong>email builder/editor</strong>.</div>
       </div>
@@ -1120,7 +1198,7 @@
   <section class="page" id="page4">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 4 of 5</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 4 of 6</div>
         <h1>Mailchimp Email Builder — parity, leapfrog, and 3-phase roadmap</h1>
         <div class="subtitle">Emerging-threats landscape, the foundational gaps Mailchimp must close to be a credible front-runner against Klaviyo, the differentiated bets to steal from Klaviyo + the AI-native challengers, and a phased plan to win the omnichannel campaign builder.</div>
       </div>
@@ -1479,7 +1557,7 @@
   <section class="page" id="page5">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 5 of 5</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 5 of 6</div>
         <h1>HVC VOC + research-session prioritization — combined-signal plan</h1>
         <div class="subtitle">Two reinforcing data sources for the Mailchimp email builder: <strong>(1)</strong> 18-month HVC Slack VOC across <code>#hvc_feedback</code>, <code>#mc-hvc-escalations</code>, <code>#mc-feedback-summary</code> (themed, MRR-weighted), and <strong>(2)</strong> 33 hand-extracted findings from PM research sessions with strategic HVC accounts (Eric · Jacob · Nina). Combined-signal scored, then sequenced into a 3-phase plan to close the most HVC MRR risk and deepest research conviction first.</div>
       </div>
@@ -1663,6 +1741,323 @@
       Per-quote source-of-record: Slack permalink + Fullstory session replay (where Qualtrics captured one).
       <br/><br/>
       <em>Combined-signal score (per item):</em> <code>(priority_weight + 2 × frustration_weight) × 100 + Slack_MRR/100 + category_boost (Bug+50, Parity+30, Delight−1000)</code>, divided by sizing_weight (Quick Win=1, Medium Lift=2, Big Lift=4). Items confirmed by both Slack VOC and research sessions get a natural double boost. Phase boundaries are scored quantiles of the unified backlog. Strategic-HVC research findings are weighted heavily because they come from PM-led 1:1 sessions with high-spend accounts — even a single research finding represents deeper conviction than a Slack ping.
+    </div>
+  </section>
+
+  <!-- ============ PAGE 6 — HEYMARVIN CUSTOMER RESEARCH SYNTHESIS ============ -->
+  <section class="page" id="page6">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 6 of 6</div>
+        <h1>Direct customer research — HeyMarvin synthesis (50 sessions, 25 briefs)</h1>
+        <div class="subtitle">Cross-customer view of how customers <em>actually</em> create, design, and ship email campaigns in Mailchimp. Synthesized from 50 transcribed HeyMarvin UX research videos (~25 hours of audio) across 25 individual customer briefs (17 very-high-signal, 10 high, 15 medium). Every claim links to a customer + transcript timestamp. Source repo: <a href="https://github.com/deepakp1308/mailchimp-campaign-builder-research" target="_blank" rel="noopener">mailchimp-campaign-builder-research</a>.</div>
+      </div>
+      <div class="meta">
+        <div><strong>Audio source:</strong> 50 HeyMarvin UX videos</div>
+        <div style="margin-top:4px;"><strong>Transcription:</strong> Whisper small.en (local)</div>
+        <div style="margin-top:4px;"><strong>Cohort:</strong> DSB · ProServ · Internal</div>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpi-row" style="margin-bottom:14px;">
+      <div class="kpi"><div class="v">50</div><div class="l">UX research transcripts (~25 hr audio) — 17 very-high · 10 high · 15 medium · 7 low · 1 none</div></div>
+      <div class="kpi"><div class="v">25</div><div class="l">Customer briefs synthesized · all-substantive cohort with quote-level traceback</div></div>
+      <div class="kpi"><div class="v">0</div><div class="l">Customers named Klaviyo / ActiveCampaign / HubSpot organically — comparators were Bee.io · Adobe Express · Canva · Constant Contact · Outlook · Levitate</div></div>
+      <div class="kpi"><div class="v">5+</div><div class="l">Independent customers with power features unused for <strong>years</strong> — discovery is the single largest growth lever</div></div>
+    </div>
+
+    <!-- HEADLINE -->
+    <h2><span class="num">30</span>Headline finding — the bifurcated builder</h2>
+    <p style="margin-bottom:8px;">The Mailchimp campaign builder is the <strong>most-used surface in the dataset</strong> — and the experience is bifurcated. For the <strong>happy-path simple-newsletter cohort</strong> (Kim Vavrick, Courtney Fong, Andrew Obeso, Nicholas H), the editor works fine: replicate-and-edit + drag-drop + send, same-day shipping. <strong>For everyone else, friction concentrates in four predictable places:</strong> layout flexibility, multi-author collaboration, asset/library management, and <strong>discoverability of features that already exist</strong>. Multiple very-high-signal customers describe being on the legacy builder for years without knowing the new builder shipped (Jack Hally, Jeffrey Davis), or paying for third-party design tools because the editor doesn't deliver Photoshop-style direct manipulation (Andrea D'Ercole's Bee.io detour for every send).</p>
+
+    <div class="quote-card" style="margin-bottom:14px;">
+      "The point is if you were coming up with paying MailChimp, so we are pretty kind of stick with you and I'm adding on one software. The problem is not that — the problem is you need to make our life easier. No more complicated."
+      <cite><strong>Andrea D'Ercole · DSB UK · [00:35:18]</strong> — single most-quotable customer line in the dataset</cite>
+    </div>
+
+    <!-- WHO + WORKFLOW SHAPES -->
+    <h2><span class="num">31</span>Who's using the builder &amp; the 5 workflow shapes</h2>
+    <div class="grid cols-3-2" style="margin-bottom:14px;">
+      <div>
+        <table class="seg-table">
+          <thead><tr><th>Segment</th><th>US</th><th>UK</th><th>Internal</th></tr></thead>
+          <tbody>
+            <tr><td><strong>DSB</strong><br/><span style="font-size:10.5px;color:var(--muted);">e-commerce, retail, services</span></td>
+              <td class="seg-cell">Andrew Obeso · Bob Gray · Clint Bartley · Courtney Fong · Jeffrey Davis · Kim Vavrick · Shauna Todd · Wes Turner</td>
+              <td class="seg-cell">Andrea D'Ercole</td>
+              <td>—</td></tr>
+            <tr><td><strong>ProServ</strong><br/><span style="font-size:10.5px;color:var(--muted);">legal, financial, advisory, association</span></td>
+              <td class="seg-cell">Chris Rich · Jack Hally · Lauren Goglick · Nick Hamer · Shannon Riso</td>
+              <td class="seg-cell">Bianka Kiss · Gilles Gauthier · Ian Stuart · Jillian Ney · Matt Cresswell · Nicholas H · Peter Bell</td>
+              <td>—</td></tr>
+            <tr><td><strong>Internal Intuit</strong></td><td>—</td><td>—</td>
+              <td class="seg-cell">Kyle Spalding (employee, dogfooding) · UXR Watch Party</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <p style="font-size:11.5px; color:var(--muted); margin:0 0 8px;"><strong>5 distinct workflow shapes</strong> in the dataset (drives feature priority by cohort):</p>
+        <div class="shape" style="margin-bottom:6px;">
+          <h4><span class="num-tag">1</span>Fast Monday-morning sender</h4>
+          <p>Replicate last week, swap content, ship in 30–90 min. Editor friction = minutes per send → hours per year.</p>
+          <div class="roster">Andrew Obeso · Andrea D'Ercole · Kim Vavrick · Clint Bartley</div>
+        </div>
+        <div class="shape" style="margin-bottom:6px;">
+          <h4><span class="num-tag">2</span>All-week ad-libber</h4>
+          <p>Living-document newsletter, edited continuously, multi-author review. <strong>Save-conflicts dominate.</strong></p>
+          <div class="roster">Jack Hally — 76 Capital, 10–20 logins/day</div>
+        </div>
+        <div class="shape" style="margin-bottom:6px;">
+          <h4><span class="num-tag">3</span>Brand-first methodical builder</h4>
+          <p>Top-down build from layout/padding before copy. Brand kit in active use. Builds patterns that should be reused but aren't (saved-blocks gap).</p>
+          <div class="roster">Wes Turner · Bob Gray</div>
+        </div>
+        <div class="shape" style="margin-bottom:6px;">
+          <h4><span class="num-tag">4</span>Third-party-tool-in-the-loop</h4>
+          <p>Designs outside Mailchimp because the builder can't match. <strong>Most strategically expensive cohort to ignore.</strong></p>
+          <div class="roster">Andrea D'Ercole (Bee.io) · Wes Turner (Adobe Express) · Jack Hally (Canva)</div>
+        </div>
+        <div class="shape">
+          <h4><span class="num-tag">5</span>Non-adopter / barely uses the builder</h4>
+          <p>Newsletter only, monthly/quarterly. Discovery gap on advanced features dominates.</p>
+          <div class="roster">Shannon · Matt Cresswell · Gilles Gauthier</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOP OF FUNNEL -->
+    <h2><span class="num">32</span>Top of funnel — template gallery &amp; first-template setup</h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Pattern</th><th>Customer evidence</th><th>Voice (quote + timestamp)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>B2B / ProServ-specific templates missing</strong></td><td>Chris Rich · Bianka · Matt Cresswell · Jack Hally · Jillian Ney · Wes Turner</td><td><em>"Many, given that you are not an e-commerce business, are really not tailored towards your organization, it feels like there's probably a missed opportunity."</em> — <span class="cust-cite">Hannah Graffeo conceding live to Chris Rich <span class="ts">[00:28:15]</span></span></td></tr>
+        <tr><td><strong>Templates feel "over-designed" for B2B / association use cases</strong></td><td>Jillian Ney · Shannon (Levitate envy) · Bianka · Matt</td><td><em>"I personally think they've been over-designed… they feel more like e-commerce emails than what they do, providing some information."</em> — <span class="cust-cite">Jillian Ney <span class="ts">[00:06:09]</span></span></td></tr>
+        <tr><td><strong>Polished templates feel "intimidating"</strong> — show someone else's content</td><td>Jillian Ney · Wes Turner</td><td><em>"Love the look of these, but they actually feel quite intimidating because they're already designed with somebody else's content."</em> — <span class="cust-cite">Jillian Ney <span class="ts">[00:28:55]</span></span></td></tr>
+        <tr><td><strong>First-template build is non-intuitive</strong> even when ongoing edits are easy</td><td>Nicholas H</td><td><em>"That first process of building, I found slightly tricky and not intuitive… if I tried to start from zero again, I think I would encounter the same challenges."</em> — <span class="cust-cite">Nicholas H <span class="ts">[00:06:01]</span></span></td></tr>
+        <tr><td><strong>Vibe-based template browsing</strong> — customers ignore category labels</td><td>Wes Turner</td><td><em>"Honestly I don't even look at the categories here on the left."</em> — <span class="cust-cite">Wes Turner <span class="ts">[00:07:06]</span></span></td></tr>
+        <tr><td><strong>Industry-specific templates are a competitor differentiator</strong></td><td>Shannon (Levitate envy)</td><td><em>"Depending on what field you're in, they have templates already. Like, oh, you are an accountant. Here's, you know, ideas."</em> — <span class="cust-cite">Shannon <span class="ts">[00:26:36]</span></span></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11.5px; color:var(--muted); margin:-8px 0 14px;"><strong>Implication:</strong> the gallery does too much for some users and too little for others. ProServ buyers want skeletons + industry-appropriate aesthetics; e-commerce buyers want the opposite. Wes's instinct to browse by <em>layout only</em> is the cleanest signal that the IA is mismatched with at least one major cohort.</p>
+
+    <!-- BUILDER CANVAS — 4 CLUSTERS -->
+    <h2><span class="num">33</span>Builder canvas — 4 friction clusters</h2>
+    <div class="grid cols-2" style="margin-bottom:14px;">
+
+      <div class="card warm">
+        <h2 style="margin:0 0 6px;">4a. Layout flexibility — biggest single complaint</h2>
+        <ul>
+          <li><strong>Drag-and-drop is restrictive vs Photoshop / Bee.io.</strong> Andrea demoed live. <span class="cust-cite">Andrea D'Ercole <span class="ts">[00:11:41]</span></span> Full Bee.io detour exists because Mailchimp can't match.</li>
+          <li><strong>Side-by-side text-and-image alignment</strong> unreliable when columns are unequal heights. Hannah confirmed gap. <span class="cust-cite">Andrea + Hannah <span class="ts">[00:10:46]</span></span></li>
+          <li><strong>Two-column layouts are 3 steps</strong>, not 1. <em>"Why was that three steps instead of one step?"</em> <span class="cust-cite">Kyle Spalding <span class="ts">[00:22:25]</span></span> — Andrea hit the same.</li>
+          <li><strong>Image resize is proportional only.</strong> <em>"I can't really reduce on one side. I can't really move the image."</em> <span class="cust-cite">Andrea <span class="ts">[00:13:30]</span></span></li>
+          <li><strong>Padding inconsistency across templates.</strong> Wes builds top-down by layout/padding <em>first</em> because templates have <em>"everything very small and centered, or the images are dancing around each other."</em> <span class="cust-cite">Wes Turner <span class="ts">[00:09:48]</span></span></li>
+        </ul>
+      </div>
+
+      <div class="card warm">
+        <h2 style="margin:0 0 6px;">4b. Image / asset library — "hunting in the attic"</h2>
+        <ul>
+          <li><strong>Duplicate uploads</strong> because the library is hard to search. <em>"Now I'm duplicating the image."</em> <span class="cust-cite">Andrew Obeso <span class="ts">[00:12:38]</span></span></li>
+          <li><strong>Image-resize prompt every time.</strong> Andrew uploads 15–20 images per send. <em>"That's about a minute… so an additional 20–30 minutes just to resize everything."</em> <span class="cust-cite">Andrew <span class="ts">[00:25:31]</span></span></li>
+          <li><strong>Content asset management is unmemorable.</strong> <em>"Hunting around in the attic for stuff."</em> <span class="cust-cite">Peter Bell <span class="ts">[00:14:16]</span></span></li>
+          <li><strong>Major discovery gap on My Products / WooCommerce auto-pull.</strong> Jeffrey didn't find this for 3.5 years. Devin demoed live: <em>"Damn, they're already in here."</em> <span class="cust-cite">Jeffrey Davis <span class="ts">[00:21:13]</span></span></li>
+        </ul>
+      </div>
+
+      <div class="card warm">
+        <h2 style="margin:0 0 6px;">4c. Multi-author collaboration breaks</h2>
+        <ul>
+          <li><strong>Save conflicts</strong> when multiple editors are in the canvas simultaneously. <strong>3 independent customers report this:</strong></li>
+          <li><span class="cust-cite">Jack Hally <span class="ts">[00:11:54]</span></span> 76 Capital, 4 reviewers: <em>"I feel like we have a disconnect in what saves… neither of our work is there or one of our work there the other one isn't."</em></li>
+          <li><span class="cust-cite">Kyle Spalding</span> <em>"We just write it all right in the canvas"</em> — same problem, same workaround (email-thread review).</li>
+          <li><span class="cust-cite">Bianka Kiss</span> half her team is "scared" of the builder; teammates email Bianka or Katarina rather than self-serve.</li>
+          <li><strong>No real-time co-edit, no change history, no draft-staging</strong> — three independent feature asks for the same shape.</li>
+        </ul>
+      </div>
+
+      <div class="card warm">
+        <h2 style="margin:0 0 6px;">4d. Brand-fit pre-pass adds tax to every send</h2>
+        <ul>
+          <li><strong>Pill CTAs need re-shaping every time</strong> — Wes flips them to rectangles for brand fit on every send. <span class="cust-cite">Wes Turner <span class="ts">[00:14:10]</span></span></li>
+          <li><strong>Hyperlink color</strong> — Nicholas couldn't figure out how to change link color from default blue to brand orange. <span class="cust-cite">Nicholas H <span class="ts">[00:13:11]</span></span></li>
+          <li><strong>Background color of text block</strong> — Nicholas couldn't figure out the picker. <span class="cust-cite">Nicholas H <span class="ts">[00:14:18]</span></span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- A/B + SEND + REPORTING -->
+    <div class="grid cols-2" style="margin-bottom:14px;">
+      <div>
+        <h2><span class="num">34</span>A/B testing &amp; pre-flight checks</h2>
+        <p style="font-size:12.5px;"><strong>The A/B test architecture forces the decision before content creation.</strong> Wes had to <em>delete a finished email</em>, save it as a template, then re-enter via the multivariate-test path to test a content section against another. PM Jose confirmed it's a known limitation but not yet on the roadmap.</p>
+        <div class="quote-card">
+          "A/B testing it looks like is only available for like the subject line once you've created the content. Is that correct?… If I had a choice I would create the content first… and then afterward pick something from that email to A/B test."
+          <cite><strong>Wes Turner · DSB US · [00:25:15] + [00:27:04]</strong></cite>
+        </div>
+        <p style="font-size:12px; margin-top:6px;"><strong>Adjacent friction (send confidence):</strong></p>
+        <ul style="margin-top:0;">
+          <li><strong>Test-send-to-self workflow is universal</strong> — Kim, Kyle, Jack all do this. Saved-blocks-style "send-and-thread" automation for boards/teams = high leverage.</li>
+          <li><strong>Send button is "scary."</strong> Kyle (Mailchimp employee) <strong>schedules sends 15 min in the future to avoid hitting Send live.</strong> <em>"I think it's so stressful."</em> <span class="cust-cite">Kyle <span class="ts">[00:27:55]</span></span></li>
+          <li><strong>Send button is active before send-time is set.</strong> <em>"It really bothers me that this send button is active when there isn't a send time. Like this isn't done."</em> <span class="cust-cite">Kyle <span class="ts">[00:26:30]</span></span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2><span class="num">35</span>Subject line, send time, from name &amp; schedule</h2>
+        <ul>
+          <li><strong>Subject line is "embarrassing if wrong"</strong> (date errors). <em>"If I put December 11th on the 19th send, that's really embarrassing."</em> <span class="cust-cite">Kyle <span class="ts">[00:30:11]</span></span> — high decision frequency.</li>
+          <li><strong>From name "never changes"</strong> — low decision frequency.</li>
+          <li><strong>Audience "never changes"</strong> for replicate-and-edit cohorts — low frequency.</li>
+        </ul>
+        <div class="quote-card">
+          "The decision levels here don't feel the same. I'm never going to change [audience or from-name] either. So why do I go through this every time?"
+          <cite><strong>Kyle Spalding · Internal · [00:30:01]</strong> — campaign-setup checklist <em>flattens decisions of vastly different importance</em></cite>
+        </div>
+        <p style="font-size:11.5px; margin-top:6px;"><strong>Send-time discipline is real and arbitrary across cohorts:</strong></p>
+        <ul style="font-size:11.5px; margin-top:0;">
+          <li>Kim Vavrick — Tuesdays 9am Time Warp</li>
+          <li>Jeffrey Davis — Tuesdays 9am Time Warp + auto-resend Wed to non-openers</li>
+          <li>Kyle's running club — Tuesdays 2–4pm</li>
+          <li>Jack Hally — Sundays 11am</li>
+          <li>Andrew Obeso — distributors Mondays 8am</li>
+        </ul>
+        <p style="font-size:11px; color:var(--bad); margin-top:6px;"><strong>No customer reported using Mailchimp's send-time-optimization feature</strong> — either it doesn't exist by name or isn't discoverable.</p>
+      </div>
+    </div>
+
+    <h2><span class="num">36</span>Reporting &amp; post-send analysis</h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Pattern</th><th>Evidence</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>No vertical / cohort benchmarks</strong></td><td>Bianka · Matt Cresswell · Shauna Todd · Jeffrey Davis</td><td><em>"What actual benchmarking looks like — for, within some kind of, even if it's just like what SMBs do in a professional services industry."</em> <span class="cust-cite">Matt <span class="ts">[00:30:39]</span></span></td></tr>
+        <tr><td><strong>Attribution methodology change unannounced</strong></td><td>Jeffrey Davis</td><td>Sept attribution-model update caused his Mailchimp-attributed-sales share to <strong>jump 5–10% → 35–85%</strong>. Devin confirmed internal change. <strong>Customer-trust event.</strong></td></tr>
+        <tr><td><strong>No product-level reporting</strong></td><td>Jeffrey Davis (planning to build his own DB)</td><td>Wants <em>"show me everyone who bought a bolt clamp."</em></td></tr>
+        <tr><td><strong>Multi-channel automation reporting fragments</strong></td><td>Bianka</td><td>Wants email + SMS + every touch point summarized in one view</td></tr>
+        <tr><td><strong>Reporting features "set it and forget it" for happy-path</strong></td><td>Kim Vavrick · Courtney Fong</td><td>Glance at opens, that's it.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- DISCOVERY (the largest growth lever) -->
+    <h2><span class="num">37</span>Cross-cutting — discovery is the single largest growth lever</h2>
+    <p style="margin-bottom:8px;">5+ independent customers report power features sitting <strong>unused for years</strong> because they didn't find them:</p>
+    <table class="voc-table" style="margin-bottom:6px;">
+      <thead><tr><th>Customer</th><th>Feature undiscovered</th><th>How long</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Bianka Kiss</strong> · ProServ UK</td><td>A/B testing</td><td>"A number of years"</td></tr>
+        <tr><td><strong>Jack Hally</strong> · ProServ US</td><td>New email builder</td><td><strong>4–6 years</strong> (inherited a replicated legacy template)</td></tr>
+        <tr><td><strong>Jeffrey Davis</strong> · DSB US</td><td>My Products / WooCommerce auto-pull</td><td>3.5 years</td></tr>
+        <tr><td><strong>Clint Bartley</strong> · DSB US</td><td>Welcome automation in DRAFT</td><td>1 year</td></tr>
+        <tr><td><strong>Wes Turner</strong> · DSB US</td><td>Saved blocks (still coming)</td><td>Hadn't shipped at time of call</td></tr>
+        <tr><td><strong>Nicholas H</strong> · ProServ UK</td><td>Tag/segment usage</td><td>Multi-year (uses two-audience workaround)</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11.5px; color:var(--muted); margin: 0 0 14px;"><strong>This is the strongest cross-cutting theme in the dataset.</strong> Mailchimp's in-product feature discovery does not reach high-frequency users. Existing nudges (Peter Bell — <em>"It keeps popping up the automation side"</em> <span class="cust-cite">Peter <span class="ts">[00:09:24]</span></span>) don't convert sophisticated users.</p>
+
+    <!-- EMOTIONAL PROFILES -->
+    <h2><span class="num">38</span>Functional &amp; emotional patterns — 3 cohorts</h2>
+    <div class="grid cols-3" style="margin-bottom:14px;">
+      <div class="emo emo-risk">
+        <h4>1 · Polite / silent-churn risk <span style="font-size:10px; font-weight:600; color:var(--bad);">(MOST COMMON)</span></h4>
+        <div class="churn-line">→ Don't churn loud. Stop renewing one day.</div>
+        <p>Calm, self-blaming, not actively frustrated, but quietly under-utilizing. Repeated language: <em>"10–20% of capability"</em>, <em>"I should be doing more"</em>, <em>"I just haven't gotten deep enough."</em></p>
+        <p style="margin-top:6px; font-size:10.5px; color:var(--muted);"><strong>Customers:</strong> Andrea D'Ercole · Shannon · Peter Bell · Bianka · Clint · Matt · Jack Hally</p>
+      </div>
+      <div class="emo emo-mid">
+        <h4>2 · Engaged / methodical builder</h4>
+        <div class="churn-line">→ Closeable cohort. Articulate exact needs.</div>
+        <p>Curious, problem-solving, capable of articulating exactly what they need.</p>
+        <p style="margin-top:6px; font-size:10.5px; color:var(--muted);"><strong>Customers:</strong> Wes Turner · Bob Gray · Chris Rich · Jeffrey Davis</p>
+      </div>
+      <div class="emo emo-good">
+        <h4>3 · Mature satisfied customer</h4>
+        <div class="churn-line">→ Expand-revenue cohort. Wants more depth.</div>
+        <p>Warm tone, requesting more depth.</p>
+        <p style="margin-top:6px; font-size:10.5px; color:var(--muted);"><strong>Customers:</strong> Kim Vavrick · Jeffrey Davis · Courtney Fong</p>
+      </div>
+    </div>
+    <p style="font-size:11.5px; color:var(--muted); margin: -6px 0 14px;"><strong>Anti-pattern:</strong> Andrew Obeso's signal-saturation rejection of automations is unique. Sales-driven B2B already saturates customer relationships — doesn't want more touchpoints.</p>
+
+    <!-- TOP 5 BETS -->
+    <h2><span class="num">39</span>Top 5 recommended bets — ranked by evidence × impact × feasibility</h2>
+    <div class="grid cols-2" style="margin-bottom:14px;">
+      <div class="bet" data-rank="1">
+        <h4>Saved blocks / section reuse <span class="conf">CONFIRMED IN-FLIGHT</span></h4>
+        <p>Confirmed by PM Jose during Wes Turner's session. Multiple customers asked for the same shape independently. <strong>Ship and announce loudly to high-frequency users.</strong></p>
+        <div class="ev"><strong>Evidence:</strong> Wes (90–95% of his emails share three components) · Peter Bell (rotating advertiser blocks) · Kyle Spalding (recurring newsletter sections) · directly maps to <span class="cust-cite">F1</span> on Page 4 + Slack VOC's #1 missing feature ($13.7K/mo MRR · 6 HVC users)</div>
+      </div>
+      <div class="bet" data-rank="2">
+        <h4>Discovery / activation funnel for high-frequency users</h4>
+        <p>Single largest growth lever. Mailchimp comes to the customer, not the other way around.</p>
+        <ul style="font-size:11px; margin: 4px 0 0; padding-left:16px;">
+          <li>In-product feature changelog surfacing new builders / A/B / My Products to high-frequency users (Bianka, Jack, Jeffrey)</li>
+          <li>Weekly drip from Mailchimp itself (Clint's direct ask <span class="cust-cite">[00:29:18]</span>)</li>
+          <li>DRAFT-resurrect prompt for stalled automations (Clint's year-old DRAFT)</li>
+          <li>Save-as-template prompt after a successful send (Jillian's self-correction)</li>
+          <li>Proactive chatbot suggestions for unbuilt automations (Bianka)</li>
+        </ul>
+      </div>
+      <div class="bet" data-rank="3">
+        <h4>B2B / ProServ-specific template gallery</h4>
+        <p>7+ ProServ customers explicitly want non-e-commerce templates. <strong>Hannah Graffeo agreed live with Chris Rich.</strong> Add a "Professional Services" / "B2B Services" / "Industry Association" template category with <em>skeleton-style</em> structures (not finished mockups), brand-kit-aware defaults, info-heavy / image-light layouts.</p>
+        <div class="ev"><strong>Evidence:</strong> Chris Rich · Bianka · Matt Cresswell · Jack Hally · Jillian Ney · Wes Turner · Hannah's live concession <span class="cust-cite">[00:28:15]</span></div>
+      </div>
+      <div class="bet" data-rank="4">
+        <h4>Multi-author collaborative editing in the canvas</h4>
+        <p>3 independent customers report save-conflicts and absent draft-staging. <strong>Real-time co-edit + change history + per-block presence indicators.</strong> Direct competition with Google Docs, Notion, Figma where this is table-stakes. Will land hardest with multi-reviewer ProServ + rotating-board nonprofit cohorts.</p>
+        <div class="ev"><strong>Evidence:</strong> Jack Hally (76 Capital, 4 reviewers) · Kyle Spalding (Mailchimp internal) · Bianka Kiss (half team scared)</div>
+      </div>
+      <div class="bet" data-rank="5">
+        <h4>Direct-manipulation editor improvements</h4>
+        <p>Andrea D'Ercole's Bee.io detour is the strongest single piece of evidence for the editor's biggest gap: <strong>direct image manipulation</strong> (free resize, asymmetric resize, free placement, drag-anywhere). Competitive ground vs Bee.io, Adobe Express, Canva.</p>
+        <ul style="font-size:11px; margin: 4px 0 0; padding-left:16px;">
+          <li>Free / asymmetric image resize (Andrea)</li>
+          <li>Bottom-align of side-by-side text boxes (Andrea, Hannah confirmed gap)</li>
+          <li>Two-column layouts in 1 click, not 3 (Kyle, Andrea)</li>
+          <li>Single-screen edit experience without "done" view back-and-forth (Andrea)</li>
+          <li>A/B test sections post-creation (Wes)</li>
+          <li>Brand-kit-aware template defaults — square/round corners, pill/box CTAs (Wes)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STRATEGIC ALIGNMENT WITH PAGES 4 + 5 -->
+    <div class="card tinted" style="margin-bottom:14px;">
+      <p style="margin:0;"><strong>Strategic alignment.</strong> This direct-customer research <em>independently confirms</em> the prioritization on Pages 4–5 from a different evidence base (1:1 PM-led research, no MRR weighting). The convergence is striking:
+      <strong>Bet 1 (Saved blocks)</strong> ↔ <strong>F1 + Slack $13.7K/mo</strong> ↔ <strong>S1.11 + S2.89 research findings.</strong>
+      <strong>Bet 2 (Discovery)</strong> ↔ <strong>Page 4 attack vector "friendlier first-run + UI stability."</strong>
+      <strong>Bet 3 (B2B templates)</strong> ↔ new Page 4 differentiator candidate <strong>not previously surfaced</strong>.
+      <strong>Bet 4 (Multi-author collab)</strong> ↔ new D11 to add to Page 4 (Google Docs / Figma table stakes).
+      <strong>Bet 5 (Direct manipulation)</strong> ↔ <strong>F4 (in-canvas AI image edit) + D9 hybrid editor.</strong>
+      Three data sources (Slack VOC + research session opportunity-DB + HeyMarvin 1:1s) now agree on the same Phase 1 backbone — high confidence to ship.</p>
+    </div>
+
+    <!-- CAVEATS -->
+    <h2><span class="num">40</span>Caveats &amp; methodology integrity</h2>
+    <div class="grid cols-2">
+      <div>
+        <ul>
+          <li><strong>Cohort bias:</strong> 22 of 50 transcripts are Hannah Graffeo's 1:1s. Customers self-selected to the research panel — skews toward higher-engagement users; quieter customers underrepresented.</li>
+          <li><strong>Whisper transcription artifacts:</strong> Bianka K (1) was truncated to ~25-char segments and supplemented by her clean second meeting. Other transcripts have minor spelling artifacts (e.g. "Bee free" vs "Bee.io").</li>
+          <li><strong>No customer named Klaviyo, ActiveCampaign, or HubSpot organically.</strong> Comparators reached for: <strong>Bee.io · Adobe Express · Canva · Constant Contact · Outlook · Microsoft Dynamics · Levitate · Text in Church · Shopify.</strong> Notable absence in light of Page 1 / Page 2 competitive framing.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Internal Intuit voices</strong> (Kyle Spalding · UXR Watch Party) provide candid product critique but <em>should not be cited as customer voice in any external doc</em>.</li>
+          <li><strong>Editor friction is not uniform.</strong> Kim Vavrick's interview is a clean counter-example: same product, simple newsletter, zero issues. Findings strongest for the <strong>complex / multi-author / brand-conscious / B2B / image-heavy cohorts</strong>.</li>
+          <li><strong>Pipeline:</strong> 50 HeyMarvin recordings → Whisper small.en local → keyword-density signal scan → 25 per-customer briefs with quote-level traceback → 11-section synthesis. Re-runnable via <code>render_briefs.py</code> in the source repo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="source">
+      <strong>Sources (Page 6):</strong>
+      Source repo — <a href="https://github.com/deepakp1308/mailchimp-campaign-builder-research" target="_blank" rel="noopener">github.com/deepakp1308/mailchimp-campaign-builder-research</a> (private — Intuit-internal). 25 customer briefs with timestamped Whisper transcripts: Andrea D'Ercole · Andrew Obeso · Bianka Kiss · Bob Gray · Chris Rich · Clint Bartley · Courtney Fong · Gilles Gauthier · Ian Stuart · Jack Hally · Jeffrey Davis · Jillian Ney · Kim Vavrick · Kyle Spalding · Lauren Goglick · Matt Cresswell · Nicholas H · Nick Hamer · Peter Bell · Shannon Riso · Shauna Todd · Wes Turner · plus internal voices (Kyle Spalding, UXR Watch Party). Triage signal scan: <code>scan_signal.py</code>. Per-brief renderer: <code>render_briefs.py</code>. Synthesis source-of-truth: <code>briefs/synthesis.md</code>.
+      <br/><br/>
+      <em>Methodology integrity:</em> Every claim on this page links to a customer + transcript timestamp <span class="cust-cite">[HH:MM:SS]</span> traceable back to the original audio. No quotes have been paraphrased — all are verbatim from the Whisper transcripts (with the standard small-en spelling caveats). Synthesis preserves the original 11-section structure of <code>briefs/synthesis.md</code> (220 lines) condensed into a dense executive view without information loss.
     </div>
   </section>
 
