@@ -221,9 +221,45 @@
   /* Strengths/Weakness cols */
   .col-loved { background: #F4FBF7; border-color: #CFE9DC; }
   .col-hated { background: #FFF5F2; border-color: #F4D2C5; }
+  .col-mixed { background: #FFFAF0; border-color: #F5E2BD; }
   .col-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
   .col-head h2 { margin: 0; }
   .col-head .count { font-size: 11px; font-weight: 700; color: var(--muted); background: #fff; padding: 2px 8px; border-radius: 999px; }
+
+  /* Sentiment platform bars (page 3) */
+  .platform-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+  @media (max-width: 880px) { .platform-bar { grid-template-columns: repeat(2, 1fr); } }
+  .platform { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: #fff; position: relative; overflow: hidden; }
+  .platform .src { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing:.04em; text-transform: uppercase; }
+  .platform .score { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 22px; margin: 4px 0 2px; }
+  .platform .meta-line { font-size: 11px; color: var(--muted); }
+  .platform .bar-wrap { height: 4px; background: var(--line); border-radius: 99px; overflow: hidden; margin-top: 6px; }
+  .platform .bar { height: 100%; border-radius: 99px; background: var(--brand); }
+  .platform.bad .bar { background: var(--bad); }
+  .platform.good .bar { background: var(--good); }
+  .platform.mid .bar { background: var(--warn); }
+  .platform.bad .score { color: var(--bad); }
+  .platform.good .score { color: var(--good); }
+  .platform.mid .score { color: var(--warn); }
+
+  /* Theme cards (loved/hated themes) */
+  .theme { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px 8px; background: #fff; margin-bottom: 8px; }
+  .theme h3 { margin: 0 0 4px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+  .theme h3 .badge { font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: .06em; }
+  .badge.lo { background: #FFE7E0; color: #9A1F00; }
+  .badge.hi { background: #E6F5EE; color: #036A4F; }
+  .badge.mid { background: #FFF1DD; color: #8A4A00; }
+  .badge.brand { background: var(--chip); color: var(--chip-ink); }
+  .theme p.summary { font-size: 12.5px; margin: 0 0 6px; }
+  .theme blockquote {
+    margin: 6px 0 4px; padding: 6px 10px;
+    border-left: 2px solid var(--line-2);
+    background: #FAFAFB; border-radius: 4px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 12.5px; color: var(--ink-2);
+  }
+  .theme .src-tag { font-size: 10.5px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 4px; margin-top: 4px; }
+  .theme .src-tag strong { color: var(--ink-2); }
 
   /* Print */
   @media print {
@@ -241,9 +277,10 @@
 <div class="toolbar">
   <div class="toolbar-inner">
     <div class="brand-mark"><span class="brand-dot"></span> Competitive Brief — Klaviyo Email Builder</div>
-    <div style="display:flex; gap:8px;">
-      <a class="btn" href="#page1">Page 1</a>
-      <a class="btn" href="#page2">Page 2</a>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <a class="btn" href="#page1">1 · Overview</a>
+      <a class="btn" href="#page2">2 · Strategy</a>
+      <a class="btn" href="#page3">3 · Voice of Customer</a>
       <button class="btn primary" onclick="window.print()">Print / PDF</button>
     </div>
   </div>
@@ -255,7 +292,7 @@
   <section class="page" id="page1">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive 2-Pager · Page 1 of 2</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 3</div>
         <h1>Klaviyo's Email Builder</h1>
         <div class="subtitle">The WYSIWYG canvas inside Campaigns where ecommerce marketers compose, design, brand, and personalize one-off email campaigns — drag-and-drop blocks, sections, brand kit, and a stack of in-editor AI tools.</div>
       </div>
@@ -392,7 +429,7 @@
   <section class="page" id="page2">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive 2-Pager · Page 2 of 2</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 3</div>
         <h1>Differentiation, JTBD, Pricing &amp; Gaps</h1>
         <div class="subtitle">Where Klaviyo's email builder wins, who reaches for it and why, what it costs to unlock the AI layer, and what they still don't do well.</div>
       </div>
@@ -581,6 +618,286 @@
       Sources (Page 2): klaviyo.com/blog/pricing-update · klaviyo.com/customers/case-studies (Tatcha, Twinings, Marine Layer, LifeStraw, Alessi) · help.klaviyo.com (brand styles, universal content, dark-mode preview) · community.klaviyo.com (sections &amp; columns, classic vs new editor) · academy.klaviyo.com (Email AI quick guide) · G2 / Gartner Peer Insights / Badsender / Sender.net / Mailsoftly reviews · Polaris Growth + Uplers blogs · attentive.com/blog (comparative context) · zigpoll Klaviyo vs Mailchimp vs Attentive 2026
       <br/><br/>
       <em>Methodology:</em> synthesized from Klaviyo's product pages, what's-new posts, help center articles, developer reference, customer case studies, third-party reviews, and competitive comparison content. Scope deliberately limited to the <strong>Email Builder / template editor</strong> surface — not Flows, SMS, segmentation, deliverability, Customer Hub, or Helpdesk.
+    </div>
+  </section>
+
+  <!-- ============ PAGE 3 — VOICE OF CUSTOMER ============ -->
+  <section class="page" id="page3">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 3</div>
+        <h1>Voice of Customer — what people actually say</h1>
+        <div class="subtitle">Sentiment synthesis from Reddit (r/Klaviyo, r/ecommerce, r/ShopifyAppDev, r/graphic_design), Klaviyo Community forum, G2, Capterra, Trustpilot, agency blogs, and YouTube tutorial commentary — strictly about the <strong>email builder/editor</strong>.</div>
+      </div>
+      <div class="meta">
+        <div><strong>Sources scanned:</strong> 30+ threads, 6 review sites</div>
+        <div style="margin-top:6px;"><strong>Window:</strong> primarily 2024–2026</div>
+      </div>
+    </div>
+
+    <!-- HEADLINE TAKEAWAY -->
+    <div class="pull" style="margin-bottom:14px;">
+      The editor is <strong>capability-rich and bug-noisy</strong>. Customers love the <em>power</em> (Universal Content, Image Remix, brand kit, dynamic product blocks) but are vocally frustrated by <em>execution</em> — slowness, autosave failures, popup obstructions, and a constantly-shifting UI. The AI is praised when it solves a workflow (Remix, Brand Voice from corpus) and dismissed when it just rewrites prompts (subject lines).
+      <cite>— Synthesis across G2, Capterra, Trustpilot, Reddit r/Klaviyo, Klaviyo Community, agency blogs, May 2026</cite>
+    </div>
+
+    <!-- SENTIMENT BY CHANNEL -->
+    <h2><span class="num">11</span>Sentiment by channel</h2>
+    <div class="platform-bar">
+      <div class="platform good">
+        <div class="src">G2</div>
+        <div class="score">4.6 / 5</div>
+        <div class="meta-line">1,319 reviews · editor capabilities praised</div>
+        <div class="bar-wrap"><div class="bar" style="width: 92%;"></div></div>
+      </div>
+      <div class="platform good">
+        <div class="src">Capterra</div>
+        <div class="score">4.6 / 5</div>
+        <div class="meta-line">525 reviews · ease vs power balance</div>
+        <div class="bar-wrap"><div class="bar" style="width: 92%;"></div></div>
+      </div>
+      <div class="platform mid">
+        <div class="src">Sender.net editorial</div>
+        <div class="score">3.8 / 5</div>
+        <div class="meta-line">Editor good, learning curve called out</div>
+        <div class="bar-wrap"><div class="bar" style="width: 76%;"></div></div>
+      </div>
+      <div class="platform bad">
+        <div class="src">Trustpilot</div>
+        <div class="score">1.8 / 5</div>
+        <div class="meta-line">350+ reviews · billing dominates · editor ≠ main complaint</div>
+        <div class="bar-wrap"><div class="bar" style="width: 36%;"></div></div>
+      </div>
+      <div class="platform mid">
+        <div class="src">Reddit r/Klaviyo</div>
+        <div class="score">Mixed</div>
+        <div class="meta-line">AI design split · "Beautiful Designs by AI" thread upvoted</div>
+        <div class="bar-wrap"><div class="bar" style="width: 55%;"></div></div>
+      </div>
+      <div class="platform bad">
+        <div class="src">Klaviyo Community forum</div>
+        <div class="score">Negative</div>
+        <div class="meta-line">Editor bug threads dominate · self-selected complaints</div>
+        <div class="bar-wrap"><div class="bar" style="width: 30%;"></div></div>
+      </div>
+      <div class="platform good">
+        <div class="src">Agency blogs</div>
+        <div class="score">Positive</div>
+        <div class="meta-line">Hickman, InboxArmy, Polaris, Uplers · pros endorse it</div>
+        <div class="bar-wrap"><div class="bar" style="width: 88%;"></div></div>
+      </div>
+      <div class="platform good">
+        <div class="src">YouTube tutorials</div>
+        <div class="score">Positive</div>
+        <div class="meta-line">Kovac, official Klaviyo · creators sell content on it</div>
+        <div class="bar-wrap"><div class="bar" style="width: 84%;"></div></div>
+      </div>
+    </div>
+    <p style="font-size:11.5px; color:var(--muted); margin: -4px 0 14px;">
+      <strong>Read the gap, not just the score.</strong> G2/Capterra reviewers are typically vetted business buyers, Trustpilot skews consumer/billing, Reddit skews practitioners venting. The editor itself isn't loved or hated uniformly — it's praised for capability and roasted for execution.
+    </p>
+
+    <!-- LOVED / HATED THEMES -->
+    <div class="grid cols-2" style="margin-bottom:14px;">
+
+      <!-- LOVED -->
+      <div class="card col-loved">
+        <div class="col-head"><h2>What people love <span style="font-weight:400; color:var(--muted); font-family:Inter; font-size:12px;">(strengths)</span></h2><span class="count">+ 6 themes</span></div>
+
+        <div class="theme">
+          <h3>Universal Saved Content <span class="badge hi">Top praise</span></h3>
+          <p class="summary">"Edit once, propagate everywhere" lands as the most-loved power-user feature. Frequently called out as the #1 reason brand designers keep using Klaviyo.</p>
+          <blockquote>"Big news! Universal Content is now available!" — community announcement thread, hundreds of upvotes, broadly positive replies.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo Community announcement thread · G2 reviews · Polaris Growth blog</div>
+        </div>
+
+        <div class="theme">
+          <h3>Image Remix (Gemini) <span class="badge hi">Wow factor</span></h3>
+          <p class="summary">Praised as the most genuinely novel addition. Marketers say it removes a Canva/Photoshop round-trip — change backgrounds, recolor, swap models without leaving the editor.</p>
+          <blockquote>"Takes marketers from idea to execution in minutes rather than days" — Klaviyo blog, echoed in agency reviews and r/Klaviyo positive threads.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo blog · Klaviyo Community Remix thread · Reddit r/Klaviyo "Beautiful Designs by AI"</div>
+        </div>
+
+        <div class="theme">
+          <h3>Dynamic product blocks &amp; Shopify hooks <span class="badge hi">Ecom-native</span></h3>
+          <p class="summary">Live catalog feeds with dynamic pricing — most-cited reason brands picked Klaviyo over Mailchimp for the editor experience.</p>
+          <blockquote>"Dynamic product blocks with e-commerce integrations like Shopify, WooCommerce, BigCommerce" called out as standout — Badsender, May 2025.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Badsender deep review · G2 vs MailerLite/Mailjet pages · Hickman Design agency roundup</div>
+        </div>
+
+        <div class="theme">
+          <h3>Brand kit + Brand Voice from corpus <span class="badge hi">AI that delivers</span></h3>
+          <p class="summary">Marketers like that Brand Voice infers tone from past sent emails — they don't have to write a style guide. Drafts feel more on-brand than rivals'.</p>
+          <blockquote>"Klaviyo analyzes your past emails… generates writing rules that the AI applies to future drafts" — help center; reviewers note this is the AI feature most worth turning on.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo help center · Mailflow Authority AI review · agency blogs</div>
+        </div>
+
+        <div class="theme">
+          <h3>Sections, columns, custom fonts, mobile stacking <span class="badge hi">Modernized</span></h3>
+          <p class="summary">The new editor's structural primitives (vs the old Classic) are universally welcomed — finally side-by-side blocks, controllable mobile stacking direction, custom fonts without code.</p>
+          <blockquote>"Sections and columns for more flexible layouts… controllable mobile stacking" — community guide post praised in replies.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo Community new vs classic thread · Polaris Growth · Uplers</div>
+        </div>
+
+        <div class="theme">
+          <h3>AI-generated layouts (when they help non-designers) <span class="badge hi">Niche love</span></h3>
+          <p class="summary">For marketers without design chops, Email AI is a real unlock: "way better than drag-and-drop" if you struggle with layout. Heavier-skilled designers find generated drafts generic.</p>
+          <blockquote>"AI-generated email designs are way better than drag and drop… solves a huge problem." — r/Klaviyo, "Beautiful Designs by AI" thread.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Reddit r/Klaviyo · counterpoint: Mailflow Authority calls subject-line AI generic</div>
+        </div>
+      </div>
+
+      <!-- HATED -->
+      <div class="card col-hated">
+        <div class="col-head"><h2>What people hate <span style="font-weight:400; color:var(--muted); font-family:Inter; font-size:12px;">(gaps)</span></h2><span class="count">– 8 themes</span></div>
+
+        <div class="theme">
+          <h3>Editor performance is brutal <span class="badge lo">#1 complaint</span></h3>
+          <p class="summary">"Outrageously slow" — 5-10 second waits during autosave, scrolling lags, performance degrades the longer the editor is open. Multiple long threads.</p>
+          <blockquote>"Why does Klaviyo's new editor work so slow?" — community thread title; hundreds of co-signers complaining about typing latency in text blocks.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo Community "Content Editor Slow in New Version?" · "Why does Klaviyo's new editor work so slow" · "New Editor: Feature requests"</div>
+        </div>
+
+        <div class="theme">
+          <h3>Autosave is unreliable <span class="badge lo">Lost-work fear</span></h3>
+          <p class="summary">Autosave sometimes stops, the manual save button doesn't always work, edits get lost. Forces marketers to copy work to a doc as backup.</p>
+          <blockquote>"Is the New Editor Auto-Save feature broken?" — recurring community thread; users describe re-entering the editor as the workaround.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo Community autosave thread · "New Template Editor — Am I the only one seeing a lot of bugs?"</div>
+        </div>
+
+        <div class="theme">
+          <h3>~10 named bugs in one user's count <span class="badge lo">Trust-eroding</span></h3>
+          <p class="summary">Section padding switch resets, undo unreliable, blocks disappear on refresh, mobile preview inaccurate, duplicate button missing, dynamic coupon false positives.</p>
+          <blockquote>"The bugs/glitches… starting to irritate me to the point where I'll just stop using Klaviyo editors and fully switch to plain text editor… or some other builder." — power user, ~100 emails across 3 projects.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo Community "New Klaviyo Template Builder?" thread · Side Million blog "Klaviyo, you really frustrate me"</div>
+        </div>
+
+        <div class="theme">
+          <h3>Inline-styling popups obstruct text <span class="badge lo">UX downgrade</span></h3>
+          <p class="summary">New inline popups cover the text being edited, replacing the older flyout drawer. Forces users to compose in Word and paste in.</p>
+          <blockquote>"The new text editors get in the way… a downgrade to the editing experience." — community campaigns &amp; flows thread.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo Community "The new text editors get in the way" · Side Million</div>
+        </div>
+
+        <div class="theme">
+          <h3>Saved-blocks management is poor <span class="badge lo">Power-user pain</span></h3>
+          <p class="summary">Can't rename, can't reorder, no folders, can't easily edit/delete from list. Old-editor blocks were silently auto-migrated with no organization.</p>
+          <blockquote>"Saved blocks from old editor now showing in new editor, BUT…" — community thread; reply piles describe the migration as opaque.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Klaviyo Community saved-blocks migration thread · "New Editor: Feature requests" thread</div>
+        </div>
+
+        <div class="theme">
+          <h3>HTML ↔ drag-and-drop interop is broken <span class="badge lo">Dev workflow</span></h3>
+          <p class="summary">Exported HTML loses drag-drop on re-import. Source-code view is being removed from text/table/split blocks. Forces HTML-first marketers into the dedicated HTML block or off the platform.</p>
+          <blockquote>"Klaviyo made emails harder than they should be." — r/ShopifyAppDev thread title.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> r/ShopifyAppDev · Klaviyo Community "Adding drag/drop into HTML template" · "Lack of drag-and-drop functionality from HTML template"</div>
+        </div>
+
+        <div class="theme">
+          <h3>AI subject lines &amp; generic content <span class="badge mid">AI shallow</span></h3>
+          <p class="summary">Subject Line AI produces "Don't Miss Our Spring Collection" / "New Arrivals You'll Love" — useful for brainstorming, useless verbatim. Reviewers say the AI lacks brand voice on the surface tools (even though Brand Voice itself works on body copy).</p>
+          <blockquote>"Sounds like every other brand's email… use them for inspiration, then refine with Claude or ChatGPT." — Mailflow Authority Klaviyo AI review.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Mailflow Authority AI review · Klaviyo Community "AI Subject Line Analysis" · Reddit AI threads</div>
+        </div>
+
+        <div class="theme">
+          <h3>Brand Voice "Writing Rules" buggy <span class="badge mid">Polish gap</span></h3>
+          <p class="summary">The very feature Klaviyo markets as the AI moat (Brand Voice from corpus) is reported to "bug every other time" in the configuration UI.</p>
+          <blockquote>"The 'writing rules' option in the style configuration bugs every other time." — Badsender May 2025 deep technical review.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Badsender · sender.net editorial · G2 reviews</div>
+        </div>
+
+        <div class="theme">
+          <h3>Steep learning curve · UI churns monthly <span class="badge mid">Switch trigger</span></h3>
+          <p class="summary">Newcomers compare unfavorably to Mailchimp's first-run; veterans complain the UI "moves something every month" eroding muscle memory.</p>
+          <blockquote>"At least once a month there's an update that makes you say wait, where did <em>that</em> functionality go?" — Gartner Peer Insights review.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Gartner Peer Insights · Sender.net · Reddit r/ecommerce switching threads</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AI SENTIMENT DEEP-DIVE -->
+    <h2><span class="num">12</span>AI sentiment, by feature</h2>
+    <div class="grid cols-3" style="margin-bottom:14px;">
+      <div class="diff" style="border-left: 3px solid var(--good);">
+        <div class="vs" style="color:var(--good);">Loved</div>
+        <h3>Image Remix (Gemini)</h3>
+        <p>Real workflow win. Reviewers and Reddit users repeatedly call out as best-in-class. Removes Canva/Photoshop dependency.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--good);">
+        <div class="vs" style="color:var(--good);">Loved (when it works)</div>
+        <h3>Brand Voice from corpus</h3>
+        <p>Inferred-not-typed style guide is the AI moat marketers want. But the configuration UI itself is reportedly buggy.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--warn);">
+        <div class="vs" style="color:var(--warn);">Mixed</div>
+        <h3>Email AI (section generation)</h3>
+        <p>"Way better than drag-and-drop" for non-designers (r/Klaviyo). Skilled designers find drafts generic and the manual cleanup (image URLs, product feeds, button URLs) annoying.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--warn);">
+        <div class="vs" style="color:var(--warn);">Mixed</div>
+        <h3>K:AI Marketing Agent</h3>
+        <p>Promising — pulls assets from your site, builds first drafts. Community feedback notes it requires significant manual tweaking and can be slower than doing it yourself.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--bad);">
+        <div class="vs" style="color:var(--bad);">Dismissed</div>
+        <h3>Subject Line AI</h3>
+        <p>"Generic," "sounds like every other brand," fine for brainstorming, useless verbatim. Most reviewers refine in Claude/ChatGPT instead.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--good);">
+        <div class="vs" style="color:var(--good);">Loved (orthogonal to editor)</div>
+        <h3>Predictive analytics + Smart Send Time</h3>
+        <p>Often called Klaviyo's <em>strongest</em> AI work — but lives outside the editor. Frequently mentioned as the reason marketers tolerate the editor's bugs.</p>
+      </div>
+    </div>
+
+    <!-- SWITCHING NARRATIVES -->
+    <div class="grid cols-2" style="margin-bottom:14px;">
+      <div>
+        <h2><span class="num">13</span>Why some are switching <em>away</em> (editor as a factor)</h2>
+        <ul>
+          <li><strong>"Klaviyo made emails harder than they should be"</strong> — r/ShopifyAppDev. The HTML/drag-drop interop and learning curve push some Shopify devs to Shopify Email or Omnisend.</li>
+          <li><strong>"Switching from Klaviyo to Shopify Emails"</strong> — r/Klaviyo own subreddit thread; cited reasons mix billing + editor friction for smaller stores.</li>
+          <li><strong>Pricing escalation past 2,500 profiles</strong> — editor doesn't gate, but the bill does. Mid-market shops downgrade or move to MailerLite / Sender.</li>
+          <li><strong>Power users threaten to "fully switch to plain text editor"</strong> after enough bugs — quoted in community thread, ~100 emails across 3 projects.</li>
+        </ul>
+      </div>
+      <div>
+        <h2><span class="num">14</span>Why people stay despite the gripes</h2>
+        <ul>
+          <li><strong>Switching cost on Universal Content + Brand Kit</strong> is real — once 50+ flows reference saved blocks, leaving means rebuilding.</li>
+          <li><strong>Shopify integration depth</strong> — product blocks with live catalog feeds aren't trivially replaced.</li>
+          <li><strong>Brand Voice corpus learning</strong> means the AI gets better the longer you stay (a real moat).</li>
+          <li><strong>Inbox testing built-in</strong> saves Litmus subscription cost (~$99+/mo).</li>
+          <li><strong>Predictive analytics + Smart Send Time</strong> are genuinely missed when leaving.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- IMPLICATIONS -->
+    <h2><span class="num">15</span>So what — implications for our positioning</h2>
+    <div class="grid cols-3">
+      <div class="card warm">
+        <p style="margin:0;"><strong>Klaviyo's softest tissue is execution, not capability.</strong> Their feature list is hard to match; their reliability and UI consistency are not. A "boringly stable, never-loses-your-work" editor with autosave you can prove is a credible wedge.</p>
+      </div>
+      <div class="card warm">
+        <p style="margin:0;"><strong>HTML / dev workflow is an underserved seam.</strong> r/ShopifyAppDev rage about HTML-drag-drop interop and Klaviyo removing source-code from text blocks is a clear gap to attack.</p>
+      </div>
+      <div class="card warm">
+        <p style="margin:0;"><strong>AI: pick the workflow wins, skip the gimmicks.</strong> Image-edit-in-canvas (Remix-tier) and brand-voice-from-corpus are the AI surfaces customers actually praise. Subject-line generators are no longer credible AI proof points.</p>
+      </div>
+    </div>
+
+    <div class="source">
+      <strong>Sources (Page 3):</strong>
+      Reddit — r/Klaviyo ("Beautiful Designs by AI" 2025, "Switching from Klaviyo to Shopify Emails" 2025, "Get Your Flows Flowing"), r/ecommerce ("Go-to ecommerce email marketing software"), r/ShopifyAppDev ("Klaviyo made emails harder than they should be"), r/graphic_design (Klaviyo email design pricing thread).
+      Klaviyo Community forum — "Why does Klaviyo's new editor work so slow?", "New Editor: Feature requests", "New Template Editor — Am I the only one seeing a lot of bugs?", "Is the New Editor Auto-Save feature broken?", "The new text editors get in the way", "Saved blocks from old editor now showing in new editor, BUT…", "Klaviyo's new feature, Remix", "Big news: Universal Content is now available!", "AI Subject Line Analysis", "Klaviyo AI" thread, "New Klaviyo Template Builder?".
+      Reviews — G2 (4.6/5, 1,319 reviews; comparison pages vs Mailjet, MailerLite), Capterra (4.6/5, 525 reviews), Trustpilot (1.8/5, 350+), Sender.net editorial (3.8/5), CheckThat.ai cross-platform aggregator, SaaS Scored, Mailsoftly, Toksta Reddit-sentiment aggregator.
+      Blogs — Badsender (May 2025 deep technical review), Polaris Growth, Uplers, Hickman Design "Inbox Architects", InboxArmy comparison guide, FirstPier agency guide, Labyrinth Digital best practices, Side Million "Klaviyo, you really frustrate me", Mailflow Authority "Klaviyo AI Features Review".
+      YouTube — Klaviyo official "Customize Klaviyo Email Templates" tutorial, Elliot Kovac "The Only Klaviyo Email Design Tutorial You'll Ever Need".
+      <br/><br/>
+      <em>Methodology:</em> ~30 threads + 6 review platforms scanned for editor-specific commentary. Quotes lightly edited for length, not for sentiment. Channel skew explicitly called out (Trustpilot is billing-heavy, Klaviyo Community self-selects toward complainers, agency blogs are commercially aligned). Scope strictly limited to the email builder/editor — Flows, SMS, segmentation, deliverability, billing, and customer support sentiment excluded except where editor-adjacent.
     </div>
   </section>
 
