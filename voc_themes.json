@@ -1,0 +1,888 @@
+{
+  "total_records_in_window": 150,
+  "classified_records": 61,
+  "unclassified_records": 89,
+  "total_hvc_mrr_in_window": 128162.0,
+  "themes": [
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Saved sections / saved blocks / universal content",
+      "n_mentions": 6,
+      "n_unique_users": 6,
+      "hvc_mrr_exposure": 13684.0,
+      "top_quotes": [
+        {
+          "quote": "I wish I could update list templates for from email, footer, etc., from within the creation interface. Right now I have to hunt it down. It's not easy to find this. Other than that, I need to spend more time exploring features to fully answer. I like the landing page feature.",
+          "mrr": 1150.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2026-04-14",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1776210444038839",
+          "fullstory": null
+        },
+        {
+          "quote": "I think a reusable drag and drop elements library would be helpful. Designed modules that would retain orientation and links \u2014\u00a0but then be editable after drop.",
+          "mrr": 1010.0,
+          "plan": "Standard",
+          "prs": 7,
+          "ts_human": "2026-01-13",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1768330348142639",
+          "fullstory": null
+        },
+        {
+          "quote": "Please, please, please provide the option of saved sections. We have our own footer that we use and every time we use a pre-made Mailchimp template (for example) I have to recreate our footer from scratch. Thank you",
+          "mrr": 6685.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-10-10",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1760106328160229",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/91dc22f9-995f-42d9-980f-1321919a5699%3Afc89e3ff-2296-4c0f-99ad-c64624eb0f06?integration_src=qualtrics"
+        },
+        {
+          "quote": "Add Footer library and saved templates for only footers",
+          "mrr": 689.0,
+          "plan": "Premium",
+          "prs": 8,
+          "ts_human": "2025-07-21",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1753102124349969",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/9a99022d-6636-4382-9b5e-ee6d9e0712b0%3A95dc0b56-f1c9-4e62-a7cc-ada3dcd12189?integration_src=qualtrics"
+        },
+        {
+          "quote": "I'd love to see a content block feature that can be inserted or used in multiple emails so when it's updated it updates across all the active emails. It would save time from needing to update multiple individual emails.",
+          "mrr": 2550.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-07-02",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1751474286472399",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/97c0e098-78b1-433a-b233-ef027efc5efe%3A43cfe797-58bf-4510-be1a-f62de56c021c?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Snap-to-grid / spacing alignment / structured layout",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 7778.0,
+      "top_quotes": [
+        {
+          "quote": "Allow for more structured email design, It is hard to line up spacing between elements. It would be nice if there was a snap to place feature or something to keep consistent spacing.",
+          "mrr": 7778.0,
+          "plan": null,
+          "prs": 7,
+          "ts_human": "2025-05-20",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1747748989129779",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/a1e4ecc0-d8f4-43ce-8c1c-8a729c3a64a6%3Ae56eb376-82f3-4d27-a45c-26a1b6ab5997?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Advanced merge tag / content variables / conditional / loops",
+      "n_mentions": 2,
+      "n_unique_users": 2,
+      "hvc_mrr_exposure": 6225.0,
+      "top_quotes": [
+        {
+          "quote": "- Allow for JSON objects in Merge Tags in order to use them in Templates\n  Ex: Merge Tag: PRODUCT_1, {item: \"My Item\", price: \"$2.99\" } and to use as *|PRODUCT_1.item|*",
+          "mrr": 5200.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-10-15",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1760551590742139",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/621648d8-6a09-4264-b7a0-de4b4e0f0360%3A4fad40e5-b979-407c-9893-07995fc88266?integration_src=qualtrics"
+        },
+        {
+          "quote": "Better scheduling tools. Let the user define multiple delivery dates and times + updated the Subject, while Mailchimp handles the message replication in the background. Add Content Variables (similar to merge tags, but for email content. E.g: a variable may contain information...",
+          "mrr": 1025.0,
+          "plan": "Premium",
+          "prs": 10,
+          "ts_human": "2025-08-27",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1756311326941819",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/7d831e72-73a9-4eaa-9c30-50e28200c0d8%3A36a27aee-ae8c-4230-92ca-199f077d49a4?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "barrier",
+      "category_label": "Barrier",
+      "theme": "Generic 'editor is clunky / hard to use / unusable'",
+      "n_mentions": 6,
+      "n_unique_users": 6,
+      "hvc_mrr_exposure": 5690.0,
+      "top_quotes": [
+        {
+          "quote": "The emails editor feels very clunky",
+          "mrr": 918.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2026-01-20",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1768927852031469",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/4a0b89ec-a10b-41d6-94f1-d0acb6216f69%3A8f6432cd-7315-4ff0-9e57-88040014ccd5?integration_src=qualtrics"
+        },
+        {
+          "quote": "the newsletter editor is clunky. The prices are insane. If I could find another newsletter with the same segmentation functionality I would leave.",
+          "mrr": 300.0,
+          "plan": null,
+          "prs": 0,
+          "ts_human": "2026-01-11",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1768118402667719",
+          "fullstory": null
+        },
+        {
+          "quote": "Your editors are a bit clunky, old one has better compatibility - lacks features, new one has better features, but completely breaks down when sending to outlook audience - I assume partly user error but it could be pointed out with more emphasis on template design stage.",
+          "mrr": 1370.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-11-24",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1763974191268639",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/43198847-0615-4206-81fc-0d47303b311f%3Ad333dab3-cfcc-4550-ba26-d70f3a03d4ab?integration_src=qualtrics"
+        },
+        {
+          "quote": "Too many inconsistencies/glitches in email builder",
+          "mrr": 877.0,
+          "plan": "Premium",
+          "prs": 5,
+          "ts_human": "2025-09-04",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1756997767016379",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/6c47a7c9-500e-4282-86c7-2437ceeca3f2%3A9429a9d4-4575-4235-a785-5565eeff6bcb?integration_src=qualtrics"
+        },
+        {
+          "quote": "I find Mailchimp very clunky and hard to manipulate the template.",
+          "mrr": 425.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-07-08",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1751951071460429",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/923342a8-4adf-48a6-bab8-edfb057ffeb2%3A170c1581-6a4b-4b59-896a-58c2b41f17fb?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "barrier",
+      "category_label": "Barrier",
+      "theme": "UI churn / new builder dislike / 'bring back the old'",
+      "n_mentions": 8,
+      "n_unique_users": 8,
+      "hvc_mrr_exposure": 5234.0,
+      "top_quotes": [
+        {
+          "quote": "I absolutely HATE that in the new builder Ctrl+K to insert links doesn't work on Firefox or Chrome. It's maddening! And I hate how the styling rules are so rigid now--I understand that it's probably trying to streamline the process, but when I have something small I need to tw...",
+          "mrr": 949.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2026-02-13",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1770996973378069",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/1f95b57b-08fa-445d-b57b-37dfb759ddd3%3Ad14ef723-3604-4408-b3d9-36a033951b32?integration_src=qualtrics"
+        },
+        {
+          "quote": "Can you please bring back the creative assistant feature? I used to use it a lot.",
+          "mrr": 1325.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2026-02-02",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1770066920468879",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/bc73070f-3709-48a9-9cc1-334738b5a681%3A213acac4-a3aa-44b2-9d23-ac6e29b0878a?integration_src=qualtrics"
+        },
+        {
+          "quote": "We need to be able to track click data across each month for a weekly newsletter. It is not easy to track clicks per link and I've had to create a add on code to each URL. The old builder allowed you to add a Title under Advanced Options - so you could see at a glance what peo...",
+          "mrr": 536.0,
+          "plan": "Standard",
+          "prs": null,
+          "ts_human": "2026-01-12",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1768201504475869",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/82e27711-79cb-4b78-8e17-05befb872643%3Aa2b55011-3efd-4abe-82ca-27f6193cb0d5?integration_src=qualtrics"
+        },
+        {
+          "quote": "bring back the paint tool in the image editor",
+          "mrr": 410.0,
+          "plan": null,
+          "prs": 10,
+          "ts_human": "2025-11-25",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1764031513867889",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/455c6357-0536-4438-b311-9786f922c81b%3Aa698d276-43b6-47ad-afb4-fe46c5086174?integration_src=qualtrics"
+        },
+        {
+          "quote": "The Editor for the campaigns could be improve. the drag and drop used to work very well but now it is super hard to drop the content where you need to. It just drops anywhere on the page, even if the purple line is where I want it.",
+          "mrr": 685.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-10-31",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1761924633569799",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/ef4fc64f-2ffe-4fbf-8008-6109122ff998%3A57cfdbc5-884b-4d17-8da3-7edbcdcef3d8?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "barrier",
+      "category_label": "Barrier",
+      "theme": "Steep learning curve / confusing UX",
+      "n_mentions": 6,
+      "n_unique_users": 6,
+      "hvc_mrr_exposure": 4677.0,
+      "top_quotes": [
+        {
+          "quote": "My single biggest pain point is the templates editor. Each of the options poses challenges. We use largely custom-coded templates because they display most reliably across inboxes, but building an email with a custom template is buggy (editor often confuses order of blocks or ...",
+          "mrr": 410.0,
+          "plan": "Standard",
+          "prs": null,
+          "ts_human": "2025-12-08",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1765231520773259",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/a27d8f89-708b-41aa-88a0-3a1e719a4f77%3A0b937cfe-2b93-4bba-96ff-e2c8054e42d9?integration_src=qualtrics"
+        },
+        {
+          "quote": "The UX flow for template use is extremely confusing and unintuitive",
+          "mrr": 978.0,
+          "plan": "Premium",
+          "prs": 1,
+          "ts_human": "2025-10-29",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1761753787106789",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/ad362463-9f7a-4c6c-81c0-a54e702f83f4%3A0d39af7f-9f30-4c2a-899a-5fd17123a55f?integration_src=qualtrics"
+        },
+        {
+          "quote": "A personal address was attached to the footer of my email campagin.  I do not know why or how.  I need that to never happen again and I can't even figure out how to ensure that never happens again becuase I can't find an edit option for the footer.  It did not show when I was ...",
+          "mrr": 655.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-10-29",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1761698801343179",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/a6c88899-d91a-4cfa-9256-9b8092a6e6a2%3A26739d8e-2d34-45dd-9c72-c2660741bf35?integration_src=qualtrics"
+        },
+        {
+          "quote": "I have a saved template for the EAAC newsletter.  Each time I need to edit it, it is difficult to find.  I don't want to create another template, just use the existing one.  I usually try to find answers on Youtube because I find the written instructions that I find online don...",
+          "mrr": 350.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-07-21",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1753138874066799",
+          "fullstory": null
+        },
+        {
+          "quote": "When I create a campaign and use the segment builder, Mailchimp creates/names the segment with some arbitrary name. I didn't experience that prior to April. Not sure why the change or how to manage the naming of this new arbitrary segment name. Confusing",
+          "mrr": 877.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-06-04",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1749078270555099",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/62c698e5-3ed4-4641-a3f9-7ed9c92ec503%3Af3a0bfa1-2dc9-4307-b5f5-93ce096c8a06?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "bug",
+      "category_label": "Bug",
+      "theme": "Preview from template list / template gallery navigation",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 3600.0,
+      "top_quotes": [
+        {
+          "quote": "All I needed to do today was to preview some of the templates. I use to ba bale to do that from the template list. Now I need to go to edit the template before I can get to preview it. It's only one more step, but it's really annoying!!",
+          "mrr": 3600.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-09-15",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1757976270527039",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/af43bce4-713a-41b4-9922-de5902d2e2bf%3A8fdde2b2-5dd0-4f7c-94f8-638c7b2bd638?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "bug",
+      "category_label": "Bug",
+      "theme": "Text formatting / fonts / spacing",
+      "n_mentions": 5,
+      "n_unique_users": 5,
+      "hvc_mrr_exposure": 3019.0,
+      "top_quotes": [
+        {
+          "quote": "Your first line custoner support is often terrible and then it takes too long to get to someone who knows what they are doing. Your support person on chat, name given was Ziggy (today at 5pm eastern), could not resolve a simple issue re font color change. Instead of attempting...",
+          "mrr": 727.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2026-04-22",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1776896347423629",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/4c70259c-abbe-4b9b-80b7-b3c14c0c2737%3A8904f945-e7a4-4771-9894-d5e4eb0f0336?integration_src=qualtrics"
+        },
+        {
+          "quote": "I often get frustrated with line spacing issues and type fonts that don't clear or change the way I want them to.",
+          "mrr": 680.0,
+          "plan": "Standard",
+          "prs": null,
+          "ts_human": "2026-02-20",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1771549880508059",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/fb6f10da-e4a7-4356-90dc-fa41068ef3f9%3Ac201ddb3-959c-4e2a-afc2-bea98d436fbc?integration_src=qualtrics"
+        },
+        {
+          "quote": "Clean up the text editors handling of tables and jumpy font size selection. Add brand-colour schemes in the colouring selector (\"saved colours\")",
+          "mrr": 492.0,
+          "plan": null,
+          "prs": 4,
+          "ts_human": "2025-11-25",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1764065106995249",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/8677366d-53b4-4f82-921a-4b3a318add20%3A3f3a645f-2083-4437-a61c-503b5a764c97?integration_src=qualtrics"
+        },
+        {
+          "quote": "When forwarding emails created in the new builder, the formatting becomes corrupted, with reduced font size and added empty space between paragraphs. This does not happen when forwarding emails created in the legacy builder.",
+          "mrr": 465.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-10-08",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1759910704560749",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/7027d2c4-7e3b-477f-bd8e-b36afe36b841%3Aa7e5677c-acee-4622-83cd-02f3ce4711ca?integration_src=qualtrics"
+        },
+        {
+          "quote": "There are regular glitches. For example, right now, my text is showing up as bolded in the editor, but not in the final email no matter how many times i clear formatting, retype, save and close, etc.",
+          "mrr": 655.0,
+          "plan": null,
+          "prs": 1,
+          "ts_human": "2025-07-30",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1753898052914549",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/f6c7e2d3-8761-420f-920e-5f560a79048b%3A929ade4b-617b-4100-93cd-a80b0ff37013?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "bug",
+      "category_label": "Bug",
+      "theme": "Hyperlink / button URL / link won't remove",
+      "n_mentions": 3,
+      "n_unique_users": 2,
+      "hvc_mrr_exposure": 2749.0,
+      "top_quotes": [
+        {
+          "quote": "I absolutely HATE that in the new builder Ctrl+K to insert links doesn't work on Firefox or Chrome. It's maddening! And I hate how the styling rules are so rigid now--I understand that it's probably trying to streamline the process, but when I have something small I need to tw...",
+          "mrr": 949.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2026-02-13",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1770996973378069",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/1f95b57b-08fa-445d-b57b-37dfb759ddd3%3Ad14ef723-3604-4408-b3d9-36a033951b32?integration_src=qualtrics"
+        },
+        {
+          "quote": "Teh email design tool is so bad. It is not at all user friendly. I have tried 50 times to remove the link but it keeps popping up. Pathetic tool.",
+          "mrr": 1800.0,
+          "plan": "Premium",
+          "prs": 0,
+          "ts_human": "2025-06-09",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1749448185872999",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/69149c4f-0d12-44bc-a05e-00b5ddd30cf6%3A4acef924-2033-43bf-92fc-b5ec1aea2415?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "barrier",
+      "category_label": "Barrier",
+      "theme": "Mobile preview accuracy / what-you-see-is-not-what-you-get",
+      "n_mentions": 2,
+      "n_unique_users": 2,
+      "hvc_mrr_exposure": 2575.0,
+      "top_quotes": [
+        {
+          "quote": "the formatting bugs are making it so that we can't format in the proper alignment, with the correct link colors, with as many images as we'd like, and they are showing up differently in every email client server. I spent 5 hours on the phone with support and it seems like our ...",
+          "mrr": 1553.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-12-09",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1765297849456199",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/055cd2e6-c9bd-46d5-848b-594a071c9e0d%3Ac81af71c-a3d5-4058-b7d8-70e46d9d6748?integration_src=qualtrics"
+        },
+        {
+          "quote": "Al momento de crear las campa\u00f1a estas lucen diferente en el editor VS c\u00f3mo lucen una vez en mi bandeja. En 2 ocasiones me han dejado sin respuesta los agentes que me contactan por correo cuando respondo en espa\u00f1ol. He tenido curiosidad de probar otras plataformas de email mark...",
+          "mrr": 1022.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-11-24",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1764028168366679",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/589c8201-e3aa-47c7-a27d-d5453626ecaf%3A9c024469-5bf2-450a-aeb3-9cbe07b21f02?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "bug",
+      "category_label": "Bug",
+      "theme": "Editor performance / lag / browser freeze",
+      "n_mentions": 3,
+      "n_unique_users": 3,
+      "hvc_mrr_exposure": 2327.0,
+      "top_quotes": [
+        {
+          "quote": "Can't use the editor without my browser freezing. Useless.",
+          "mrr": 820.0,
+          "plan": null,
+          "prs": 0,
+          "ts_human": "2026-02-10",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1770757367177539",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/155f4e16-85da-4fdf-ab9e-05a4e945d596%3A3a354e02-efa4-49c0-a7aa-853fb17fc065?integration_src=qualtrics"
+        },
+        {
+          "quote": "Our template is very laggy and the site is unresponsive when adding new modules.",
+          "mrr": 802.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-10-14",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1760441594183879",
+          "fullstory": null
+        },
+        {
+          "quote": "upload image is slow in the email content",
+          "mrr": 705.0,
+          "plan": null,
+          "prs": 7,
+          "ts_human": "2025-06-19",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1750326590300959",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/9d8220f9-ef36-451c-a18d-0bb067be8889%3A7e48787e-f26d-4305-8648-bead765779eb?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Editor undo / redo / version history",
+      "n_mentions": 2,
+      "n_unique_users": 2,
+      "hvc_mrr_exposure": 2197.0,
+      "top_quotes": [
+        {
+          "quote": "Every time I copy and past text into an email campaign template, it breaks the whole template and can't be undone",
+          "mrr": 492.0,
+          "plan": null,
+          "prs": 2,
+          "ts_human": "2026-03-20",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1773998492331739",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/fdcec621-48f2-4883-9848-96f468c7c374%3Acb28383d-ff1e-4e01-97e2-7bc3f1b255a8?integration_src=qualtrics"
+        },
+        {
+          "quote": "Add template versioning sistem.",
+          "mrr": 1705.0,
+          "plan": "Premium",
+          "prs": 3,
+          "ts_human": "2025-08-08",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1754643979706339",
+          "fullstory": null
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Custom CSS / direct HTML editor / view full code",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 1802.0,
+      "top_quotes": [
+        {
+          "quote": "I would love to be able to view the full HTML code with the click of a button, along with a direct HTML editor tool. Not just a single block of code, but the entire email as a whole.",
+          "mrr": 1802.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-08-12",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1755001272661699",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/c203fc3c-8c38-4eb5-89f3-f4f46c3dfa9e%3A7e0fad21-a622-4340-94e5-73a3b3a145ea?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Better A/B testing / multivariate in builder",
+      "n_mentions": 2,
+      "n_unique_users": 2,
+      "hvc_mrr_exposure": 1539.0,
+      "top_quotes": [
+        {
+          "quote": "A better editor to set up mail flows and a better A/B test facilitys",
+          "mrr": 1208.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2026-02-23",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1771832979531389",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/104f4658-dc34-4387-ab97-cc0b2bec9404%3A514ae373-9729-49a3-a80d-4032ef823a8f?integration_src=qualtrics"
+        },
+        {
+          "quote": "I would like if it was easier to use the results of an A/B test to replicate the winner into a new email without it still being an A/B test. Being able to easily switch between regular campaigns and tests would be nice.",
+          "mrr": 331.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2026-02-12",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1770860533282159",
+          "fullstory": null
+        }
+      ]
+    },
+    {
+      "category": "barrier",
+      "category_label": "Barrier",
+      "theme": "Editor feels dated / less powerful than competitors",
+      "n_mentions": 3,
+      "n_unique_users": 3,
+      "hvc_mrr_exposure": 1314.0,
+      "top_quotes": [
+        {
+          "quote": "Overall it's very glitchy and I often have formatting issues show up when they are not visible on the editor and previews. It happens pretty frequently and I never had issues like that with Constant Contact. I would not use or recommend Mailchimp if it were my choice because o...",
+          "mrr": 439.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2026-01-08",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1767888113021129",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/080bbbf6-6587-44a6-b3db-5ad84ec94ecd%3A1f86d8b4-531f-443e-a023-b1fece6ac1ef?integration_src=qualtrics"
+        },
+        {
+          "quote": "Former email developer for Intuit & web developer here. UX is great, very approachable. Email builder is really well done. I appreciate being able to set styles email-wide.  Thank you for adding easy subject line a/b testing. \n1. Would like a responsive preview pane, 2 set wid...",
+          "mrr": 535.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-12-18",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1766081046423769",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/88c01d08-1a16-48e5-8326-235e27599e59%3A8d8f253f-9347-4ac7-b330-4439a67a1ef8?integration_src=qualtrics"
+        },
+        {
+          "quote": "Make the editor better, it's incredibly clunky, I only use it because I have to. The content blocks are far too rigid, I can't make custom backgrounds, I can't make specific areas of a content block to click so i could have multiple clicks in one box. I'm in the process of ask...",
+          "mrr": 340.0,
+          "plan": null,
+          "prs": 0,
+          "ts_human": "2025-07-02",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1751471562122689",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/44134713-9ff1-41ab-8528-f6fa6dc9081f%3Aac8133fd-f10c-473e-a638-8c54e0dcc37f?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Better post-send / editor navigation / find what was sent",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 1202.0,
+      "top_quotes": [
+        {
+          "quote": "The navigation in general needs a lot of improvement.\nAfter an email is sent, the main post-activities (see the final email design, get its primary details like subject, etc.) need to be easy to achieve for both single and multivariant emails.",
+          "mrr": 1202.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2026-03-26",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1774559092743299",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/260baa7d-c7a4-464d-b486-b58c9608bc31%3A0959207d-7e80-4fc1-a3c5-ebff6ba6639b?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Dark mode / inbox preview / multi-client testing",
+      "n_mentions": 3,
+      "n_unique_users": 2,
+      "hvc_mrr_exposure": 1003.0,
+      "top_quotes": [
+        {
+          "quote": "Make it easier to develop an email for all the different screen experiences (light/dark mode in particular, but also mobile and desktop, while improved, has some room to grow. We'd also like to place background images in the new builder, but functionality does not allow curren...",
+          "mrr": 468.0,
+          "plan": null,
+          "prs": 6,
+          "ts_human": "2026-02-15",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1771173388936109",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/c6256206-a4d2-4dc6-bf20-e2c911dab58e%3Abe003ce8-5f0e-4ec3-a1a2-34a363ffd08c?integration_src=qualtrics"
+        },
+        {
+          "quote": "Former email developer for Intuit & web developer here. UX is great, very approachable. Email builder is really well done. I appreciate being able to set styles email-wide.  Thank you for adding easy subject line a/b testing. \n1. Would like a responsive preview pane, 2 set wid...",
+          "mrr": 535.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2025-12-18",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1766081046423769",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/88c01d08-1a16-48e5-8326-235e27599e59%3A8d8f253f-9347-4ac7-b330-4439a67a1ef8?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Editor consistency / new builder for journeys / one editor",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 904.0,
+      "top_quotes": [
+        {
+          "quote": "I'm actually quite disappointed that your customer journeys are still edited in your legacy builder. Kind of takes away the point...",
+          "mrr": 904.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2026-03-06",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1772789988305819",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/d6bf4796-743c-4566-93b8-65360baf1455%3Ac7bc96fb-bad6-4f32-a967-3ee3fa35cbe2?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Footer customization / unsubscribe legal control",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 815.0,
+      "top_quotes": [
+        {
+          "quote": "Tr\u00e8s insatisfait par le fait de nous forcer \u00e0 utiliser vos mentions l\u00e9gales (footer email - unsubscribe) et pour les SMS (lien dans le SMS) alors qu'on a notre propre STOP SMS...\nTr\u00e8s insatisfait \u00e9galement de ne pas pouvoir r\u00e9aliser un segment basique pour massifier mes envois...",
+          "mrr": 815.0,
+          "plan": "Premium",
+          "prs": null,
+          "ts_human": "2026-01-07",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1767809246872159",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/454d3877-0e35-469d-9634-c71c3532d75e%3A1724e075-527e-4e69-9c7e-8f1da12701de?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Better image editor / asset management",
+      "n_mentions": 2,
+      "n_unique_users": 2,
+      "hvc_mrr_exposure": 793.0,
+      "top_quotes": [
+        {
+          "quote": "bring back the paint tool in the image editor",
+          "mrr": 410.0,
+          "plan": null,
+          "prs": 10,
+          "ts_human": "2025-11-25",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1764031513867889",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/455c6357-0536-4438-b311-9786f922c81b%3Aa698d276-43b6-47ad-afb4-fe46c5086174?integration_src=qualtrics"
+        },
+        {
+          "quote": "The Image editor is not very flexible to work with, I often need to edit images outside of Mailchimp and then re-upload them.",
+          "mrr": 383.0,
+          "plan": "Standard",
+          "prs": null,
+          "ts_human": "2025-09-02",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1756850865860559",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/704924e4-2dca-4588-aed9-99fe9f042792%3Adfd554f7-e9bc-4a2c-a456-76a8297c277a?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "barrier",
+      "category_label": "Barrier",
+      "theme": "Switching between views / tabs / modes",
+      "n_mentions": 2,
+      "n_unique_users": 2,
+      "hvc_mrr_exposure": 662.0,
+      "top_quotes": [
+        {
+          "quote": "I would like if it was easier to use the results of an A/B test to replicate the winner into a new email without it still being an A/B test. Being able to easily switch between regular campaigns and tests would be nice.",
+          "mrr": 331.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2026-02-12",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1770860533282159",
+          "fullstory": null
+        },
+        {
+          "quote": "I want more options to have more than just 2 columns and I want a way to make blocked text show up as the same size in my emails when they are side by side. One is often a tiny bit taller. You have a template that has a 3 column style but I cannot do this on my own and I also ...",
+          "mrr": 331.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-07-17",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1752769610640919",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/5f320762-4d1e-4cf2-afc4-7804587b7af3%3A79ed7c26-d1ad-45f6-aea4-1523bca01b51?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Better text/font/typography control",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 655.0,
+      "top_quotes": [
+        {
+          "quote": "It'd be amazing if you got a template for mailing that allows us to link any Google Font into our messages!",
+          "mrr": 655.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-09-30",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1759270061399919",
+          "fullstory": null
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "More block types (text+button combo, social, other)",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 655.0,
+      "top_quotes": [
+        {
+          "quote": "Mi piacerebbe che ci fossero pi\u00f9 blocks tra cui scegliere, ad esempio testo + pulsante insieme o altro. Nel block social non c'\u00e8 Telegram. A volte quando si lavora con l'editor foto si creano delle righe nere in alto o di lato sulla foto.",
+          "mrr": 655.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-05-05",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1746445778553929",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/243b9923-5216-4818-9855-2866ade21b8f%3A929a3e1d-06b2-4d94-a0de-1d518b80c346?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "bug",
+      "category_label": "Bug",
+      "theme": "Image editor bugs / black lines / asset rendering",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 655.0,
+      "top_quotes": [
+        {
+          "quote": "Mi piacerebbe che ci fossero pi\u00f9 blocks tra cui scegliere, ad esempio testo + pulsante insieme o altro. Nel block social non c'\u00e8 Telegram. A volte quando si lavora con l'editor foto si creano delle righe nere in alto o di lato sulla foto.",
+          "mrr": 655.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-05-05",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1746445778553929",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/243b9923-5216-4818-9855-2866ade21b8f%3A929a3e1d-06b2-4d94-a0de-1d518b80c346?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "bug",
+      "category_label": "Bug",
+      "theme": "Image upload / cropping / resize",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 621.0,
+      "top_quotes": [
+        {
+          "quote": "Content studio not loading images. Email builder breaking and not working properly. Had to keep quitting out and re-loading in order to swap images. Which I then couldn't see because content studio kept breaking. Absolutely shocking. And why are you trying to constantly push p...",
+          "mrr": 621.0,
+          "plan": "Standard",
+          "prs": null,
+          "ts_human": "2025-08-19",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1755606624125399",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/a78fd118-04fe-4f3e-9dd9-598372334ce9%3A4e446383-b49e-47ee-95ef-2bc8684da64f?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Brand voice / tone learning AI",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 410.0,
+      "top_quotes": [
+        {
+          "quote": "Please stop the AI tool notifications - it disrupts our user experience. We have also had difficulties with our brand guide being easily accessible during email creation.",
+          "mrr": 410.0,
+          "plan": "Standard",
+          "prs": null,
+          "ts_human": "2025-05-06",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1746551428691709",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/251a0923-cc52-4ce7-a75b-d0e78c62ffd8%3Ac0ebf738-6e0a-4aaa-882d-d8172d70f275?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "bug",
+      "category_label": "Bug",
+      "theme": "Block reordering / lost layout",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 340.0,
+      "top_quotes": [
+        {
+          "quote": "When making a long bulleted list, when I click in to make edits, the cursor jumps to a different place. There's no way to check for dynamic content prior to sending. It's hard to find aspects I use regularly - like email sign up forms or my public archive page.",
+          "mrr": 340.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-09-15",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1757949961102769",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/2a00bd64-512e-4717-aa37-00b0ca82b4b1%3A66d6d56b-021c-4dd9-9d0c-54691e7801d7?integration_src=qualtrics"
+        }
+      ]
+    },
+    {
+      "category": "missing",
+      "category_label": "Missing Feature",
+      "theme": "Conditional / dynamic content per segment",
+      "n_mentions": 1,
+      "n_unique_users": 1,
+      "hvc_mrr_exposure": 340.0,
+      "top_quotes": [
+        {
+          "quote": "When making a long bulleted list, when I click in to make edits, the cursor jumps to a different place. There's no way to check for dynamic content prior to sending. It's hard to find aspects I use regularly - like email sign up forms or my public archive page.",
+          "mrr": 340.0,
+          "plan": null,
+          "prs": null,
+          "ts_human": "2025-09-15",
+          "channel": "#hvc_feedback",
+          "permalink": "https://intuit.enterprise.slack.com/archives/C051Y4H98VB/p1757949961102769",
+          "fullstory": "https://app.fullstory.com/ui/ZHBMT/client-session/2a00bd64-512e-4717-aa37-00b0ca82b4b1%3A66d6d56b-021c-4dd9-9d0c-54691e7801d7?integration_src=qualtrics"
+        }
+      ]
+    }
+  ]
+}
