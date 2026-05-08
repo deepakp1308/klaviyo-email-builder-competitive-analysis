@@ -261,6 +261,92 @@
   .theme .src-tag { font-size: 10.5px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 4px; margin-top: 4px; }
   .theme .src-tag strong { color: var(--ink-2); }
 
+  /* Strategy roadmap tab (page 4) */
+  .threat {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 12px; background: #fff; margin-bottom: 6px;
+    display: grid; grid-template-columns: 1.4fr 2fr 1.2fr 0.6fr; gap: 10px; align-items: start;
+  }
+  @media (max-width: 880px) { .threat { grid-template-columns: 1fr; } }
+  .threat .nm { font-weight: 700; font-size: 13px; color: var(--ink); }
+  .threat .nm small { display: block; font-weight: 500; font-size: 10.5px; color: var(--muted); margin-top: 2px; letter-spacing: .04em; text-transform: uppercase; }
+  .threat .desc { font-size: 12px; color: var(--ink-2); }
+  .threat .funding { font-size: 11.5px; color: var(--muted); }
+  .threat .funding strong { color: var(--ink-2); display: block; }
+  .threat .level { font-size: 10.5px; font-weight: 800; padding: 4px 6px; border-radius: 4px; text-align: center; height: fit-content; letter-spacing: .04em; }
+  .level.acute { background: #FFE7E0; color: #9A1F00; }
+  .level.high  { background: #FFF1DD; color: #8A4A00; }
+  .level.med   { background: #F1F2F4; color: #374151; }
+  .level.dev   { background: var(--chip); color: var(--chip-ink); }
+  .threat-tier { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); margin: 12px 0 6px; }
+
+  /* Feature cards (parity / differentiated) */
+  .feat {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 12px; background: #fff; margin-bottom: 6px;
+    display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: start;
+  }
+  .feat .fid {
+    background: var(--chip); color: var(--chip-ink);
+    font-weight: 800; font-size: 11px; padding: 4px 0; border-radius: 6px;
+    text-align: center; letter-spacing: .04em;
+  }
+  .feat.diff .fid { background: #FFEFE0; color: #9A4A00; border: 1px solid #FCD9B6; }
+  .feat .ft { font-weight: 700; font-size: 12.5px; color: var(--ink); }
+  .feat .fd { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .feat .from { font-size: 10.5px; color: var(--muted); margin-top: 4px; }
+  .feat .from b { color: var(--ink-2); font-weight: 700; }
+
+  /* Phase / swim-lane grid */
+  .phase-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+  @media (max-width: 880px) { .phase-grid { grid-template-columns: 1fr; } }
+  .phase {
+    border: 1px solid var(--line); border-radius: 12px;
+    background: linear-gradient(180deg, #FBFAFF 0%, #FFFFFF 100%);
+    padding: 14px 14px 10px;
+  }
+  .phase.p2 { background: linear-gradient(180deg, #FFF8F0 0%, #FFFFFF 100%); border-color: #FCE6CC; }
+  .phase.p3 { background: linear-gradient(180deg, #F4F6EE 0%, #FFFFFF 100%); border-color: #E1E7CB; }
+  .phase .label {
+    font-size: 10.5px; font-weight: 800; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--brand);
+  }
+  .phase.p2 .label { color: #B45309; }
+  .phase.p3 .label { color: #4D7A22; }
+  .phase h3 { margin: 4px 0 2px; font-size: 14.5px; font-weight: 700; font-family: 'Source Serif 4', serif; }
+  .phase .goal {
+    font-size: 11.5px; color: var(--ink-2); margin-bottom: 10px;
+    padding-bottom: 8px; border-bottom: 1px dashed var(--line);
+  }
+  .phase .goal strong { color: var(--ink); }
+  .swim {
+    border-top: 2px solid; padding-top: 6px; margin-top: 8px;
+  }
+  .swim.found { border-color: var(--chip-ink); }
+  .swim.diff  { border-color: var(--brand-2); }
+  .swim .lane {
+    font-size: 10px; font-weight: 800; letter-spacing: .1em;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  .swim.found .lane { color: var(--chip-ink); }
+  .swim.diff .lane  { color: var(--brand-2); }
+  .swim ul { padding-left: 14px; margin: 0 0 4px; }
+  .swim li { font-size: 11.5px; margin-bottom: 3px; }
+  .swim li code { background: #F1EEFF; color: var(--chip-ink); padding: 0 4px; border-radius: 3px; font-size: 10.5px; font-weight: 700; }
+
+  /* PB table */
+  table.pb th { white-space: nowrap; }
+  table.pb td { font-size: 12px; }
+  table.pb td.id { width: 38px; }
+  table.pb td.id span {
+    background: var(--chip); color: var(--chip-ink);
+    font-weight: 800; font-size: 11px; padding: 3px 0; border-radius: 5px;
+    display: inline-block; width: 32px; text-align: center; letter-spacing: .04em;
+  }
+  table.pb td.id span.diff { background: #FFEFE0; color: #9A4A00; }
+
   /* Print */
   @media print {
     body { background: white; }
@@ -281,6 +367,7 @@
       <a class="btn" href="#page1">1 · Overview</a>
       <a class="btn" href="#page2">2 · Strategy</a>
       <a class="btn" href="#page3">3 · Voice of Customer</a>
+      <a class="btn" href="#page4">4 · Mailchimp Roadmap</a>
       <button class="btn primary" onclick="window.print()">Print / PDF</button>
     </div>
   </div>
@@ -292,7 +379,7 @@
   <section class="page" id="page1">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 3</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 4</div>
         <h1>Klaviyo's Email Builder</h1>
         <div class="subtitle">The WYSIWYG canvas inside Campaigns where ecommerce marketers compose, design, brand, and personalize one-off email campaigns — drag-and-drop blocks, sections, brand kit, and a stack of in-editor AI tools.</div>
       </div>
@@ -429,7 +516,7 @@
   <section class="page" id="page2">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 3</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 4</div>
         <h1>Differentiation, JTBD, Pricing &amp; Gaps</h1>
         <div class="subtitle">Where Klaviyo's email builder wins, who reaches for it and why, what it costs to unlock the AI layer, and what they still don't do well.</div>
       </div>
@@ -625,7 +712,7 @@
   <section class="page" id="page3">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 3</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 4</div>
         <h1>Voice of Customer — what people actually say</h1>
         <div class="subtitle">Sentiment synthesis from Reddit (r/Klaviyo, r/ecommerce, r/ShopifyAppDev, r/graphic_design), Klaviyo Community forum, G2, Capterra, Trustpilot, agency blogs, and YouTube tutorial commentary — strictly about the <strong>email builder/editor</strong>.</div>
       </div>
@@ -898,6 +985,365 @@
       YouTube — Klaviyo official "Customize Klaviyo Email Templates" tutorial, Elliot Kovac "The Only Klaviyo Email Design Tutorial You'll Ever Need".
       <br/><br/>
       <em>Methodology:</em> ~30 threads + 6 review platforms scanned for editor-specific commentary. Quotes lightly edited for length, not for sentiment. Channel skew explicitly called out (Trustpilot is billing-heavy, Klaviyo Community self-selects toward complainers, agency blogs are commercially aligned). Scope strictly limited to the email builder/editor — Flows, SMS, segmentation, deliverability, billing, and customer support sentiment excluded except where editor-adjacent.
+    </div>
+  </section>
+
+  <!-- ============ PAGE 4 — MAILCHIMP STRATEGY ROADMAP ============ -->
+  <section class="page" id="page4">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 4 of 4</div>
+        <h1>Mailchimp Email Builder — parity, leapfrog, and 3-phase roadmap</h1>
+        <div class="subtitle">Emerging-threats landscape, the foundational gaps Mailchimp must close to be a credible front-runner against Klaviyo, the differentiated bets to steal from Klaviyo + the AI-native challengers, and a phased plan to win the omnichannel campaign builder.</div>
+      </div>
+      <div class="meta">
+        <div><strong>POV:</strong> Mailchimp PM strategy</div>
+        <div style="margin-top:6px;"><strong>Horizon:</strong> 18 months · 3 phases</div>
+      </div>
+    </div>
+
+    <!-- HEADLINE FRAMING -->
+    <div class="pull" style="margin-bottom:14px;">
+      The omnichannel campaign builder market is fragmenting fast. <strong>Klaviyo</strong> owns DTC editor mind-share. <strong>Bird</strong> ($1.1B raised, $3.8B valuation) is commoditizing channel infra and racing up to AI orchestration. <strong>YC's W22-W25 batches</strong> (Resend, Loops, Zaymo, Eden, Mailmodo, Apten) are unbundling Mailchimp from below with AI-native, interactive, and agentic angles. Mailchimp's defensible position is <em>SMB scale + Intuit data + omnichannel breadth</em> — but the editor itself is a parity gap today. We must <strong>achieve editor parity in Phase 1, leapfrog with single-canvas omnichannel + WhatsApp in Phase 2, and own agentic 1-to-1 in Phase 3</strong>.
+      <cite>— Strategy synthesis, May 2026</cite>
+    </div>
+
+    <!-- EMERGING THREATS LANDSCAPE -->
+    <h2><span class="num">16</span>Emerging threats landscape — who's coming for the omnichannel builder</h2>
+
+    <div class="threat-tier">Tier 1 · Scaled, well-funded (acute threats — already ARR-significant)</div>
+    <div class="threat">
+      <div class="nm">Bird (was MessageBird) <small>Acquired/rebrand · 2024</small></div>
+      <div class="desc">"Omnichannel Platform-as-a-Service" — SMS, email, WhatsApp, voice, push, AI agents. Slashed SMS pricing 90% in 2024 to commoditize Twilio and move up to AI orchestration.</div>
+      <div class="funding"><strong>$1.1B raised</strong>$3.8B valuation · $500M–$1B ARR · 15,000+ customers · 170+ countries</div>
+      <div class="level acute">ACUTE</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Attentive <small>Late-stage · pre-IPO</small></div>
+      <div class="desc">SMS-first DTC marketing, expanded into email. Drove ~$2B brand revenue Cyber Week 2025. Direct overlap with Mailchimp's DTC segment.</div>
+      <div class="funding"><strong>$500M+ ARR (2024)</strong>8,000+ businesses · DTC dominant</div>
+      <div class="level acute">ACUTE</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Braze <small>Public · NASDAQ</small></div>
+      <div class="desc">Enterprise CDP + cross-channel engagement. Acquired OfferFit for AI decisioning. Mostly upmarket from Mailchimp but compresses ceiling.</div>
+      <div class="funding"><strong>~$693M ARR</strong>2,296 customers · 247 at $500K+ · FY25 26% growth</div>
+      <div class="level high">HIGH</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Customer.io <small>Growth-stage</small></div>
+      <div class="desc">Workflow-first cross-channel platform popular with growth-stage SaaS. Direct mid-market overlap with Mailchimp Standard/Premium.</div>
+      <div class="funding"><strong>$100M ARR (Sep 2025)</strong>9,000+ brands · 111% NDR</div>
+      <div class="level acute">ACUTE</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Bloomreach <small>Growth-stage</small></div>
+      <div class="desc">"Loomi AI" agentic platform for ecommerce. Fast-growing, agentic-first narrative.</div>
+      <div class="funding"><strong>$260M+ ARR (2025)</strong>FCF-positive · record net new ARR</div>
+      <div class="level high">HIGH</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Postscript <small>Series C · 2022</small></div>
+      <div class="desc">SMS-first for Shopify brands. Conversational replies, native two-way SMS in editor.</div>
+      <div class="funding"><strong>$65M Series C</strong>8,000+ Shopify brands · 25× avg ROI claimed</div>
+      <div class="level high">HIGH</div>
+    </div>
+
+    <div class="threat-tier">Tier 2 · AI-native disruptors (high disruption signal, lower scale today)</div>
+    <div class="threat">
+      <div class="nm">Resend <small>YC W23 · a16z-backed</small></div>
+      <div class="desc">Developer-first email infra moving up to marketing. Open-source React Email (300K weekly downloads, 14K stars). Customers: Warner Bros, Decathlon, Raycast.</div>
+      <div class="funding"><strong>$18M Series A (Dec 2024)</strong>200K+ developers · a16z-led</div>
+      <div class="level dev">DEV-LED</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Loops <small>YC W22</small></div>
+      <div class="desc">"Email platform built for SaaS" — product, marketing, transactional in one canvas. Craft Ventures backed.</div>
+      <div class="funding"><strong>~$13M raised total</strong>$3.2M seed Sep 2023 · DC-based</div>
+      <div class="level med">MED</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Knock <small>Notification infra</small></div>
+      <div class="desc">G2-leader notification infrastructure. Multi-channel preference center, deduplication. Could move into builder space.</div>
+      <div class="funding"><strong>State-of-Notification report 2025</strong>Category leader (vs Novu, Courier, SuprSend)</div>
+      <div class="level med">MED</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Singulate <small>Pre-seed · 2024</small></div>
+      <div class="desc">"Singulation" — generates unique 1-to-1 content per recipient via LLMs. Beta showed 5–10× CTR vs blasts. Founded by Hopin alumni.</div>
+      <div class="funding"><strong>$2.3M pre-seed</strong>Bowery Capital + Seedcamp · angels: Hopin, Indeed, SaaStock</div>
+      <div class="level dev">EARLY</div>
+    </div>
+
+    <div class="threat-tier">Tier 3 · YC W22–W25 batch (newest builder-layer entrants)</div>
+    <div class="threat">
+      <div class="nm">Zaymo <small>YC W24</small></div>
+      <div class="desc">Interactive email builder — shop, browse, buy <em>inside</em> the email. AMP-for-Email native. Claims +27% revenue vs traditional emails.</div>
+      <div class="funding"><strong>YC backing</strong>Shopify-focused · interactive in-inbox</div>
+      <div class="level high">HIGH</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Mailmodo / Mailmodo AI <small>YC</small></div>
+      <div class="desc">Interactive widgets in email (polls, quizzes, calculators, spin-the-wheel) + prompt-first AI campaign creation. "Prompt-first email marketing for the AI era."</div>
+      <div class="funding"><strong>YC backing</strong>AMP-for-Email native · AI campaign builder</div>
+      <div class="level high">HIGH</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Eden <small>YC</small></div>
+      <div class="desc">AI-personalized campaigns based on <em>why</em> customers hesitate (CRM + analytics + support tickets fused). 1-to-1 hesitation-driven content.</div>
+      <div class="funding"><strong>YC backing</strong>Behavioral 1:1 personalization</div>
+      <div class="level med">MED</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Apten <small>YC</small></div>
+      <div class="desc">Omnichannel AI agents across SMS, voice, email, webchat with unified memory. Agentic next-best-action across channels. Hundreds of thousands of leads/month.</div>
+      <div class="funding"><strong>YC backing</strong>Agentic orchestration · enterprise consumer services</div>
+      <div class="level high">HIGH</div>
+    </div>
+
+    <div class="threat-tier">Tier 4 · WhatsApp-first commerce (huge in international ecom — under-attacked by US-centric ESPs)</div>
+    <div class="threat">
+      <div class="nm">AiSensy <small>India · CTWA Partner of the Year 2024</small></div>
+      <div class="desc">WhatsApp marketing &amp; engagement: broadcasting, chatbots, click-to-WhatsApp ads, payments. Meta CTWA Partner of the Year. Dream Green Capital backed.</div>
+      <div class="funding"><strong>50,000+ businesses</strong>₹1,000+ cr brand revenue · 80–100M msgs/mo</div>
+      <div class="level acute">ACUTE (intl)</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Wati <small>Global · 4.6 G2</small></div>
+      <div class="desc">WhatsApp Business API + team inbox + AI lead qualification. 16,000+ customers worldwide.</div>
+      <div class="funding"><strong>16,000+ customers</strong>Global SMB WhatsApp commerce</div>
+      <div class="level high">HIGH</div>
+    </div>
+    <div class="threat">
+      <div class="nm">Charles · Zoko · Interakt · LimeChat <small>WhatsApp-DTC stack</small></div>
+      <div class="desc">Conversational commerce on WhatsApp + IG + Messenger. Catalog product cards, abandoned-cart, subscription, two-way chat.</div>
+      <div class="funding"><strong>Various seed/A-stage</strong>Shopify-WhatsApp fusion · DACH/India focus</div>
+      <div class="level high">HIGH</div>
+    </div>
+
+    <p style="font-size:11.5px; color:var(--muted); margin-top: 8px;">
+      <strong>Reading the landscape:</strong> the threat isn't one company — it's a converging pincer. Bird is racing UP from infra. Klaviyo is racing OUT from DTC email. Attentive is expanding from SMS. AiSensy/Wati are owning WhatsApp internationally. Zaymo/Mailmodo are reinventing the inbox itself. Apten/Singulate are betting the builder becomes an agent. Mailchimp is structurally exposed in the editor while these multiply.
+    </p>
+
+    <!-- FOUNDATIONAL GAPS — PARITY -->
+    <h2><span class="num">17</span>Foundational gaps Mailchimp must close (parity to be a credible Klaviyo front-runner)</h2>
+    <p style="margin-bottom:8px;">These are <strong>table-stakes Mailchimp does not credibly have today in the email builder</strong>. Without these, evaluators compare us against Klaviyo and we lose on capability before we get to talk about omnichannel breadth.</p>
+    <div class="grid cols-2" style="margin-bottom:14px;">
+      <div>
+        <div class="feat"><div class="fid">F1</div><div><div class="ft">Universal Saved Content</div><div class="fd">Save a header / footer / promo block once, edit it once, propagate to every campaign and template that uses it.</div><div class="from">Match: <b>Klaviyo's #1-praised feature</b> · also Bloomreach</div></div></div>
+        <div class="feat"><div class="fid">F2</div><div><div class="ft">Brand Voice from corpus (AI)</div><div class="fd">Auto-extract tone, vocabulary, and writing patterns from past sent emails. Apply automatically to all AI drafts. Editable.</div><div class="from">Match: <b>Klaviyo Brand Voice</b> · differentiator vs Mailchimp's prompt-typed style</div></div></div>
+        <div class="feat"><div class="fid">F3</div><div><div class="ft">AI section/layout generator (not just copy)</div><div class="fd">Generate full multi-column, multi-block <em>layouts</em> from a prompt — not only inline copy edits. 3 drafts per prompt.</div><div class="from">Match: <b>Klaviyo Email AI</b> (99 sections/day) · Intuit Assist today only does copy</div></div></div>
+        <div class="feat"><div class="fid">F4</div><div><div class="ft">In-canvas AI image editor</div><div class="fd">Change backgrounds, recolor, swap objects/people, restyle product photos via text prompt — without leaving the editor.</div><div class="from">Match: <b>Klaviyo Image Remix</b> (Gemini) · Mailchimp has Creative Assistant but no in-canvas Gemini-tier edit</div></div></div>
+        <div class="feat"><div class="fid">F5</div><div><div class="ft">Sections + per-section mobile-stacking control</div><div class="fd">Group blocks into sections; control mobile stacking direction (L→R, R→L, off) per section, not just globally.</div><div class="from">Match: <b>Klaviyo new editor</b> · current Mailchimp builder is global-only</div></div></div>
+      </div>
+      <div>
+        <div class="feat"><div class="fid">F6</div><div><div class="ft">Dynamic show/hide blocks per segment</div><div class="fd">Conditionally show different hero/CTA blocks to different segments from a <em>single template</em> — no template fork required.</div><div class="from">Match: <b>Klaviyo dynamic blocks</b> · Mailchimp limited equivalent</div></div></div>
+        <div class="feat"><div class="fid">F7</div><div><div class="ft">Live product feed blocks (Shopify/BigCommerce/Woo parity)</div><div class="fd">Drop a product block, point at a live catalog feed; pricing, inventory, images sync at send-time. Match Klaviyo's Shopify depth.</div><div class="from">Match: <b>Klaviyo Product blocks</b> · Mailchimp depends on integrations</div></div></div>
+        <div class="feat"><div class="fid">F8</div><div><div class="ft">Built-in inbox testing</div><div class="fd">Render the email across desktop / mobile / web / dark-mode inboxes inside the builder. Eliminate the Litmus subscription dependency.</div><div class="from">Match: <b>Klaviyo + Mailgun</b> bundled · Mailchimp would need Litmus parity</div></div></div>
+        <div class="feat"><div class="fid">F9</div><div><div class="ft">Reliable autosave + version history</div><div class="fd">Visible save state, diff between versions, "restore to" any prior point. Specifically attack Klaviyo's #1 community complaint.</div><div class="from">Steal: <b>weakness in Klaviyo</b> ("Is autosave broken?" community thread) · turn into our strength</div></div></div>
+        <div class="feat"><div class="fid">F10</div><div><div class="ft">HTML block + safe template-tag builder</div><div class="fd">Dedicated HTML block with React Email / Liquid / Django-style tag autocomplete for power users. Don't break dev workflow.</div><div class="from">Match: <b>Klaviyo HTML block + Django Tag Builder</b> · Steal: <b>r/ShopifyAppDev rage</b> at HTML/drag-drop interop</div></div></div>
+      </div>
+    </div>
+
+    <!-- DIFFERENTIATED — STEAL -->
+    <h2><span class="num">18</span>Differentiated bets to steal from Klaviyo + emerging threats (leapfrog moves)</h2>
+    <p style="margin-bottom:8px;">These are the <strong>positioning wedges</strong> — what makes Mailchimp not just "as good as Klaviyo" but "better and differently shaped" — by stealing the best ideas across the threat landscape and binding them to our omnichannel + Intuit-data advantages.</p>
+    <div class="grid cols-2" style="margin-bottom:14px;">
+      <div>
+        <div class="feat diff"><div class="fid">D1</div><div><div class="ft">True omnichannel composition canvas</div><div class="fd">One editor → email + SMS + WhatsApp + push + in-app. Compose channel-specific variants in tabs of a single campaign, not 4 separate tools.</div><div class="from">Steal: <b>Bird</b> (omnichannel-as-a-service) · attacks Klaviyo's separate-canvas weakness</div></div></div>
+        <div class="feat diff"><div class="fid">D2</div><div><div class="ft">Channel-adaptive AI content reuse</div><div class="fd">Write the email; AI auto-generates the SMS short-form, the WhatsApp template-compliant variant, the push headline. Marketer reviews/edits.</div><div class="from">Steal: <b>Apten unified memory</b> + <b>Bird AI</b> · 5× reduces multi-channel composition time</div></div></div>
+        <div class="feat diff"><div class="fid">D3</div><div><div class="ft">Native WhatsApp template builder in editor</div><div class="fd">First-class WhatsApp Business template builder: Marketing / Utility / Authentication types, button limits, header types, CTWA campaigns — all inside the same builder.</div><div class="from">Steal: <b>AiSensy + Wati + Charles</b> · open up emerging-market ecom moat Klaviyo doesn't have</div></div></div>
+        <div class="feat diff"><div class="fid">D4</div><div><div class="ft">Interactive in-inbox blocks (AMP for Email)</div><div class="fd">Native AMP blocks: shop-the-product, RSVP, NPS, poll, quiz, spin-the-wheel — render inside Gmail/Yahoo. Click-out becomes click-in.</div><div class="from">Steal: <b>Zaymo + Mailmodo</b> · +27% revenue claim baked into product</div></div></div>
+        <div class="feat diff"><div class="fid">D5</div><div><div class="ft">1-to-1 generative personalization ("singulation")</div><div class="fd">Past static merge-tags; AI generates a unique hero block + headline + product story per recipient using Intuit's customer data graph.</div><div class="from">Steal: <b>Singulate + Eden</b> · 5–10× CTR claim · Intuit-data is the unfair advantage</div></div></div>
+      </div>
+      <div>
+        <div class="feat diff"><div class="fid">D6</div><div><div class="ft">Agentic next-best-action orchestration</div><div class="fd">In the campaign canvas, opt in to "let agent decide" — channel + send time + variant + frequency-cap, per recipient, optimizing on the goal you set.</div><div class="from">Steal: <b>Apten + Bloomreach Loomi + Braze OfferFit</b> · become the agent-OS for SMB campaigns</div></div></div>
+        <div class="feat diff"><div class="fid">D7</div><div><div class="ft">Cross-channel preference + dedup center</div><div class="fd">Subscriber-level preference center across email/SMS/WhatsApp/push. Smart dedup so a single event doesn't fire 3 channels. Builder shows live channel reach pre-send.</div><div class="from">Steal: <b>Knock</b> · turn compliance pain into trust feature</div></div></div>
+        <div class="feat diff"><div class="fid">D8</div><div><div class="ft">Inline conversational reply handling</div><div class="fd">When SMS/WhatsApp recipient replies, conversation surfaces in the same builder. Marketer (or AI agent) replies without context-switching.</div><div class="from">Steal: <b>Postscript + Charles + Apten</b> · close the broadcast→conversation loop</div></div></div>
+        <div class="feat diff"><div class="fid">D9</div><div><div class="ft">Hybrid code/no-code editor (React Email layer)</div><div class="fd">Designers ship React Email components; marketers drag-edit them; engineers extend in code. Both populations served, no platform fragmentation.</div><div class="from">Steal: <b>Resend + Loops</b> · attack Klaviyo's source-code-removal rage on r/ShopifyAppDev</div></div></div>
+        <div class="feat diff"><div class="fid">D10</div><div><div class="ft">Click-to-WhatsApp ad → builder → flow loop</div><div class="fd">Build the WhatsApp landing-message inside the builder; AI generates the matching Meta ad creative; first-message reply auto-enrolls into a flow.</div><div class="from">Steal: <b>AiSensy CTWA</b> · close the paid-acquisition → owned-channel loop</div></div></div>
+      </div>
+    </div>
+
+    <!-- PROBLEM-BENEFIT TABLE -->
+    <h2><span class="num">19</span>For each feature — core problem solved &amp; customer functional benefit</h2>
+    <table class="pb" style="margin-bottom:14px;">
+      <thead>
+        <tr>
+          <th class="id">ID</th>
+          <th>Feature</th>
+          <th>Core problem it solves</th>
+          <th>Customer functional benefit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="4" style="background:#FBFAFF; font-weight:700; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--chip-ink);">Foundational (parity with Klaviyo)</td></tr>
+        <tr><td class="id"><span>F1</span></td><td><strong>Universal Saved Content</strong></td><td>Marketers manually update the same header / footer / promo block across dozens of templates → drift, errors, brand inconsistency.</td><td>Edit once, propagate everywhere. Cuts brand-update time from hours to seconds; eliminates "wrong promo on Tuesday's send."</td></tr>
+        <tr><td class="id"><span>F2</span></td><td><strong>Brand Voice from corpus (AI)</strong></td><td>AI drafts read generic; "sounds like every other brand's email"; marketers throw away most AI suggestions.</td><td>AI writes in <em>your</em> voice from day one; usable drafts ship 3–5× more often without rewrite.</td></tr>
+        <tr><td class="id"><span>F3</span></td><td><strong>AI section / layout generator</strong></td><td>Blank-canvas paralysis; non-designers can't compose a coherent multi-block layout from scratch.</td><td>"3-column section with hero + headline + button" → 3 styled drafts in seconds. Solo marketers ship without designer dependency.</td></tr>
+        <tr><td class="id"><span>F4</span></td><td><strong>In-canvas AI image editor</strong></td><td>Marketer leaves builder for Canva / Photoshop to recolor a photo, swap a background, or refit a product shot. Slow, breaks flow.</td><td>Re-light, re-background, swap objects in 1–3 minutes inside the builder. Replaces a Canva subscription.</td></tr>
+        <tr><td class="id"><span>F5</span></td><td><strong>Per-section mobile-stacking control</strong></td><td>Multi-column emails stack the wrong way on mobile; marketers fork desktop and mobile templates.</td><td>Per-section control (L→R, R→L, off). One template, two devices, no fork.</td></tr>
+        <tr><td class="id"><span>F6</span></td><td><strong>Dynamic show/hide blocks per segment</strong></td><td>"Repeat customers should see X; new subs should see Y" → marketer forks the template, doubling maintenance.</td><td>One template, conditional blocks. Personalization without template explosion.</td></tr>
+        <tr><td class="id"><span>F7</span></td><td><strong>Live product feed blocks</strong></td><td>Static product images go stale; out-of-stock items get sent; pricing drifts from store.</td><td>Send-time fresh: pricing, stock, image always reflect the live store. Lifts revenue and reduces refund/complaint rate.</td></tr>
+        <tr><td class="id"><span>F8</span></td><td><strong>Built-in inbox testing</strong></td><td>Marketer pays $99+/mo for Litmus / Email on Acid <em>just</em> to verify rendering before send.</td><td>Bundled rendering across Gmail / Outlook / Apple Mail / dark mode / mobile. Saves $1.2K+/year per seat.</td></tr>
+        <tr><td class="id"><span>F9</span></td><td><strong>Reliable autosave + version history</strong></td><td>Editor loses unsaved work (Klaviyo's #1 community complaint); marketer ships in fear or copies to a doc.</td><td>Visible save state, diff between versions, restore-to-any-point. Removes lost-work anxiety; trust marker vs Klaviyo.</td></tr>
+        <tr><td class="id"><span>F10</span></td><td><strong>HTML block + safe tag builder</strong></td><td>HTML-first marketers and dev teams pushed off the platform when source-code editing is removed (Klaviyo case).</td><td>Power users ship custom HTML / tags without breaking templates. Keeps dev / agency seats on the platform.</td></tr>
+
+        <tr><td colspan="4" style="background:#FFF8F0; font-weight:700; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#9A4A00;">Differentiated (steal &amp; leapfrog)</td></tr>
+        <tr><td class="id"><span class="diff">D1</span></td><td><strong>Omnichannel composition canvas</strong></td><td>To run a campaign across email + SMS + WhatsApp + push, marketers use 2–4 disconnected tools and re-author content.</td><td>One canvas, channel tabs, shared content + audience. Compress launch time from 2 weeks to 2 days.</td></tr>
+        <tr><td class="id"><span class="diff">D2</span></td><td><strong>Channel-adaptive AI content reuse</strong></td><td>Re-authoring email body for SMS / WhatsApp / push is tedious and inconsistent.</td><td>Write once; AI generates compliant SMS, WhatsApp template, push headline. Marketer edits, doesn't author from scratch.</td></tr>
+        <tr><td class="id"><span class="diff">D3</span></td><td><strong>Native WhatsApp template builder</strong></td><td>WhatsApp Business templates (Marketing / Utility / Auth) require Meta-approved structure; marketers cobble together via 3rd parties (AiSensy / Wati).</td><td>Build, submit, and send WhatsApp templates inside Mailchimp. Open international ecom that's invisible to Klaviyo.</td></tr>
+        <tr><td class="id"><span class="diff">D4</span></td><td><strong>Interactive in-inbox blocks (AMP)</strong></td><td>"Click-out to website to RSVP / shop / vote" loses 60–80% of intent at the click.</td><td>RSVP, poll, shop, NPS render inside Gmail/Yahoo. +27% revenue uplift claim (Zaymo) realized in product.</td></tr>
+        <tr><td class="id"><span class="diff">D5</span></td><td><strong>1-to-1 generative personalization</strong></td><td>Merge-tags personalize the name; the rest of the email is identical to 100K other recipients.</td><td>AI writes a unique hero + product story + CTA per recipient using Intuit's customer-data graph. 5–10× CTR (Singulate beta).</td></tr>
+        <tr><td class="id"><span class="diff">D6</span></td><td><strong>Agentic orchestration</strong></td><td>Marketer manually picks channel, send time, variant, frequency cap — and gets it wrong per individual.</td><td>Opt-in agent decides per recipient, optimizes on goal. Marketer sets guardrails, not micro-decisions.</td></tr>
+        <tr><td class="id"><span class="diff">D7</span></td><td><strong>Cross-channel preference + dedup center</strong></td><td>Same event fires email + SMS + push → recipient gets spammed → unsubscribes from <em>all</em> channels.</td><td>Smart dedup respects preferences across channels. Pre-send live-reach indicator. Reduces churn-by-fatigue.</td></tr>
+        <tr><td class="id"><span class="diff">D8</span></td><td><strong>Inline conversational reply handling</strong></td><td>SMS / WhatsApp replies land in a separate inbox tool; broadcast → conversation loop is broken.</td><td>Replies surface in same builder; AI agent or marketer responds inline. Closes the loop on conversational commerce.</td></tr>
+        <tr><td class="id"><span class="diff">D9</span></td><td><strong>Hybrid code/no-code editor</strong></td><td>Designers want to ship React Email components; marketers want drag-edit; engineers want code extension. Today they fork tools.</td><td>One platform serves all three populations. Enterprise + agency seats stick instead of leaving for Resend/Loops.</td></tr>
+        <tr><td class="id"><span class="diff">D10</span></td><td><strong>CTWA → builder → flow loop</strong></td><td>Paid WhatsApp ads drive a first message → goes to a separate inbox; no auto-enrollment in lifecycle.</td><td>Meta ad creative + landing message + first-reply flow built in one place. Closes paid-acquisition → owned-channel loop.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- PHASED ROADMAP -->
+    <h2><span class="num">20</span>3-phase sequencing — two swim lanes per phase</h2>
+    <p style="margin-bottom:10px;"><strong>North star:</strong> by end of <em>Phase 1</em>, Mailchimp is a credible front-runner against Klaviyo's email builder. By end of <em>Phase 2</em>, Mailchimp owns the omnichannel + WhatsApp + interactive narrative. By end of <em>Phase 3</em>, Mailchimp is the agentic 1-to-1 customer engagement OS for SMB.</p>
+
+    <div class="phase-grid">
+      <!-- PHASE 1 -->
+      <div class="phase">
+        <div class="label">Phase 1 · Months 0–6</div>
+        <h3>Neutralize Klaviyo's editor moat</h3>
+        <div class="goal"><strong>Outcome:</strong> Win the head-to-head Klaviyo "feature parity" demo. Stop losing deals on capability gaps. Position the omnichannel wedge.</div>
+        <div class="swim found">
+          <div class="lane">Foundational (parity)</div>
+          <ul>
+            <li><code>F1</code> Universal Saved Content</li>
+            <li><code>F3</code> AI section/layout generator (extend Intuit Assist beyond copy)</li>
+            <li><code>F4</code> In-canvas AI image editor (Gemini or Imagen)</li>
+            <li><code>F8</code> Built-in inbox testing</li>
+            <li><code>F9</code> Reliable autosave + version history (turn Klaviyo's weakness into our trust marker)</li>
+          </ul>
+        </div>
+        <div class="swim diff">
+          <div class="lane">Differentiated (early wedge)</div>
+          <ul>
+            <li><code>F2</code> Brand Voice from corpus — match + brand-it-better than Klaviyo</li>
+            <li><code>D1</code> Omnichannel canvas v1 (email + SMS + push tabs)</li>
+            <li><code>D2</code> Channel-adaptive AI content reuse — email → SMS first cut</li>
+          </ul>
+        </div>
+        <div class="goal" style="margin-top:10px; border-top:1px dashed var(--line); border-bottom:0; padding-top:8px; padding-bottom:0;">
+          <strong>Demo line:</strong> "Everything Klaviyo's editor does — plus a single canvas where one campaign reaches email, SMS, and push, with AI adapting your copy to each channel."
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="phase p2">
+        <div class="label">Phase 2 · Months 7–12</div>
+        <h3>Own omnichannel + WhatsApp + interactive</h3>
+        <div class="goal"><strong>Outcome:</strong> No competitor matches the breadth (incl. WhatsApp) or the in-inbox interactivity. Open international ecom that's invisible to Klaviyo.</div>
+        <div class="swim found">
+          <div class="lane">Foundational (round out parity)</div>
+          <ul>
+            <li><code>F5</code> Per-section mobile-stacking control</li>
+            <li><code>F6</code> Dynamic show/hide blocks per segment</li>
+            <li><code>F7</code> Live product feed blocks (Shopify / BigCommerce / Woo parity)</li>
+            <li><code>F10</code> HTML block + safe template-tag builder</li>
+          </ul>
+        </div>
+        <div class="swim diff">
+          <div class="lane">Differentiated (leapfrog)</div>
+          <ul>
+            <li><code>D3</code> Native WhatsApp template builder (Marketing / Utility / Auth) inside builder</li>
+            <li><code>D4</code> Interactive in-inbox blocks (AMP) — start with poll, RSVP, NPS, then shop-the-product</li>
+            <li><code>D7</code> Cross-channel preference + dedup center with live pre-send reach</li>
+            <li><code>D8</code> Inline conversational reply handling (SMS + WhatsApp)</li>
+          </ul>
+        </div>
+        <div class="goal" style="margin-top:10px; border-top:1px dashed var(--line); border-bottom:0; padding-top:8px; padding-bottom:0;">
+          <strong>Demo line:</strong> "The only platform where you compose, send, AND have a conversation across email + SMS + WhatsApp + push from one canvas — with shop, RSVP, and quizzes living inside the inbox."
+        </div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="phase p3">
+        <div class="label">Phase 3 · Months 13–18+</div>
+        <h3>Become the agentic 1-to-1 engagement OS</h3>
+        <div class="goal"><strong>Outcome:</strong> Mailchimp is no longer compared feature-by-feature; it's compared as a category — agent vs. tools. Klaviyo, Bird, and Attentive become point solutions in our story.</div>
+        <div class="swim found">
+          <div class="lane">Foundational (durable polish)</div>
+          <ul>
+            <li>Editor reliability hardening — measurable autosave / preview accuracy SLOs</li>
+            <li>Mobile preview accuracy parity with real-device tests</li>
+            <li>Performance budget — hard ceiling on canvas latency at 100+ blocks</li>
+            <li>Accessibility &amp; compliance polish (WCAG 2.2, GDPR-aware AI, SOC 2 trail)</li>
+          </ul>
+        </div>
+        <div class="swim diff">
+          <div class="lane">Differentiated (category move)</div>
+          <ul>
+            <li><code>D5</code> 1-to-1 generative personalization (Singulate-style) on Intuit data graph</li>
+            <li><code>D6</code> Agentic orchestration — channel + time + variant + cap, per recipient</li>
+            <li><code>D9</code> Hybrid code/no-code editor (React Email layer for designers/devs)</li>
+            <li><code>D10</code> Click-to-WhatsApp ad → builder → flow loop with Meta-side creative gen</li>
+          </ul>
+        </div>
+        <div class="goal" style="margin-top:10px; border-top:1px dashed var(--line); border-bottom:0; padding-top:8px; padding-bottom:0;">
+          <strong>Demo line:</strong> "Set the goal. The agent picks the channel, the time, the variant, and writes a unique message per recipient using your Intuit customer graph. You set guardrails, not micro-decisions."
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS CRITERIA -->
+    <h2 style="margin-top:18px;"><span class="num">21</span>How we measure winning each phase</h2>
+    <div class="grid cols-3" style="margin-bottom:8px;">
+      <div class="card tinted">
+        <div class="eyebrow" style="color:var(--brand);">Phase 1 success</div>
+        <ul>
+          <li>Win-rate vs Klaviyo in head-to-head SMB &amp; mid-market evals: <strong>+15 pts</strong></li>
+          <li>Feature-parity-loss reasons in CRM: <strong>cut by 60%</strong></li>
+          <li>"Editor lost my work" support tickets: <strong>&lt; 1/10K sends</strong></li>
+          <li>Active omnichannel campaign sends (email+SMS+push): <strong>2× lift</strong></li>
+        </ul>
+      </div>
+      <div class="card warm">
+        <div class="eyebrow" style="color:#B45309;">Phase 2 success</div>
+        <ul>
+          <li>WhatsApp campaigns sent through Mailchimp: <strong>1M+/month</strong></li>
+          <li>International new-logo ARR (esp. EMEA, India, LATAM): <strong>+30%</strong></li>
+          <li>AMP-block adoption among ecom accounts: <strong>30%+</strong></li>
+          <li>Cross-channel reply-handled rate: <strong>80%+ within builder</strong></li>
+        </ul>
+      </div>
+      <div class="card olive">
+        <div class="eyebrow" style="color:#4D7A22;">Phase 3 success</div>
+        <ul>
+          <li>Agent-mode adoption among ecom Standard+: <strong>40%</strong></li>
+          <li>1-to-1 personalized sends as % of total: <strong>25%+</strong></li>
+          <li>Lift on agent-mode vs manual: <strong>2× campaign revenue per send</strong></li>
+          <li>Analyst &amp; press category reframe: <strong>"agentic engagement OS"</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RISKS / GUARDRAILS -->
+    <h2 style="margin-top:14px;"><span class="num">22</span>Risks &amp; guardrails</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <p style="margin:0;"><strong>UI churn risk.</strong> Klaviyo gets called out for monthly UI changes — don't replicate. Ship a stable shell; iterate behind feature flags. Keep Classic Builder users protected.</p>
+      </div>
+      <div class="card">
+        <p style="margin:0;"><strong>AI quality bar.</strong> Subject Line AI burned Klaviyo's AI credibility (generic output). Don't ship F3/F2/D5 until they beat hand-written drafts in blind tests with real merchants.</p>
+      </div>
+      <div class="card">
+        <p style="margin:0;"><strong>Channel-cost discipline.</strong> Bird commoditized SMS to attack Twilio. WhatsApp template costs scale fast. Build cost-aware sending UX (live cost preview pre-send) — turn it into a differentiator.</p>
+      </div>
+    </div>
+
+    <div class="source">
+      <strong>Sources (Page 4):</strong>
+      Y Combinator companies directory (Bird, Apten, Outbound, Zaymo, Mailmodo, Eden, Loops, Resend), Bird/MessageBird (TechCrunch rebrand Feb 2024 + $200M Series C 2020 at $3B → $3.8B today, 15K+ customers, 170+ countries, $500M–$1B ARR per FundBat), Attentive (Wikipedia — $500M+ ARR 2024, 8K+ businesses, ~$2B Cyber Week 2025), Braze (FY25 investor release — $693M ARR, 2,296 customers, 247 at $500K+, OfferFit acquisition), Customer.io (vendor materials — $100M ARR Sep 2025, 9K+ brands, 111% NDR), Bloomreach (press release — $260M+ ARR, Loomi AI), Postscript ($65M Series C 2022, 8K+ Shopify brands), Sendlane ($20M Series A, $7M+ ARR — Christine Hall TechCrunch), Resend (resend.com/blog/series-a — $18M a16z Dec 2024, 200K developers, Warner Bros / Decathlon / Raycast), Loops (loops.so — YC W22, $13M total, $3.2M seed Craft Ventures Sep 2023), Knock (state-of-notification report 2025), Singulate (singulate.com — $2.3M pre-seed Bowery + Seedcamp), Backstroke / Mutiny / Dreamlit (vendor pages), AiSensy (CB Insights, Pitchonnet, Zee News, CXOToday — 50K+ businesses, ₹1,000+cr brand revenue, 80–100M msgs/mo, Meta CTWA Partner of the Year 2024, Dream Green Capital), Wati (16K+ customers, 4.6 G2), Charles / Zoko / Interakt / LimeChat (vendor pages), Mailchimp current state (mailchimp.com/help/compare-mailchimps-email-builders — 250 templates new builder, mailchimp.com/newsroom/introducing-intuit-assist, Feb 2026 release — Site Tracking Pixel, 26% more ecom triggers, SMS Europe expansion, Yotpo/Judge.me integrations), Mailchimp vs Klaviyo gap analysis (Datawhistl capability map, get-creative.co, sendpulse).
+      <br/><br/>
+      <em>Methodology:</em> threat tiers built on (a) funding raised, (b) ARR / customer count, (c) editor-builder relevance, (d) likely overlap with Mailchimp's SMB+mid-market book. Foundational features = those Klaviyo and 2+ other competitors have but Mailchimp's email builder credibly lacks today. Differentiated features = best ideas across the threat landscape that bind well to Mailchimp's omnichannel + Intuit-data advantage. Phasing prioritized for Phase-1 head-to-head Klaviyo demos, then breadth (Phase 2), then category move (Phase 3).
     </div>
   </section>
 
