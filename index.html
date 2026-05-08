@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Klaviyo Email Builder — Competitive Analysis (Executive 2-Pager)</title>
+<meta name="description" content="Two-page executive competitive brief on Klaviyo's campaign Email Builder: WYSIWYG editor, blocks, templates, brand kit, in-editor AI (Email AI, Image Remix, Subject Line AI), preview/test, JTBD, pricing, gaps." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0E1116;
+    --ink-2: #1F2937;
+    --muted: #4B5563;
+    --line: #E5E7EB;
+    --line-2: #D1D5DB;
+    --bg: #F8F7F4;
+    --paper: #FFFFFF;
+    --brand: #5A2BFF;
+    --brand-2: #FF7A1A;
+    --good: #047857;
+    --warn: #B45309;
+    --bad: #B91C1C;
+    --chip: #F1EEFF;
+    --chip-ink: #3A1ACC;
+    --shadow: 0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.45;
+  }
+  .toolbar {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(248,247,244,.85);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .toolbar-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 20px; gap: 12px;
+  }
+  .brand-mark { display:flex; align-items:center; gap:10px; font-weight: 700; font-size: 14px; color: var(--ink-2); }
+  .brand-dot { width: 10px; height: 10px; border-radius: 3px; background: var(--brand); box-shadow: 0 0 0 3px rgba(90,43,255,.15); }
+  .toolbar a.btn, .toolbar button.btn {
+    border: 1px solid var(--line-2); background: var(--paper); color: var(--ink-2);
+    padding: 7px 12px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    text-decoration: none; cursor: pointer;
+  }
+  .toolbar .btn.primary { background: var(--ink); color: white; border-color: var(--ink); }
+  .toolbar .btn:hover { transform: translateY(-1px); }
+
+  .page-wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 64px; }
+  .page {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 28px 32px 26px;
+    margin-bottom: 22px;
+  }
+  .page-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 16px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .eyebrow { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700; font-size: 30px; line-height: 1.15;
+    margin: 6px 0 4px; letter-spacing: -0.01em;
+  }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  .meta { text-align: right; font-size: 12px; color: var(--muted); }
+  .meta strong { color: var(--ink-2); }
+
+  .grid { display: grid; gap: 16px; }
+  .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols-5-3 { grid-template-columns: 5fr 3fr; }
+  .grid.cols-3-2 { grid-template-columns: 3fr 2fr; }
+
+  @media (max-width: 880px) {
+    .grid.cols-2, .grid.cols-3, .grid.cols-4, .grid.cols-5-3, .grid.cols-3-2 { grid-template-columns: 1fr; }
+    .page { padding: 20px; }
+    h1 { font-size: 24px; }
+  }
+
+  h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px; margin: 0 0 8px; letter-spacing: -0.005em;
+  }
+  h2 .num {
+    display: inline-block; font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 800; color: var(--brand);
+    background: var(--chip); padding: 2px 6px; border-radius: 4px;
+    margin-right: 8px; transform: translateY(-2px); letter-spacing: .08em;
+  }
+  p { margin: 0 0 8px; font-size: 13.5px; color: var(--ink-2); }
+  ul { margin: 4px 0 8px; padding-left: 18px; }
+  li { font-size: 13px; color: var(--ink-2); margin-bottom: 4px; }
+  li strong { color: var(--ink); }
+
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .card.tinted { background: #FBFAFF; border-color: #ECE6FF; }
+  .card.warm { background: #FFF8F0; border-color: #FCE6CC; }
+  .card.olive { background: #F4F6EE; border-color: #E1E7CB; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .kpi {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFB 100%);
+    border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+  }
+  .kpi .v { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 22px; line-height: 1; color: var(--ink); }
+  .kpi .l { font-size: 11px; color: var(--muted); margin-top: 6px; line-height: 1.3; }
+  @media (max-width: 720px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .chip {
+    background: var(--chip); color: var(--chip-ink);
+    border-radius: 999px; padding: 3px 9px; font-size: 11px;
+    font-weight: 600; letter-spacing: .01em; border: 1px solid #E1D8FF;
+  }
+  .chip.warm { background: #FFEFE0; color: #9A4A00; border-color: #FCD9B6; }
+  .chip.green { background: #E6F5EE; color: #036A4F; border-color: #BFE6D3; }
+  .chip.gray { background: #F1F2F4; color: #374151; border-color: #E2E5EA; }
+  .chip.bad { background: #FFEDE8; color: #9A1F00; border-color: #F5C9BA; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th {
+    font-size: 11px; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--muted); background: #FAFAFB;
+  }
+  td.nowrap { white-space: nowrap; }
+  td.center, th.center { text-align: center; }
+  .dot { display:inline-block; width:8px; height:8px; border-radius:999px; margin-right:6px; vertical-align: middle; }
+  .dot.good { background: var(--good); }
+  .dot.mid  { background: var(--warn); }
+  .dot.bad  { background: var(--bad); }
+  .check { color: var(--good); font-weight: 800; }
+  .cross { color: #B0A9A0; font-weight: 700; }
+
+  .pull {
+    border-left: 3px solid var(--brand); padding: 8px 12px;
+    background: #FBFAFF; border-radius: 6px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 14px; color: var(--ink-2);
+  }
+  .pull cite { display: block; font-family: 'Inter', sans-serif; font-size: 11px; color: var(--muted); margin-top: 6px; font-style: normal; }
+
+  .source { font-size: 10.5px; color: var(--muted); border-top: 1px dashed var(--line); margin-top: 14px; padding-top: 10px; }
+  .source a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+
+  .price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  @media (max-width: 880px) { .price-grid { grid-template-columns: repeat(2, 1fr); } }
+  .price { border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: #fff; }
+  .price h4 { margin: 0 0 4px; font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; justify-content: space-between; }
+  .price .p { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .price ul { margin: 0; padding-left: 16px; }
+  .price li { font-size: 11.5px; }
+  .price.spotlight { border-color: #C7B8FF; background: linear-gradient(180deg,#FBFAFF,#FFFFFF); }
+  .pill { font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+  .pill.included { background: #E6F5EE; color: #036A4F; }
+  .pill.partial  { background: #FFF1DD; color: #8A4A00; }
+  .pill.excluded { background: #FFEDE8; color: #9A1F00; }
+
+  /* Block-type tile grid */
+  .block-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  @media (max-width: 880px) { .block-grid { grid-template-columns: repeat(3, 1fr); } }
+  .block-tile {
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 6px; text-align: center; background: #fff;
+  }
+  .block-tile .ic { font-size: 18px; line-height: 1; margin-bottom: 4px; display: block; }
+  .block-tile .nm { font-size: 11px; font-weight: 700; color: var(--ink-2); }
+  .block-tile .tg { font-size: 9.5px; color: var(--muted); margin-top: 2px; letter-spacing: .04em; text-transform: uppercase; }
+
+  /* JTBD list */
+  .jtbd { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: #fff; margin-bottom: 8px; }
+  .jtbd .role { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); }
+  .jtbd .quote { font-family: 'Source Serif 4', Georgia, serif; font-size: 13px; margin: 4px 0 4px; }
+  .jtbd .why { font-size: 11.5px; color: var(--muted); }
+
+  /* AI feature cards */
+  .ai-card {
+    border: 1px solid #ECE6FF; background: #FBFAFF;
+    border-radius: 10px; padding: 12px 14px;
+    position: relative; overflow: hidden;
+  }
+  .ai-card::before {
+    content: ""; position: absolute; right: -20px; top: -20px;
+    width: 80px; height: 80px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(90,43,255,.18), transparent 70%);
+  }
+  .ai-card h3 { margin: 0 0 4px; font-size: 13.5px; font-weight: 700; }
+  .ai-card .gate { font-size: 10.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-left: 6px; }
+  .gate.free { background: #E6F5EE; color: #036A4F; }
+  .gate.paid { background: #FFF1DD; color: #8A4A00; }
+  .ai-card p { font-size: 12px; margin: 0 0 6px; }
+  .ai-card .meta-line { font-size: 10.5px; color: var(--muted); }
+
+  /* Differentiator cards */
+  .diff { border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: #fff; }
+  .diff h3 { margin: 0 0 4px; font-size: 13px; font-weight: 700; }
+  .diff p { font-size: 11.5px; margin: 0; color: var(--muted); }
+  .diff .vs { font-size: 10.5px; color: var(--brand); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 4px; }
+
+  /* Strengths/Weakness cols */
+  .col-loved { background: #F4FBF7; border-color: #CFE9DC; }
+  .col-hated { background: #FFF5F2; border-color: #F4D2C5; }
+  .col-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+  .col-head h2 { margin: 0; }
+  .col-head .count { font-size: 11px; font-weight: 700; color: var(--muted); background: #fff; padding: 2px 8px; border-radius: 999px; }
+
+  /* Print */
+  @media print {
+    body { background: white; }
+    .toolbar { display: none; }
+    .page-wrap { padding: 0; max-width: 100%; }
+    .page { box-shadow: none; border: 0; border-radius: 0; padding: 18px 22px; page-break-after: always; margin-bottom: 0; }
+    .page:last-child { page-break-after: auto; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <div class="brand-mark"><span class="brand-dot"></span> Competitive Brief — Klaviyo Email Builder</div>
+    <div style="display:flex; gap:8px;">
+      <a class="btn" href="#page1">Page 1</a>
+      <a class="btn" href="#page2">Page 2</a>
+      <button class="btn primary" onclick="window.print()">Print / PDF</button>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- ============ PAGE 1 ============ -->
+  <section class="page" id="page1">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive 2-Pager · Page 1 of 2</div>
+        <h1>Klaviyo's Email Builder</h1>
+        <div class="subtitle">The WYSIWYG canvas inside Campaigns where ecommerce marketers compose, design, brand, and personalize one-off email campaigns — drag-and-drop blocks, sections, brand kit, and a stack of in-editor AI tools.</div>
+      </div>
+      <div class="meta">
+        <div><strong>Scope:</strong> Email Builder only<br/><span style="color:#9aa0a6">(excludes Flows, SMS, segmentation, deliverability, customer hub)</span></div>
+        <div style="margin-top:6px;"><strong>Last updated:</strong> May 2026</div>
+      </div>
+    </div>
+
+    <!-- KPI strip -->
+    <div class="kpi-row" style="margin-bottom:16px;">
+      <div class="kpi">
+        <div class="v">160+</div>
+        <div class="l">Pre-built email templates in library, filterable by use case, layout, season, Shopify</div>
+      </div>
+      <div class="kpi">
+        <div class="v">~13</div>
+        <div class="l">Native drag-and-drop block types (text, image, button, product, table, HTML, split, header bar, divider, spacer, drop shadow, social, video)</div>
+      </div>
+      <div class="kpi">
+        <div class="v">99 / day</div>
+        <div class="l">Email AI section generations per account (33 prompts × 3 drafts) — paid plans only</div>
+      </div>
+      <div class="kpi">
+        <div class="v">100 / mo</div>
+        <div class="l">Inbox renderings per user via built-in Mailgun-powered inbox testing (paid)</div>
+      </div>
+    </div>
+
+    <!-- TWO COLUMN: What it is | Why it matters -->
+    <div class="grid cols-5-3" style="margin-bottom:16px;">
+      <div>
+        <h2><span class="num">01</span>What the product feature is</h2>
+        <p>The <strong>Klaviyo Email Editor</strong> (officially: "drag-and-drop email template editor", marketed as "Create engaging emails, faster") is the canvas marketers open inside a Campaign to design a one-off broadcast email. The current generation replaced the deprecated <em>Classic Editor</em> in May 2023 and is now the default for all new templates.</p>
+        <p>It is positioned as a <strong>no-code, AI-assisted, brand-aware</strong> builder — purpose-built for ecommerce. The product surface is bounded: a left-rail block library, a center canvas with sections &amp; columns, a right-rail style/properties panel, and a top bar for preview, test send, AI assist, and version controls.</p>
+        <div class="chips">
+          <span class="chip">Drag-and-drop canvas</span>
+          <span class="chip">Sections + columns</span>
+          <span class="chip">Universal saved content</span>
+          <span class="chip">Brand kit auto-apply</span>
+          <span class="chip">In-editor AI</span>
+          <span class="chip">Inbox &amp; mobile preview</span>
+          <span class="chip">HTML block + Django tags</span>
+        </div>
+      </div>
+      <div>
+        <h2><span class="num">02</span>Why it matters strategically</h2>
+        <div class="card tinted">
+          <p style="margin-bottom:6px;"><strong>The editor is Klaviyo's daily-touchpoint surface.</strong> Marketers may visit segmentation or deliverability monthly, but they touch the editor every time they ship a campaign. This is where retention is earned and competitive switching costs accumulate.</p>
+          <p style="margin-bottom:0;">Klaviyo has invested heavily here in 2024–2026: the editor rewrite, the Email AI generative layer, Brand Voice extraction, Image Remix (Gemini-powered), and Universal Content. They're racing to close the gap to Mailchimp's polished editor while extending an AI-native moat.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK TYPES + CORE CAPABILITIES -->
+    <div class="grid cols-2" style="margin-bottom:16px;">
+      <div>
+        <h2><span class="num">03</span>Block library inside the canvas</h2>
+        <p style="margin-bottom:8px;">Marketers compose emails by dragging these atomic units from the left sidebar onto the canvas. Each block has its own style/properties panel; structural blocks (Section, Split) contain content blocks.</p>
+        <div class="block-grid">
+          <div class="block-tile"><span class="ic">T</span><div class="nm">Text</div><div class="tg">Content</div></div>
+          <div class="block-tile"><span class="ic">▭</span><div class="nm">Image</div><div class="tg">Content</div></div>
+          <div class="block-tile"><span class="ic">▢</span><div class="nm">Button</div><div class="tg">Content</div></div>
+          <div class="block-tile"><span class="ic">⊞</span><div class="nm">Table</div><div class="tg">Content</div></div>
+          <div class="block-tile"><span class="ic">🛍</span><div class="nm">Product</div><div class="tg">Catalog</div></div>
+          <div class="block-tile"><span class="ic">▶</span><div class="nm">Video</div><div class="tg">Content</div></div>
+          <div class="block-tile"><span class="ic">⫻</span><div class="nm">Split</div><div class="tg">Layout</div></div>
+          <div class="block-tile"><span class="ic">▬</span><div class="nm">Header Bar</div><div class="tg">Layout</div></div>
+          <div class="block-tile"><span class="ic">━</span><div class="nm">Divider</div><div class="tg">Layout</div></div>
+          <div class="block-tile"><span class="ic">↕</span><div class="nm">Spacer</div><div class="tg">Layout</div></div>
+          <div class="block-tile"><span class="ic">◐</span><div class="nm">Drop Shadow</div><div class="tg">Style</div></div>
+          <div class="block-tile"><span class="ic">@</span><div class="nm">Social</div><div class="tg">Content</div></div>
+          <div class="block-tile"><span class="ic">&lt;/&gt;</span><div class="nm">HTML</div><div class="tg">Power user</div></div>
+        </div>
+        <p style="font-size:11.5px; color:var(--muted); margin-top:8px;">Six block types (button, divider, HTML, image, spacer, text) can additionally be saved as <strong>Universal Content</strong> — edit once, propagates to every email/template that uses it.</p>
+      </div>
+
+      <div>
+        <h2><span class="num">04</span>Core editor capabilities</h2>
+        <ul>
+          <li><strong>Sections &amp; columns:</strong> group blocks, save as units, control mobile stacking direction (left→right, right→left, or off).</li>
+          <li><strong>Universal Content:</strong> reusable blocks/sections that propagate updates globally — header, footer, promo banners.</li>
+          <li><strong>Background images per section</strong> with fallback colors and Original / Fit / Fill / Tile sizing.</li>
+          <li><strong>Brand kit:</strong> logos, colors, fonts, buttons, social links, brand voice — applied automatically to library templates and new flow emails.</li>
+          <li><strong>Personalization engine:</strong> Django-style template tags (<code style="font-size:11px;">{{ first_name|title|default:'there' }}</code>), filters (<code style="font-size:11px;">floatformat</code>, <code style="font-size:11px;">multiply</code>), custom object support, dynamic show/hide blocks per segment.</li>
+          <li><strong>Productivity:</strong> undo/redo (⌘+Z), autosave, faster preview, in-canvas text editing.</li>
+          <li><strong>HTML block + Django Tag Builder</strong> for power users (replacing source-code mode in text blocks).</li>
+          <li><strong>Preview &amp; test:</strong> desktop ↔ mobile toggle, dark-mode preview, send test email, shareable preview links (6-day expiry), inbox testing across desktop/web/mobile/dark via Mailgun (capped 100/user/mo, paid).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AI BLOCK -->
+    <h2><span class="num">05</span>AI built into the editor</h2>
+    <div class="grid cols-3" style="margin-bottom:14px;">
+      <div class="ai-card">
+        <h3>Email AI <span class="gate paid">Paid only</span></h3>
+        <p>Type a plain-text prompt ("3-column section with image + headline + button"). AI generates 3 fully-styled draft sections inheriting the template's Styles tab. Toggle through drafts, regenerate, or edit description.</p>
+        <div class="meta-line">Generates layouts, copy, image placeholders, buttons, columns. Limit: 33 prompts × 3 drafts = 99 sections/day. Image URLs, product feeds, alt text still configured manually.</div>
+      </div>
+      <div class="ai-card">
+        <h3>Brand Voice Guidelines <span class="gate paid">Paid</span></h3>
+        <p>Klaviyo analyzes your <strong>past emails</strong> to extract tone, vocabulary, sentence patterns. Generates writing rules that the AI auto-applies to every future Email AI draft. Manually editable.</p>
+        <div class="meta-line">Distinctive: most competitors require user-typed style guides; Klaviyo infers from corpus.</div>
+      </div>
+      <div class="ai-card">
+        <h3>Subject Line AI <span class="gate free">Free tier</span></h3>
+        <p>Natural language prompt → multiple subject line suggestions. Regenerate freely. Available to anyone (also surfaced as a public free tool on klaviyo.com).</p>
+        <div class="meta-line">Lowest-friction AI surface — used as an acquisition hook before paywall.</div>
+      </div>
+      <div class="ai-card">
+        <h3>Image Remix (Gemini) <span class="gate paid">Paid</span></h3>
+        <p>In-canvas AI image editor powered by Google Gemini. Change backgrounds, recolor objects, add/remove people, change facial expressions, all via text prompt. 1–3 min per image; original preserved.</p>
+        <div class="meta-line">Eliminates the Canva/Photoshop round-trip — rare among email tools.</div>
+      </div>
+      <div class="ai-card">
+        <h3>Marketing Agent <span class="gate free">Free tier</span></h3>
+        <p>Pulls brand assets (images, copy, colors) from your website on connect, then proposes campaign concepts and pre-fills the editor with on-brand drafts.</p>
+        <div class="meta-line">Onboarding accelerant — gets a free user to first sent email faster.</div>
+      </div>
+      <div class="ai-card">
+        <h3>Personalized Campaigns AI <span class="gate paid">Paid</span></h3>
+        <p>For A/B/n campaigns, the AI auto-routes each subscriber to the variant most likely to convert <em>them</em> (not the population average). Builder shows which variant won per segment.</p>
+        <div class="meta-line">Differs from classic A/B: continuous personalization, not single-winner.</div>
+      </div>
+    </div>
+
+    <div class="source">
+      Sources (Page 1): klaviyo.com/products/email-marketing/templates · klaviyo.com/product/whats-new/email-editor · klaviyo.com/product/whats-new/email-ai · klaviyo.com/solutions/ai/remix · klaviyo.com/tools/email-subject-line-generator · help.klaviyo.com (editor guide, brand voice, sections &amp; columns, inbox testing, personalization tags) · klaviyo.com/whats-new (Spring 2026)
+    </div>
+  </section>
+
+  <!-- ============ PAGE 2 ============ -->
+  <section class="page" id="page2">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive 2-Pager · Page 2 of 2</div>
+        <h1>Differentiation, JTBD, Pricing &amp; Gaps</h1>
+        <div class="subtitle">Where Klaviyo's email builder wins, who reaches for it and why, what it costs to unlock the AI layer, and what they still don't do well.</div>
+      </div>
+      <div class="meta">
+        <div><strong>Reading time:</strong> ~4 min</div>
+        <div style="margin-top:6px;"><strong>Confidence:</strong> High (vendor docs + reviews)</div>
+      </div>
+    </div>
+
+    <!-- DIFFERENTIATORS -->
+    <h2><span class="num">06</span>What truly differentiates the builder (vs Mailchimp, Omnisend, Attentive)</h2>
+    <div class="grid cols-3" style="margin-bottom:14px;">
+      <div class="diff">
+        <div class="vs">vs. Mailchimp</div>
+        <h3>Ecommerce-native blocks</h3>
+        <p>Product blocks are first-class with live catalog feeds; the template library has a dedicated Shopify category. Mailchimp's product block exists but feels bolted-on relative to its content-marketing roots.</p>
+      </div>
+      <div class="diff">
+        <div class="vs">vs. all rivals</div>
+        <h3>Brand voice <em>inferred</em>, not typed</h3>
+        <p>Klaviyo derives writing rules from your past sent emails. Competitors (Mailchimp Intuit Assist, Omnisend AI, Attentive AI) require the marketer to write their own style guide.</p>
+      </div>
+      <div class="diff">
+        <div class="vs">vs. Mailchimp / Omnisend</div>
+        <h3>In-editor AI image edit (Gemini)</h3>
+        <p>Image Remix lets you re-light, re-background, swap objects without leaving the canvas. Most rivals push you to Canva, Adobe Express, or external editors.</p>
+      </div>
+      <div class="diff">
+        <div class="vs">vs. Mailchimp</div>
+        <h3>Universal Content with global propagation</h3>
+        <p>Edit a saved block once → updates every email it appears in. Mailchimp's "content blocks" are templated copy-paste; not truly globally bound.</p>
+      </div>
+      <div class="diff">
+        <div class="vs">vs. Attentive</div>
+        <h3>Built-in inbox rendering</h3>
+        <p>Mailgun-powered inbox tests across mobile, desktop, web, and dark mode are bundled (100/user/mo). Attentive and most ESPs require Litmus or Email on Acid subscriptions.</p>
+      </div>
+      <div class="diff">
+        <div class="vs">vs. Mailchimp</div>
+        <h3>Section-level mobile stacking control</h3>
+        <p>Marketers control whether columns stack, in which order (L→R, R→L), or stay horizontal on mobile, per-section. Mailchimp offers global only.</p>
+      </div>
+    </div>
+
+    <!-- JTBD -->
+    <div class="grid cols-2" style="margin-bottom:14px;">
+      <div>
+        <h2><span class="num">07</span>Who's using it &amp; jobs to be done</h2>
+        <p style="margin-bottom:6px;"><strong>Primary persona:</strong> 1–3 person ecommerce marketing team at a $5M–$200M GMV DTC brand on Shopify. Often a solo email marketer or a brand designer who also ships campaigns.</p>
+        <p style="margin-bottom:10px;"><strong>Reference customers using the builder:</strong>
+          <span class="chips" style="display:inline-flex;">
+            <span class="chip gray">Tatcha</span>
+            <span class="chip gray">Twinings</span>
+            <span class="chip gray">Marine Layer</span>
+            <span class="chip gray">LifeStraw</span>
+            <span class="chip gray">Alessi</span>
+          </span>
+        </p>
+
+        <div class="jtbd">
+          <div class="role">Solo email marketer · DTC apparel</div>
+          <div class="quote">"Build me a Friday promo email that's on-brand in under 30 minutes — without opening Figma or pinging the designer."</div>
+          <div class="why">Solved by: Email AI + Brand Kit + library template + Image Remix.</div>
+        </div>
+        <div class="jtbd">
+          <div class="role">Brand designer · Beauty</div>
+          <div class="quote">"Lock down our header, footer, and disclaimer block once so junior marketers can't break the brand."</div>
+          <div class="why">Solved by: Universal Saved Content + Brand Kit defaults.</div>
+        </div>
+        <div class="jtbd">
+          <div class="role">Lifecycle marketer · Home goods</div>
+          <div class="quote">"Show repeat customers a different hero block than first-time subscribers from one template."</div>
+          <div class="why">Solved by: Dynamic show/hide blocks + segment conditions on blocks.</div>
+        </div>
+        <div class="jtbd">
+          <div class="role">Email developer · Mid-market</div>
+          <div class="quote">"Drop in a custom HTML countdown timer and live product feed without forking a template."</div>
+          <div class="why">Solved by: HTML block + Django Tag Builder + Product block.</div>
+        </div>
+        <div class="jtbd">
+          <div class="role">Marketing manager · Holiday season</div>
+          <div class="quote">"Verify this BFCM email renders in Gmail dark mode, Outlook, and on iPhone before I send to 200K."</div>
+          <div class="why">Solved by: Dark-mode preview + inbox testing (Mailgun) + mobile toggle.</div>
+        </div>
+      </div>
+
+      <div>
+        <h2><span class="num">08</span>Pricing — what plan unlocks what</h2>
+        <p style="margin-bottom:8px;">Builder itself is in <strong>every plan</strong> (including Free). The differentiation Klaviyo monetizes is the <strong>AI layer</strong>, <strong>inbox testing</strong>, and the underlying contact volume.</p>
+
+        <div class="price-grid" style="margin-bottom:10px;">
+          <div class="price">
+            <h4>Free <span class="pill partial">Builder ✓</span></h4>
+            <div class="p">$0 · up to 250 profiles</div>
+            <ul>
+              <li>Drag-and-drop editor</li>
+              <li>Basic templates (subset of 160+)</li>
+              <li>Subject Line AI</li>
+              <li>Marketing Agent</li>
+              <li class="cross">No Email AI generation</li>
+              <li class="cross">No Image Remix</li>
+              <li class="cross">No inbox testing</li>
+            </ul>
+          </div>
+          <div class="price spotlight">
+            <h4>Starter <span class="pill included">Builder + AI ✓</span></h4>
+            <div class="p">~$20/mo · up to 500 profiles</div>
+            <ul>
+              <li>Full template library (160+)</li>
+              <li>Email AI (99 sections/day)</li>
+              <li>Brand Voice Guidelines</li>
+              <li>Image Remix (Gemini)</li>
+              <li>Inbox testing (100/mo)</li>
+              <li>Universal Content</li>
+            </ul>
+          </div>
+          <div class="price">
+            <h4>Growth <span class="pill included">All editor AI</span></h4>
+            <div class="p">~$60/mo · up to 2,500 profiles</div>
+            <ul>
+              <li>Everything in Starter</li>
+              <li>Personalized Campaigns AI (A/B/n auto-routing)</li>
+              <li>Higher AI generation ceilings</li>
+              <li>Custom HTML support tier</li>
+            </ul>
+          </div>
+          <div class="price">
+            <h4>Pro <span class="pill included">All editor AI</span></h4>
+            <div class="p">~$150/mo · up to 10,000 profiles</div>
+            <ul>
+              <li>Everything in Growth</li>
+              <li>Dedicated success / onboarding</li>
+              <li>Same builder feature set as Growth</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size:11px; color:var(--muted); margin:0;">
+          Note: Klaviyo uses <strong>contact-based pricing</strong>; the builder doesn't gate by feature beyond AI. SMS is a separate credit pool. Annual billing saves 10–20%.
+        </p>
+      </div>
+    </div>
+
+    <!-- LOVED / GAPS -->
+    <h2><span class="num">09</span>What customers love · what they call out</h2>
+    <div class="grid cols-2" style="margin-bottom:14px;">
+      <div class="card col-loved">
+        <div class="col-head"><h2>Loved <span style="font-weight:400; color:var(--muted); font-family:Inter; font-size:12px;">(strengths)</span></h2><span class="count">+ Builder wins</span></div>
+        <ul>
+          <li><strong>Drag-and-drop is genuinely fast</strong> once learned; auto-save and ⌘+Z reduce fear of breaking work.</li>
+          <li><strong>Universal saved content</strong> is the most-praised power-user feature — global header/footer updates without hunting.</li>
+          <li><strong>Image Remix wow-factor:</strong> reviewers consistently flag this as best-in-class — replaces an entire Canva workflow.</li>
+          <li><strong>Brand voice extraction from past emails</strong> lands more on-brand drafts than any prompt-based competitor.</li>
+          <li><strong>Inbox testing built-in</strong> is a real cost saver vs Litmus ($99+/mo external).</li>
+          <li><strong>Deep Shopify hooks</strong> in product blocks &amp; templates — live catalog feeds, dynamic pricing.</li>
+        </ul>
+      </div>
+      <div class="card col-hated">
+        <div class="col-head"><h2>Called out <span style="font-weight:400; color:var(--muted); font-family:Inter; font-size:12px;">(gaps)</span></h2><span class="count">– Builder gaps</span></div>
+        <ul>
+          <li><strong>Steep learning curve</strong> — solopreneurs hit a wall vs Mailchimp's friendlier first-run.</li>
+          <li><strong>UI churns frequently</strong> — "every month something moves" (Gartner Peer Insights). Erodes muscle memory for power users.</li>
+          <li><strong>Source-code view being removed</strong> from text/table/split blocks — friction for HTML-first marketers; forces migration to dedicated HTML block.</li>
+          <li><strong>Brand voice "writing rules" editor reportedly buggy</strong> (Badsender, May 2025).</li>
+          <li><strong>Email AI doesn't auto-configure</strong> product feeds, image URLs, or button destinations — generated sections need cleanup.</li>
+          <li><strong>Daily AI cap (99 sections)</strong> can bite agencies running multiple brands.</li>
+          <li><strong>Cost escalates</strong> with contact growth — builder is "free" but the platform isn't, once you're past 2,500 profiles.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SO WHAT -->
+    <h2><span class="num">10</span>So what — implications for our roadmap</h2>
+    <div class="grid cols-3">
+      <div class="card warm">
+        <p style="margin:0;"><strong>Match the table stakes.</strong> Sections + columns, universal saved content, mobile-stacking control, dark-mode preview, and inbox testing are now expected. Anything less reads as dated to a Klaviyo evaluator.</p>
+      </div>
+      <div class="card warm">
+        <p style="margin:0;"><strong>The AI bar moved.</strong> Generate-from-prompt and brand-voice-from-corpus are the new floor. In-canvas image editing (Gemini-tier) is the new ceiling. A "subject line generator" alone no longer impresses.</p>
+      </div>
+      <div class="card warm">
+        <p style="margin:0;"><strong>Attack vectors:</strong> (1) friendlier first-run / lower learning curve, (2) UI stability promise, (3) better HTML/dev workflow, (4) higher / unlimited AI ceilings, (5) flat-rate pricing tiers that don't punish growth.</p>
+      </div>
+    </div>
+
+    <div class="source">
+      Sources (Page 2): klaviyo.com/blog/pricing-update · klaviyo.com/customers/case-studies (Tatcha, Twinings, Marine Layer, LifeStraw, Alessi) · help.klaviyo.com (brand styles, universal content, dark-mode preview) · community.klaviyo.com (sections &amp; columns, classic vs new editor) · academy.klaviyo.com (Email AI quick guide) · G2 / Gartner Peer Insights / Badsender / Sender.net / Mailsoftly reviews · Polaris Growth + Uplers blogs · attentive.com/blog (comparative context) · zigpoll Klaviyo vs Mailchimp vs Attentive 2026
+      <br/><br/>
+      <em>Methodology:</em> synthesized from Klaviyo's product pages, what's-new posts, help center articles, developer reference, customer case studies, third-party reviews, and competitive comparison content. Scope deliberately limited to the <strong>Email Builder / template editor</strong> surface — not Flows, SMS, segmentation, deliverability, Customer Hub, or Helpdesk.
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Smooth-scroll for the toolbar anchors.
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+</script>
+
+</body>
+</html>
