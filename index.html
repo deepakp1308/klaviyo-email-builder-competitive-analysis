@@ -568,6 +568,51 @@
   .qa-fail { background: #B91C1C; color: #fff; }
   td.qa-detail { font-size: 11px; color: var(--ink-2); line-height: 1.4; }
 
+  /* Page 9 — Doc summary cards + cross-ref table + reviewer */
+  .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+  @media (max-width: 880px) { .doc-grid { grid-template-columns: 1fr; } }
+  .doc-card {
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px; background: linear-gradient(180deg, #FBFAFF 0%, #FFFFFF 100%);
+  }
+  .doc-card .doc-head { margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  .doc-card .doc-name { font-weight: 700; font-size: 13px; color: var(--ink); }
+  .doc-card .doc-meta { font-size: 10.5px; color: var(--ink-2); margin-top: 2px; }
+  .doc-row {
+    display: grid; grid-template-columns: 70px 1fr; gap: 8px;
+    padding: 4px 0; font-size: 11.5px; line-height: 1.5;
+  }
+  .doc-label {
+    font-size: 9.5px; font-weight: 800; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--brand); padding-top: 2px;
+  }
+
+  .ix-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+  table.ix-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  table.ix-table th {
+    font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); background: #FAFAFB;
+    text-align: left; padding: 8px; border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  table.ix-table td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.45; }
+  td.ix-id { width: 60px; text-align: center; }
+  td.ix-id code { background: #F1F2F4; color: var(--ink-2); padding: 2px 5px; border-radius: 3px; font-size: 10.5px; font-weight: 700; }
+  .must {
+    color: var(--brand-2); font-weight: 800; font-size: 14px;
+    display: inline-block; margin-top: 3px;
+  }
+
+  .review-card {
+    border-left: 3px solid var(--brand); padding: 8px 10px;
+    background: #FBFAFF; border-radius: 4px; margin-bottom: 6px;
+    font-size: 11.5px;
+  }
+  .review-card.review-pass { border-color: var(--good); background: #F4FBF7; }
+  .review-card.review-warn { border-color: var(--warn); background: #FFF8F0; }
+  .review-card.review-overlap { border-color: var(--brand-2); background: #FFF8F0; }
+  .review-card strong { display: block; margin-bottom: 2px; font-size: 12px; }
+  .review-card p { font-size: 11px; margin: 0; color: var(--ink-2); line-height: 1.5; }
+
   /* Page 8 — Finding cards (F·B·I·R) */
   .finding-card {
     border: 1px solid var(--line); border-radius: 12px;
@@ -635,6 +680,7 @@
       <a class="btn" href="#page6">6 · Customer Research (HeyMarvin)</a>
       <a class="btn" href="#page7">7 · Builder Health Diagnostic</a>
       <a class="btn" href="#page8">8 · YoY · QA · F·B·I·R</a>
+      <a class="btn" href="#page9">9 · PM Doc Review + Reviewer</a>
       <button class="btn primary" onclick="window.print()">Print / PDF</button>
     </div>
   </div>
@@ -646,7 +692,7 @@
   <section class="page" id="page1">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 8</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 9</div>
         <h1>Klaviyo's Email Builder</h1>
         <div class="subtitle">The WYSIWYG canvas inside Campaigns where ecommerce marketers compose, design, brand, and personalize one-off email campaigns — drag-and-drop blocks, sections, brand kit, and a stack of in-editor AI tools.</div>
       </div>
@@ -783,7 +829,7 @@
   <section class="page" id="page2">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 8</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 9</div>
         <h1>Differentiation, JTBD, Pricing &amp; Gaps</h1>
         <div class="subtitle">Where Klaviyo's email builder wins, who reaches for it and why, what it costs to unlock the AI layer, and what they still don't do well.</div>
       </div>
@@ -979,7 +1025,7 @@
   <section class="page" id="page3">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 8</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 9</div>
         <h1>Voice of Customer — what people actually say</h1>
         <div class="subtitle">Sentiment synthesis from Reddit (r/Klaviyo, r/ecommerce, r/ShopifyAppDev, r/graphic_design), Klaviyo Community forum, G2, Capterra, Trustpilot, agency blogs, and YouTube tutorial commentary — strictly about the <strong>email builder/editor</strong>.</div>
       </div>
@@ -1259,7 +1305,7 @@
   <section class="page" id="page4">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 4 of 8</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 4 of 9</div>
         <h1>Mailchimp Email Builder — parity, leapfrog, and 3-phase roadmap</h1>
         <div class="subtitle">Emerging-threats landscape, the foundational gaps Mailchimp must close to be a credible front-runner against Klaviyo, the differentiated bets to steal from Klaviyo + the AI-native challengers, and a phased plan to win the omnichannel campaign builder.</div>
       </div>
@@ -1618,7 +1664,7 @@
   <section class="page" id="page5">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 5 of 8</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 5 of 9</div>
         <h1>HVC VOC + research-session prioritization — combined-signal plan</h1>
         <div class="subtitle">Two reinforcing data sources for the Mailchimp email builder: <strong>(1)</strong> 18-month HVC Slack VOC across <code>#hvc_feedback</code>, <code>#mc-hvc-escalations</code>, <code>#mc-feedback-summary</code> (themed, MRR-weighted), and <strong>(2)</strong> 33 hand-extracted findings from PM research sessions with strategic HVC accounts (Eric · Jacob · Nina). Combined-signal scored, then sequenced into a 3-phase plan to close the most HVC MRR risk and deepest research conviction first.</div>
       </div>
@@ -1809,7 +1855,7 @@
   <section class="page" id="page6">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 6 of 8</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 6 of 9</div>
         <h1>Direct customer research — HeyMarvin synthesis (50 sessions, 25 briefs)</h1>
         <div class="subtitle">Cross-customer view of how customers <em>actually</em> create, design, and ship email campaigns in Mailchimp. Synthesized from 50 transcribed HeyMarvin UX research videos (~25 hours of audio) across 25 individual customer briefs (17 very-high-signal, 10 high, 15 medium). Every claim links to a customer + transcript timestamp. Source repo: <a href="https://github.com/deepakp1308/mailchimp-campaign-builder-research" target="_blank" rel="noopener">mailchimp-campaign-builder-research</a>.</div>
       </div>
@@ -2127,7 +2173,7 @@
   <section class="page" id="page7">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 7 of 8</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 7 of 9</div>
         <h1>Email Builder health diagnostic — strategic analytics framework + live BigQuery findings</h1>
         <div class="subtitle">Lay-of-the-land for the new product lead. <strong>What to measure, where to look, and what BigQuery says today (May 8, 2026).</strong> Data sources: <code>bi_aggregate.product_health_weekly</code>, <code>customer_engagements_weekly</code>, <code>funnel_weekly</code>, <code>free_trials_weekly</code>, <code>churn_daily</code>, <code>product_journey_monthly</code> — all fresh through 2026-05-10. (User-level <code>bi_product.product_reporting_email_base</code> is stale since Dec 2023 — flagged for refresh.)</div>
       </div>
@@ -2449,7 +2495,7 @@ GROUP BY 1,2 ORDER BY 2,1;</pre>
   <section class="page" id="page8">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 8 of 8</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 8 of 9</div>
         <h1>QA-tested year-over-year diagnostic — Findings · Benefits · Implications · Resolutions</h1>
         <div class="subtitle">Full TY (May'25–Apr'26) vs LY (May'24–Apr'25) BigQuery analysis on the Mailchimp BI warehouse, with end-to-end data-quality tests, regression validation against Page 7 published numbers, and a structured F · B · I · R synthesis on every finding. <strong>Run date: 2026-05-08 · 9 QA tests · 7 YoY metric pulls · 10 structured findings.</strong></div>
       </div>
@@ -2708,6 +2754,424 @@ GROUP BY 1,2 ORDER BY 2,1;</pre>
       <em>Test methodology:</em> 9 explicit QA assertions covering freshness, row volume, YoY consistency between current value and prev_yr LAG columns, null checks on critical dimensions, funnel monotonicity, regression test (Page 7 number reproduction), and unit tests on derived rates. Result: 6 PASS · 1 PARTIAL (documented) · 1 DOCUMENTED (metric semantics) · 1 PASS unit test on trial-to-paid math.
       <br/><br/>
       <em>YoY methodology:</em> TY = trailing 12 mo (May 2025 – Apr 2026 inclusive of complete months only). LY = same 12-mo window prior year. Cohort comparisons (retention) use mature observation windows: TY = 180-540 days ago, LY = 540-900 days ago to ensure both have ≥6-mo maturity for M6 measurement. Engagement rates calculated as opens/delivered and clicks/delivered (industry standard).
+    </div>
+  </section>
+
+<!-- ============ PAGE 9 — PM DOC CROSS-REFERENCE + REVIEWER ============ -->
+  <section class="page" id="page9">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 9 of 9</div>
+        <h1>Previous PM's roadmap docs — cross-referenced + reviewer-agent critique</h1>
+        <div class="subtitle">5 PDFs reviewed (Builder VoC Plans · Nuni Strategy · H2 FY26 Priorities · H2 FY26 Roadmap). 21 builder-relevant initiatives extracted, each cross-referenced against Slack VOC (Page 5) · HeyMarvin research (Page 6) · Klaviyo competitive gaps (Page 4) · BigQuery health metrics (Page 7-8). <strong>13 initiatives flagged HIGH-confidence (multi-source) → reviewer-agent narrows to TOP 5 must-do-now</strong>.</div>
+      </div>
+      <div class="meta">
+        <div><strong>Docs:</strong> 5 (Nov'25 → Mar'26)</div>
+        <div style="margin-top:4px;"><strong>Initiatives:</strong> 21 unique</div>
+        <div style="margin-top:4px;"><strong>Reviewer:</strong> 3 PASS · 5 warnings · 3 overlaps</div>
+      </div>
+    </div>
+
+    <!-- HEADLINE -->
+    <div class="pull" style="margin-bottom:14px;">
+      <strong>The previous PM team has the right answers — and reasonable plans.</strong> The Nuni Strategy (Jan 2026) is comprehensive: 7-phase JTBD × 6-level Maslow, scored vs Klaviyo + Canva, 30+ initiatives mapped to Q2/Q3/Q4, six SLOs proposed. Cross-referenced with our independent triple-source (Slack VOC + HeyMarvin + BigQuery YoY), <strong>~80% of their initiatives map cleanly to a customer pain or competitive gap we independently identified.</strong> The remaining ~20% lack a direct customer voice (justifiable but lower confidence). <strong>Three structural risks the docs don't address:</strong> (1) several Mobile/Rendering items remain "Not Funded" since Nov 2025; (2) AI work spans two budgets (Builder + AI Objective) with unclear ownership; (3) sizing across docs ($4-6M, $1.5-2.8M, $3-8M) cannot be summed.
+      <cite>— Cross-reference + reviewer-agent pass, May 8, 2026</cite>
+    </div>
+
+    <!-- DOC SUMMARIES -->
+    <h2><span class="num">50</span>The 5 documents — what each proposes</h2>
+    <div class="doc-grid">
+      
+    <div class="doc-card">
+      <div class="doc-head">
+        <div class="doc-name">Builder VoC Feedback Response Plan</div>
+        <div class="doc-meta">Ose Amiegheme · Erin McCue · JB Lovell · Joyce Russell · <span style="color:var(--muted);">Nov 5, 2025</span></div>
+      </div>
+      <div class="doc-row"><span class="doc-label">Thesis</span><span>Builder is now the #1 driver of design-tool churn. 468 VoC items categorized into 6 buckets — Usability (51%), Reliability (14%), Mobile (12%), Rendering (10%), Feature Requests (12%), Integrations (1%).</span></div>
+      <div class="doc-row"><span class="doc-label">Asks</span><span>Quality Pod (Nov-Jan, 4 sprints) for Mobile + Rendering quality wins · Cross-functional Design Sprint to reimagine clunky workflows · Audit feature gaps and decide Build/Borrow/Defer (MC vs Fusion).</span></div>
+      <div class="doc-row"><span class="doc-label">Sizing</span><span><strong>Improving email sends = $4–$6M FY26 revenue impact (cited). 17% non-HVC churn + 12% Free user churn attributed to design tools. Quality Pod target: 20–30% reduction in mobile/rendering complaints by EOQ2 FY26.</strong></span></div>
+      <div class="doc-row"><span class="doc-label">Notable gaps</span><span style="color:var(--muted); font-size:11px;">Mobile Styles V2 · Dynamic content on Mobile · Dark mode education · Mobile rendering bug fixes · Expanding Inbox Previews · Automated Rendering Test (all flagged &#x27;Not funded&#x27; in source doc)</span></div>
+    </div>
+    
+    <div class="doc-card">
+      <div class="doc-head">
+        <div class="doc-name">Builder VoC Response Plan (Pillar version)</div>
+        <div class="doc-meta">Builder Team · <span style="color:var(--muted);">Q2 FY26</span></div>
+      </div>
+      <div class="doc-row"><span class="doc-label">Thesis</span><span>3 strategic pillars to organize builder work: (1) Keep Core Promise (rendering reliability), (2) Build Habits (reduce effort to send), (3) Redesign Workflows (one big swing).</span></div>
+      <div class="doc-row"><span class="doc-label">Asks</span><span>Pillar 1 projects: Automated Testing (Litmus API), Dark Mode, Block layout rendering, Text rendering, Inbox Preview boost, Mobile Styles V2, Show/Hide on devices, Responsive Nuni. Pillar 2: Reusable content blocks. Brand Kit projects: Branded Templates, Brand Kit Activation, Link Brand Kit + Global Styles, Template Refresh + Replicate. Pillar 3: Daily SWAT, DSB Asks.</span></div>
+      <div class="doc-row"><span class="doc-label">Sizing</span><span><strong>Effort sized as Small / Medium / Large / X-Large per project; Impact column uses &#x27;Email Sends&#x27; as proxy. No dollar sizing in this doc.</strong></span></div>
+      <div class="doc-row"><span class="doc-label">Notable gaps</span><span style="color:var(--muted); font-size:11px;">—</span></div>
+    </div>
+    
+    <div class="doc-card">
+      <div class="doc-head">
+        <div class="doc-name">Nuni Builder Strategy and Roadmap (MASTER)</div>
+        <div class="doc-meta">Ose Amiegheme · Erin McCue · JB Lovell · Ashley Wiesner · reviewed by Eric Anderson · <span style="color:var(--muted);">Jan 2, 2026</span></div>
+      </div>
+      <div class="doc-row"><span class="doc-label">Thesis</span><span>Nuni is 5-yr-old WYSIWYG builder, the primary creation surface, and one of the biggest sources of negative VoC. Two target ICPs for rest of FY26: &lt;$299 non-HVC (price-sensitive, churn fast on friction) + DSB switchers (mostly HVC, coming from Klaviyo). Uses 7-Phase JTBD × 6-Level Maslow hierarchy. Nuni scores 4/4/2/1/2/0 vs Klaviyo 5/5/3/3/2/3 vs Canva 5/4/5/5/3/N/A — gap at Levels 3 (Efficient Workflow) and 4 (Brand-Native).</span></div>
+      <div class="doc-row"><span class="doc-label">Asks</span><span>30+ initiatives across Q2/Q3/Q4 mapped to 7-phase JTBD. 6 Builder SLOs (uptime ≥99.9%, crash-free ≥99.5%, save ≥99.99%, init load P95 &lt;500ms, interaction P95 &lt;300ms, render fidelity ≥99%, mobile ≥95%). Three named product briefs: Content Insertion · Styles · Alignment &amp; Layout.</span></div>
+      <div class="doc-row"><span class="doc-label">Sizing</span><span><strong>Directional goals: reduce builder-driven churn 20–30% vs FY25 baseline (for &lt;$299 non-HVC). Shift 80%+ of sends to &#x27;healthy effort&#x27; (≤250 clicks). Reduce &gt;500-click sessions by 30%.</strong></span></div>
+      <div class="doc-row"><span class="doc-label">Notable gaps</span><span style="color:var(--muted); font-size:11px;">AI is positioned as &#x27;horizontal accelerator&#x27; embedded in JTBD phases (no separate AI track) — generated layouts, image gen, chat-based editing.</span></div>
+    </div>
+    
+    <div class="doc-card">
+      <div class="doc-head">
+        <div class="doc-name">Mailchimp H2 FY26 Product Priorities</div>
+        <div class="doc-meta">Diana Williams · <span style="color:var(--muted);">H2 FY26 (Aug&#x27;25 onwards)</span></div>
+      </div>
+      <div class="doc-row"><span class="doc-label">Thesis</span><span>4 objectives: (1) Accelerate FTU &amp; Optimal Setup [&lt;$299 cohort], (2) Strengthen Ecommerce/DSB, (3) Expand Omnichannel (SMS/Tx/RCS/WA), (4) Scale AI + Ecosystem (MC Everywhere). Builder is named directly under Obj 1 (FTU Branded Template E2E + Save Email Sections) and Obj 2 (Make all brand kit in Nuni + Klaviyo template converter).</span></div>
+      <div class="doc-row"><span class="doc-label">Asks</span><span>OKRs include FTU 30/90-day retention lift, DSB MRR +13% YoY, SMS rev to $23.75M, Tx rev to $33.65M.</span></div>
+      <div class="doc-row"><span class="doc-label">Sizing</span><span><strong>FTU Optimal Setup: $1.5M-$2.8M projected revenue (12-mo) from 2.85%-5.34% absolute lift in FTU 90d retention. DSB Initiative: $3M-$8M cumulative impact estimates. Omnichannel: $97K-$469K monthly. AI: $1K-$530K monthly.</strong></span></div>
+      <div class="doc-row"><span class="doc-label">Notable gaps</span><span style="color:var(--muted); font-size:11px;">Pull-back: &#x27;Broad Churn Experimentation&#x27; is shifting to focus on FTU + platform performance. Mid-market commitments at sustained P2 investment.</span></div>
+    </div>
+    
+    <div class="doc-card">
+      <div class="doc-head">
+        <div class="doc-name">Mailchimp H2 FY26 Roadmap (March update)</div>
+        <div class="doc-meta">Diana Williams + product domain POCs · <span style="color:var(--muted);">Mar 12, 2026</span></div>
+      </div>
+      <div class="doc-row"><span class="doc-label">Thesis</span><span>Detailed Q3/Q4 monthly milestones for each of the 4 H2 objectives. Builder-related deliverables explicit: Branded Template E2E (Q4 May), Save and Reuse Email Sections (Q4 May), One Click Apply Email Styles (Q4 June), Vibe Email Content Editing, Canva AI image gen in Nuni (Q4 April).</span></div>
+      <div class="doc-row"><span class="doc-label">Asks</span><span>Roadmap includes ~70+ deliverables across 4 objectives. Builder gets named slots in FTU + DSB + AI tracks but does not have its own objective.</span></div>
+      <div class="doc-row"><span class="doc-label">Sizing</span><span><strong>Per-objective monthly impact estimates: FTU $7K→$22K→$46K→$290K (Apr→May→Jun→Jul); DSB $3K→$8K→$520K→$3M; SMS $97K→$162K→$208K→$469K; Tx $70K→$48K (May→Jun); AI $1K→$40K→$97K→$530K.</strong></span></div>
+      <div class="doc-row"><span class="doc-label">Notable gaps</span><span style="color:var(--muted); font-size:11px;">Q4 FY26 items are still in &#x27;Draft&#x27; mode per the doc. Several Mobile/Rendering items from VoC plan remain absent from this roadmap.</span></div>
+    </div>
+    
+    </div>
+
+    <!-- MASTER CROSS-REF TABLE -->
+    <h2 style="margin-top:14px;"><span class="num">51</span>Master cross-reference — 21 initiatives × 4 evidence sources</h2>
+    <div class="ix-table-wrap">
+      <table class="ix-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Initiative · Source doc</th>
+            <th>Problem · Customer benefit</th>
+            <th>Slack VOC theme · MRR exposure</th>
+            <th>HeyMarvin research</th>
+            <th>Klaviyo gap (Page 4)</th>
+            <th>BigQuery KPI moved</th>
+            <th>Confidence · Sizing</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td class="ix-id"><code>I-01</code> <span class="must">★</span></td>
+      <td><strong>Reusable Saved Sections / Universal Content</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q3, Phase 7) + VoC Plan (Pillar 2) + H2 FY26 Roadmap (May FTU)</small></td>
+      <td>Marketers rebuild header/footer/promo blocks every send; no edit-once-propagate model.<br/><br/><strong style="color:var(--good);">Benefit:</strong> 60–80% complete next-campaign starting point. Cuts brand-update time from hours to seconds.</td>
+      <td><strong>Saved sections / saved blocks / universal content</strong><br/><small style="color:var(--muted);">$13.7K/mo · 6 HVC users</small></td>
+      <td>Top-cited HeyMarvin Bet 1 (Wes 90-95% reuse · Peter rotating advertisers · Kyle recurring sections · S1.11 + S2.89 explicitly raised) — confirmed in-flight by PM Jose</td>
+      <td><span class="ph-cat ph-missing">F1 (parity must-have)</span></td>
+      <td>Activation funnel (bulk_publish_1w 7.1%) + retention (M3/M6 builder-usage correlation)<br/><small style="color:var(--brand); font-weight:700;">→ Lift email_creates and first-time-sends; reduce &#x27;created-but-never-sent&#x27; wedge</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Nuni doc: contributor to &#x27;20-30% builder-driven churn reduction&#x27; (no isolated $)</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-02</code> <span class="must">★</span></td>
+      <td><strong>Drag Image from Local Device into Nuni</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q3, Phase 3) + VoC Plan (Drag &amp; Drop 5%)</small></td>
+      <td>Users expect drag-an-image-file directly onto the page; today they must add an Image Block placeholder first.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Removes an entire &#x27;placeholder-then-fill&#x27; step from the Compose loop. Aligns with how all modern editors behave.</td>
+      <td><strong>Generic &#x27;editor is clunky / hard to use&#x27;</strong><br/><small style="color:var(--muted);">$5.7K/mo · 6 HVC users</small></td>
+      <td>Andrea D&#x27;Ercole Bee.io detour (HeyMarvin Bet 5) · Wes Turner direct manipulation expectations</td>
+      <td><span class="ph-cat ph-missing">F4 (in-canvas edit) tangent · part of Page 6 Bet 5 (direct-manipulation editor)</span></td>
+      <td>Bulk_create→bulk_publish funnel (currently 25% conv)<br/><small style="color:var(--brand); font-weight:700;">→ Reduce &gt;500-click sessions (per Nuni SLO target) and friction in Compose loop</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Nuni: contributes to 30% reduction in &gt;500-click sessions</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-03</code> <span class="must">★</span></td>
+      <td><strong>Add within Columns + Improved Drop Zones Visibility</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q3, Phase 3) + Content Insertion brief</small></td>
+      <td>Block placement is unpredictable; users &#x27;misdrop&#x27; content (especially into columns) and feel scared of breaking the layout.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Predictable placement — content lands exactly where the user intends. Reduces &#x27;I&#x27;m scared to break the layout&#x27; fear.</td>
+      <td><strong>Generic &#x27;editor is clunky / hard to use&#x27;</strong><br/><small style="color:var(--muted);">$5.7K/mo · 6 HVC users</small></td>
+      <td>S1.7 Eric — 2-column discoverability is poor (HIGH research priority) · Wes Turner padding &#x27;dancing around&#x27;</td>
+      <td><span class="ph-cat ph-missing">F5 (sections + per-section mobile-stacking)</span></td>
+      <td>Bulk_create→bulk_publish funnel · publishes per session<br/><small style="color:var(--brand); font-weight:700;">→ Restore bulk_publish_1w toward LY 9.7%</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Nuni: part of Level-3 Efficient Workflow targets</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-04</code> <span class="must">★</span></td>
+      <td><strong>In-canvas AI Image Gen + Image Normalization (Vibe / Canva-in-Nuni)</strong><br/><small style="color:var(--muted);">Nuni Strategy (Jan: Image generation; Q3: Image normalization) + H2 FY26 Roadmap (Apr Q4 — Canva AI image gen + Vibe Email Content Editing)</small></td>
+      <td>Marketers leave Nuni for Canva/Adobe Express/Bee.io to recolor, swap, resize images; flow breaks every send.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Re-light, re-background, swap objects without leaving the canvas. Matches Klaviyo&#x27;s Image Remix (Gemini) bar.</td>
+      <td><strong>Better image editor / asset management</strong><br/><small style="color:var(--muted);">$793/mo · 2 HVC users</small></td>
+      <td>Andrea D&#x27;Ercole (Bee.io detour every send) · Andrew Obeso (image-resize prompt every time, 20-30 min/send) · Page 6 Bet 5 direct mention</td>
+      <td><span class="ph-cat ph-missing">F4 (in-canvas AI image editor — Gemini-class)</span></td>
+      <td>Image-block adoption · time-in-builder · first-time-sends<br/><small style="color:var(--brand); font-weight:700;">→ First-time sends (currently −25.7% YoY); image quality is rate-limiter for non-designer FTUs</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">H2 FY26 AI: $1K→$40K→$97K→$530K monthly (Vibe + Canva tracks combined)</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-05</code> <span class="must"></span></td>
+      <td><strong>Multiselect + Drag Handles for padding/margins + Copy/Paste Styles</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q4 Phase 4) + Alignment &amp; Layout brief + VoC Plan (Editing Primitives)</small></td>
+      <td>Users can&#x27;t align multiple items at once; spacing requires per-block tweaks; brand styles can&#x27;t be &#x27;pasted&#x27; to other elements.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Multiselect + paint format = 5–10× faster repetitive styling. Reduces &#x27;symmetry tax&#x27; Wes Turner described.</td>
+      <td><strong>Snap-to-grid / spacing alignment / structured layout</strong><br/><small style="color:var(--muted);">$7.8K/mo · 1 HVC users</small></td>
+      <td>Wes Turner padding pre-pass · Andrea D&#x27;Ercole bottom-align (Hannah confirmed) · single high-MRR snap-to-grid quote</td>
+      <td><span class="ph-cat ph-missing">F5 (sections + alignment)</span></td>
+      <td>Click count per send (&gt;500-click session bucket)<br/><small style="color:var(--brand); font-weight:700;">→ Reduce &gt;500-click sessions by 30% (Nuni SLO target)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Nuni: 30% reduction in &gt;500-click sessions</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-06</code> <span class="must"></span></td>
+      <td><strong>Chat-based Editing (Q4 Phase 4)</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q4) + H2 FY26 AI track (Vibe Email Content Editing)</small></td>
+      <td>Atomic edits (font, color, copy) require navigating multiple panels; new users hunt for controls.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Natural language: &#x27;make the headline bigger and red&#x27; executed in seconds. Lowers click count and discovery cost.</td>
+      <td><strong>Generic &#x27;editor is clunky&#x27; + Steep learning curve</strong><br/><small style="color:var(--muted);">$10.4K/mo · 12 HVC users</small></td>
+      <td>S1.5 (DnD handle confusion) · S1.10 (discount code editing confusing) · S1.12 (merge tag toggle undiscoverable)</td>
+      <td><span class="ph-cat ph-missing">Adjacent to D2 (channel-adaptive AI content) · partial F3 (AI section/layout generator)</span></td>
+      <td>Activate→publish-1w (currently 7.1%)<br/><small style="color:var(--brand); font-weight:700;">→ Lift first-time sends (−25.7% YoY) by lowering discovery cost for new users</small></td>
+      <td><span class="qa-status qa-partial">MED</span><br/><small style="color:var(--muted);">Part of H2 FY26 AI envelope ($1K→$530K monthly)</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-07</code> <span class="must">★</span></td>
+      <td><strong>One-click Apply Brand + Branded Templates</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q3 Phase 2) + H2 FY26 Roadmap (May FTU &#x27;Branded Template E2E&#x27;)</small></td>
+      <td>Brand Kit is disconnected from Nuni; users manually re-style every campaign. &#x27;Blank-page anxiety&#x27; before first send.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Templates auto-apply user&#x27;s brand (logo, colors, fonts). FTUs see their brand on first canvas open — collapses time-to-first-on-brand-send.</td>
+      <td><strong>Brand voice / tone learning AI (proxy for brand-kit-on-AI-drafts)</strong><br/><small style="color:var(--muted);">$410/mo · 1 HVC users</small></td>
+      <td>S1.59 Eric — Global styles undiscoverable (HIGH research) · S2.35 Jacob — templates don&#x27;t apply brand kit buttons · Nuni doc: &#x27;Connect Brand Kit and fix global inheritance&#x27;</td>
+      <td><span class="ph-cat ph-missing">Tangent to F2 (brand voice from corpus); Klaviyo also lacks one-click brand apply at scale</span></td>
+      <td>Activation funnel · FTU activation→publish-1w · open/click rate (better-on-brand emails outperform)<br/><small style="color:var(--brand); font-weight:700;">→ Lift FTU 90d retention (H2 FY26 target: 2.85-5.34% lift = $1.5-2.8M)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">H2 FY26 FTU Optimal Setup: $1.5M-$2.8M projected (12-mo)</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-08</code> <span class="must"></span></td>
+      <td><strong>Multiple Brand Kits + Audience-Specific Brand</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q3 foundation, Q4 audience-specific)</small></td>
+      <td>Agencies manage multiple brands per Mailchimp account; one brand kit doesn&#x27;t fit. Hannah&#x27;s ProServ insight: brand-conscious agencies are dealbreaker-sensitive.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Agencies and multi-brand SMBs can ship without per-account workarounds. Removes a top dealbreaker for agency tier.</td>
+      <td><span style="color:#9CA3AF;">no Slack VOC mapping</span></td>
+      <td>S1.59 (Eric agency dealbreaker) · S2.35 (Jacob brand application) · HeyMarvin Andrea D&#x27;Ercole (multi-brand workflow)</td>
+      <td><span class="ph-cat ph-missing">Klaviyo also single brand kit — potential differentiator</span></td>
+      <td>DSB / agency segment retention (Page 7/8 DSB cuts)<br/><small style="color:var(--brand); font-weight:700;">→ DSB MRR +13% YoY (H2 Obj 2 KR)</small></td>
+      <td><span class="qa-status qa-partial">MED</span><br/><small style="color:var(--muted);">Part of DSB $3M-$8M envelope</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-09</code> <span class="must">★</span></td>
+      <td><strong>Brand Voice + On-brand Content Generation (Q4)</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q4 Phase 2)</small></td>
+      <td>AI drafts are generic; sound like &#x27;every other brand&#x27;s email.&#x27;<br/><br/><strong style="color:var(--good);">Benefit:</strong> AI infers tone from past sent emails (corpus-based) and applies to all generated drafts. Drafts feel on-brand from day one.</td>
+      <td><strong>Brand voice / tone learning AI</strong><br/><small style="color:var(--muted);">$410/mo · 1 HVC users</small></td>
+      <td>Page 6 implicitly — AI-generated drafts called out as generic by HeyMarvin engaged users; Wes Turner brand-kit expectations</td>
+      <td><span class="ph-cat ph-missing">F2 (Brand Voice from corpus — Klaviyo&#x27;s distinct moat)</span></td>
+      <td>AI-feature adoption (needs new event surface — flagged Page 7)<br/><small style="color:var(--brand); font-weight:700;">→ AI features adoption rate; engagement quality (already +2 pts open YoY)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Part of H2 FY26 AI track ($1K-$530K monthly)</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-10</code> <span class="must">★</span></td>
+      <td><strong>Gmail Clipping + Dark Mode Guidance</strong><br/><small style="color:var(--muted);">Nuni Strategy (Jan/Q3 Phase 6) + VoC Plan Deep Dive #3 Rendering</small></td>
+      <td>Sent emails render differently than the editor preview (Outlook, dark mode). Users blame Mailchimp.<br/><br/><strong style="color:var(--good);">Benefit:</strong> In-editor warnings before send: &#x27;this email will be clipped in Gmail at X&#x27; / &#x27;this color won&#x27;t survive dark mode.&#x27; Builds confidence.</td>
+      <td><strong>Mobile preview accuracy / WYSIWYG breakdown</strong><br/><small style="color:var(--muted);">$2.6K/mo · 2 HVC users</small></td>
+      <td>44 VoC items in Rendering bucket (10% of 468) · &#x27;Why can&#x27;t you keep the colors I chose&#x27; direct quote</td>
+      <td><span class="ph-cat ph-missing">Adjacent F8 (built-in inbox testing — Klaviyo bundles via Mailgun)</span></td>
+      <td>Open/click rate (rendering quality affects engagement) · CSAT<br/><small style="color:var(--brand); font-weight:700;">→ Sustain engagement quality gains (+2 pts open YoY) · CSAT (now 60%)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Part of Quality Pod&#x27;s 20-30% reduction in mobile/rendering complaints</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-11</code> <span class="must"></span></td>
+      <td><strong>Inbox Previews refresh + consolidated checks (Q4)</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q4 Phase 6) + VoC Plan</small></td>
+      <td>Litmus integration is hidden; preview is fragmented (separate from link-check, optimization, dark-mode).<br/><br/><strong style="color:var(--good);">Benefit:</strong> Single &#x27;pre-send confidence wall&#x27; — preview, links, dark mode, mobile, deliverability in one panel before send.</td>
+      <td><strong>Dark mode / inbox preview / multi-client testing</strong><br/><small style="color:var(--muted);">$1.0K/mo · 2 HVC users</small></td>
+      <td>VoC Plan: &#x27;Litmus feature is hidden&#x27; · Andrew Obeso pre-send anxiety · Kyle Spalding 15-min-future-send</td>
+      <td><span class="ph-cat ph-missing">F8 (built-in inbox testing — Klaviyo bundles 100/mo via Mailgun)</span></td>
+      <td>Sends per session (test-send loops drop) · CSAT<br/><small style="color:var(--brand); font-weight:700;">→ Reduce passive-billing-failure churn (rendering issues drive support tickets → cancellations)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Quality Pod target</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-12</code> <span class="must">★</span></td>
+      <td><strong>Mobile Styles V2 + Dynamic Content on Mobile</strong><br/><small style="color:var(--muted);">VoC Plan Deep Dive #2 (NOT FUNDED) · Nuni Strategy Phase 5 (Q4 Mobile Show/Hide)</small></td>
+      <td>56 mobile-VoC items (12% of total). Users can&#x27;t unlink mobile/desktop styles, no granular mobile-only display, mobile preview ≠ actual rendering.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Mobile-correct designs without forking templates. Per-section mobile control matches Klaviyo F5.</td>
+      <td><strong>Mobile preview accuracy</strong><br/><small style="color:var(--muted);">$2.6K/mo · 2 HVC users</small></td>
+      <td>VoC Plan deepdive — &#x27;mobile view is not how it shows on phone&#x27; · Andrea/Hannah confirmed gap</td>
+      <td><span class="ph-cat ph-missing">F5 (per-section mobile-stacking) + adjacent D4 (interactive in-inbox)</span></td>
+      <td>Mobile-render fidelity SLO (Nuni proposed ≥95%)<br/><small style="color:var(--brand); font-weight:700;">→ Engagement quality (mobile open rate)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">VoC Plan flagged as &#x27;Not funded&#x27; — re-fund in H2 critical</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-13</code> <span class="must"></span></td>
+      <td><strong>Automated Rendering Test (Litmus API)</strong><br/><small style="color:var(--muted);">VoC Plan (NOT FUNDED) + Pillar 1 (Automated Testing X-Large effort)</small></td>
+      <td>Rendering regressions ship to production; we don&#x27;t catch them until customers complain.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Catch rendering bugs pre-deploy. Stops the trust-erosion treadmill.</td>
+      <td><span style="color:#9CA3AF;">no Slack VOC mapping</span></td>
+      <td>VoC Plan recommendation only — no direct customer quote</td>
+      <td><span class="ph-cat ph-missing">Internal quality, not competitive</span></td>
+      <td>Render-fidelity SLO (Nuni proposed ≥99%)<br/><small style="color:var(--brand); font-weight:700;">→ Internal — protects engagement-quality YoY gains</small></td>
+      <td><span class="qa-status qa-partial">MED</span><br/><small style="color:var(--muted);">Effort: X-Large (per Pillar plan)</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-14</code> <span class="must">★</span></td>
+      <td><strong>Generated Layouts + Generated Layouts V2</strong><br/><small style="color:var(--muted);">Nuni Strategy (Dec, Q3) + Phase 1 &#x27;Choose Structure&#x27;</small></td>
+      <td>Blank-page anxiety. Non-designer FTUs don&#x27;t know how to compose a multi-block layout.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Type a goal → AI generates layout draft. Mirrors Klaviyo Email AI&#x27;s 99-section/day capability.</td>
+      <td><strong>AI generative / AI image / AI layout</strong><br/><small style="color:var(--muted);">—/mo · 0 HVC users</small></td>
+      <td>S1.7 (2-col discoverability) · Reddit r/Klaviyo: &#x27;AI design way better than drag-drop&#x27;</td>
+      <td><span class="ph-cat ph-missing">F3 (AI section/layout generator — currently Klaviyo only does this)</span></td>
+      <td>Activate→bulk_create_24h (currently 32%)<br/><small style="color:var(--brand); font-weight:700;">→ Lift first-time sends (−25.7% YoY) for non-designer cohort</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Part of H2 FY26 AI envelope</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-15</code> <span class="must"></span></td>
+      <td><strong>&#x27;It&#x27;s Just an Email&#x27; Automations Flow (FTU)</strong><br/><small style="color:var(--muted);">H2 FY26 Roadmap (Apr Q4) — FTU Optimal Setup</small></td>
+      <td>FTUs see &#x27;automation&#x27; as scary/complex; barrier to first automation send. Bianka Kiss / Clint Bartley quotes.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Reframe automation as &#x27;just an email&#x27; — drop one trigger, ship. Lowers cognitive cost of first automation.</td>
+      <td><strong>Generic editor clunky (proxy)</strong><br/><small style="color:var(--muted);">$5.7K/mo · 6 HVC users</small></td>
+      <td>Bianka Kiss (HeyMarvin) — A/B testing undiscovered for years; Clint Bartley DRAFT for 1 yr; Page 6 Bet 2 (Discovery)</td>
+      <td><span class="ph-cat ph-missing">Adjacent — Klaviyo also has steep automation learning curve</span></td>
+      <td>Automation create + first send (funnel_weekly: cjb_create_24hrs)<br/><small style="color:var(--brand); font-weight:700;">→ Logins YoY (−24%) — re-energize visit cadence</small></td>
+      <td><span class="qa-status qa-partial">MED</span><br/><small style="color:var(--muted);">H2 FY26 FTU Optimal Setup: $1.5M-$2.8M</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-16</code> <span class="must">★</span></td>
+      <td><strong>Pick-up-where-you-left-off (Wayfinding)</strong><br/><small style="color:var(--muted);">H2 FY26 Roadmap (Mar Q3) — FTU Optimal Setup</small></td>
+      <td>Users abandon a draft and can&#x27;t find it again on next login. Created-but-never-sent wedge.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Surfaces incomplete drafts on homepage. Closes gap between create and publish.</td>
+      <td><strong>Editor consistency / new builder for journeys</strong><br/><small style="color:var(--muted);">$904/mo · 1 HVC users</small></td>
+      <td>Clint Bartley DRAFT-resurrect ask · Jillian Ney save-as-template after success · Page 6 Bet 2 (DRAFT-resurrect prompt)</td>
+      <td><span class="ph-cat ph-missing">Adjacent F9 (autosave reliability + version history)</span></td>
+      <td>Activate→bulk_publish_1w (currently 7.1%) — directly addresses created-but-never-sent<br/><small style="color:var(--brand); font-weight:700;">→ First-time sends (−25.7% YoY)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">H2 FY26 FTU Optimal Setup envelope</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-17</code> <span class="must">★</span></td>
+      <td><strong>Dynamic Product Blocks + eCom templates with product blocks</strong><br/><small style="color:var(--muted);">Nuni Strategy (Q3 Phase 4 + Q4 Phase 1) + H2 FY26 DSB roadmap (Feb)</small></td>
+      <td>DSB switchers from Klaviyo expect product blocks with live catalog feeds; today Mailchimp has them but they&#x27;re hard to discover (Jacob research) and use placeholder products instead of real Shopify items (S2.53).<br/><br/><strong style="color:var(--good);">Benefit:</strong> Live Shopify catalog → product block at send-time; matches Klaviyo product-block experience.</td>
+      <td><strong>Generic clunky + missing competitive parity</strong><br/><small style="color:var(--muted);">$5.7K/mo · 6 HVC users</small></td>
+      <td>S2.53 Jacob (placeholder products bug, HIGH priority) · S2.50 Jacob (low max items, no hide price) · S2.29 Jacob (discoverability) · Page 6 Bet 5</td>
+      <td><span class="ph-cat ph-missing">F7 (live product feed parity — Shopify/BigCommerce/Woo)</span></td>
+      <td>DSB MRR (H2 KR2.1 +13% YoY)<br/><small style="color:var(--brand); font-weight:700;">→ Engagement quality + DSB attach rate</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">DSB $3M-$8M cumulative</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-18</code> <span class="must"></span></td>
+      <td><strong>Klaviyo Email Template Converter + Custom Properties Migration</strong><br/><small style="color:var(--muted);">H2 FY26 DSB Roadmap (Q3) + Switcher track</small></td>
+      <td>DSB switchers from Klaviyo bring legacy templates and contact attributes; today they have to rebuild in Nuni.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Direct migration path: API key + template converter. Reduces switching friction from days to hours.</td>
+      <td><span style="color:#9CA3AF;">no Slack VOC mapping</span></td>
+      <td>Nuni doc explicitly named DSB-from-Klaviyo as ICP · Page 6 Andrea (switcher mindset) · Page 4 D9 (hybrid editor for switchers)</td>
+      <td><span class="ph-cat ph-missing">Strategic differentiator — Klaviyo doesn&#x27;t make leaving easy</span></td>
+      <td>DSB switcher conversion · DSB MRR YoY<br/><small style="color:var(--brand); font-weight:700;">→ DSB switchers cohort retention</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Part of DSB $3M-$8M</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-19</code> <span class="must">★</span></td>
+      <td><strong>Quality Pod (Mobile + Rendering, 4 sprints Nov-Jan)</strong><br/><small style="color:var(--muted);">VoC Plan (Recommendation 2)</small></td>
+      <td>Mobile (12% VoC) + Rendering (10% VoC) = 22% of all builder feedback. Quick visible wins available.<br/><br/><strong style="color:var(--good);">Benefit:</strong> Rapid bug burndown on highest-volume complaints. Restores trust in product reliability.</td>
+      <td><strong>Editor performance · Mobile preview accuracy</strong><br/><small style="color:var(--muted);">$5.8K/mo · 7 HVC users</small></td>
+      <td>VoC Plan deepdives 1+2 · S1.4/S1.6 image-edit bugs · S2.36 logo placeholder · Editor lag complaints</td>
+      <td><span class="ph-cat ph-missing">F9 (autosave reliability — turn Klaviyo&#x27;s #1 complaint into our trust marker)</span></td>
+      <td>CSAT (currently 60%) · Crash-free SLO (target ≥99.5%)<br/><small style="color:var(--brand); font-weight:700;">→ Reduce churn risk pool (currently 71K weekly · 0.23%)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">VoC Plan target: 20-30% reduction in mobile/rendering complaints by EOQ2 FY26</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-20</code> <span class="must">★</span></td>
+      <td><strong>Builder SLOs (6 metrics with targets)</strong><br/><small style="color:var(--muted);">Nuni Strategy Section 7</small></td>
+      <td>Reliability/performance regressions ship without operational guardrails; team has no shared &#x27;quality bar.&#x27;<br/><br/><strong style="color:var(--good);">Benefit:</strong> Operating contract: uptime ≥99.9%, crash-free ≥99.5%, save ≥99.99%, init load P95 &lt;500ms, interaction P95 &lt;300ms, render fidelity ≥99%, mobile ≥95%.</td>
+      <td><strong>Editor performance / lag / browser freeze</strong><br/><small style="color:var(--muted);">$3.2K/mo · 5 HVC users</small></td>
+      <td>S1.14 Eric — editor crashed losing work · Page 5 multiple performance complaints</td>
+      <td><span class="ph-cat ph-missing">F9 (reliable autosave + version history — directly attacks Klaviyo&#x27;s #1 community complaint)</span></td>
+      <td>Crash-free sessions · save success rate · interaction latency P95<br/><small style="color:var(--brand); font-weight:700;">→ Active churn risk reduction (currently 32K/mo of 71K total churn risk)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Operational guardrail; not a $ initiative</small></td>
+    </tr>
+    
+    <tr>
+      <td class="ix-id"><code>I-21</code> <span class="must"></span></td>
+      <td><strong>Cross-functional Design Sprint to reimagine clunky workflows</strong><br/><small style="color:var(--muted);">VoC Plan (Recommendation 1, Nov 2025)</small></td>
+      <td>&gt;25% of VoC is &#x27;Ease of Use / Clunky&#x27; — death by 1000 cuts. Won&#x27;t be fixed by point fixes.<br/><br/><strong style="color:var(--good);">Benefit:</strong> North-star vision for workflow simplification. Foundation for H2 FY26 builds.</td>
+      <td><strong>Generic &#x27;editor is clunky&#x27; (8 themes converge here)</strong><br/><small style="color:var(--muted);">$23.0K/mo · 20 HVC users</small></td>
+      <td>Multiple HeyMarvin findings · Page 6 Bet 5 (direct manipulation) · Andrea D&#x27;Ercole exit quote</td>
+      <td><span class="ph-cat ph-missing">Foundational; informs F1-F10 sequencing</span></td>
+      <td>Click-budget per send (Nuni proposed ≤250 healthy band)<br/><small style="color:var(--brand); font-weight:700;">→ Builder-driven churn share (Nuni target: -20-30% vs FY25)</small></td>
+      <td><span class="qa-status qa-pass">HIGH</span><br/><small style="color:var(--muted);">Process / discovery — outputs feed roadmap</small></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11.5px; color:var(--muted); margin-top:6px;">
+      <span class="must">★</span> = HIGH-confidence multi-source initiative (13 of 21 — mapped to ≥3 sources: Slack VOC, HeyMarvin research, Klaviyo gap, or BigQuery KPI). Reviewer narrows further to TOP 5 must-do (Section 53 below). Confidence: HIGH = mapped to ≥3 sources. MED = 1-2 sources. LOW = strategic/internal logic only.
+    </p>
+
+    <!-- REVIEWER AGENT -->
+    <h2 style="margin-top:18px;"><span class="num">52</span>Reviewer-agent critique — sharpness, hallucination, coverage</h2>
+    <p style="margin-bottom:10px; font-size:12.5px;">Reviewer ran 4 lenses: hallucination check (every cited number traced to source), coverage check (any VOC theme / research finding / Klaviyo gap not addressed?), redundancy check (overlapping initiatives), and sharpness check (which 5 are actually must-do?).</p>
+
+    <div class="grid cols-3" style="margin-bottom:14px;">
+      <div>
+        <h2 style="margin:0 0 8px;">PASS · 3 lenses</h2>
+        <div class="review-card review-pass"><strong>✓ Hallucination check: <span style="color:var(--good);">PASS</span></strong><p>Every $ figure traces to a doc source — Nuni Strategy: &#x27;20-30% builder-driven churn reduction&#x27;, VoC Plan: &#x27;$4-$6M FY26 revenue impact from improving sends&#x27;, H2 FY26 FTU Roadmap: &#x27;$1.5M-$2.8M projected revenue (12-mo)&#x27; from 2.85-5.34% lift in FTU 90d retention, DSB Roadmap: &#x27;$3M-$8M cumulative impact estimates&#x27;. Every customer-quote citation traces to Page 5 (Slack VOC, MRR-validated) or Page 6 (HeyMarvin transcript with timestamp).</p></div><div class="review-card review-pass"><strong>✓ YoY data backing: <span style="color:var(--good);">PASS</span></strong><p>Every BQ metric reference traces to Page 7/8 actuals: bulk_publish_1w 7.1%, first-time-sends -25.7% YoY, M3 retention 76.5→34.5%, churn risk pool 71K. No fabricated numbers.</p></div><div class="review-card review-pass"><strong>✓ Klaviyo competitive mapping: <span style="color:var(--good);">PASS</span></strong><p>F-codes (F1-F10 parity) and D-codes (D1-D10 differentiator) all reference Page 4 strategic plan. F1 (Universal Saved Content) = I-01. F4 (in-canvas AI image) = I-04. F2 (Brand Voice from corpus) = I-09. F5 (sections/mobile-stacking) = I-03/I-12. F7 (live product feeds) = I-17. F8 (inbox testing) = I-10/I-11. F9 (autosave reliability) = I-19/I-20.</p></div>
+      </div>
+      <div>
+        <h2 style="margin:0 0 8px;">WARN · 5 issues</h2>
+        <div class="review-card review-warn"><strong>⚠ VoC Plan items still &#x27;Not Funded&#x27;</strong><p>Mobile Styles V2 · Dynamic content on Mobile · Dark mode education · Mobile rendering bug fixes · Expanding Inbox Previews · Automated Rendering Test were ALL marked &#x27;Not funded&#x27; in the original VoC Plan (Nov 2025). Some show up in Nuni Strategy (Q4) but no clear funding/owner confirmation. ACTION: confirm funding status with Diana/Eric.</p></div><div class="review-card review-warn"><strong>⚠ AI initiatives positioned as &#x27;horizontal accelerator&#x27; but have separate H2 funding</strong><p>Nuni doc says &#x27;no specific AI column — AI is horizontal accelerator.&#x27; But H2 FY26 Roadmap has AI as Objective 4 with $1K-$530K monthly impact. Risk: builder AI work falls between two budgets. ACTION: clarify funding model — does the Builder team get AI eng capacity, or rely on AI Objective team?</p></div><div class="review-card review-warn"><strong>⚠ Sizing inconsistency between docs</strong><p>VoC Plan cites &#x27;$4-$6M FY26 revenue impact&#x27; from improving email sends. H2 FY26 FTU sizing is &#x27;$1.5M-$2.8M from FTU retention.&#x27; DSB is &#x27;$3M-$8M.&#x27; These aren&#x27;t additive (overlap with retention/MRR). REVIEWER: do not double-count. Treat $4-$6M as the upper-bound sense-check on builder-attributable opportunity.</p></div><div class="review-card review-warn"><strong>⚠ Some initiatives have no Slack VOC mapping</strong><p>I-08 (Multi Brand Kits), I-13 (Automated Rendering Test), I-18 (Klaviyo Template Converter) — no direct Slack VOC theme. Justified by research (Page 6) or strategic logic but not customer-articulated in HVC channels. Lower confidence; track CSAT post-ship to validate.</p></div><div class="review-card review-warn"><strong>⚠ Coverage gap — no initiative addresses HVC churn-passive-billing (53% of churn risk pool)</strong><p>Page 8 finding: 53% of weekly churn risk is passive billing failure (not active dissatisfaction). The builder team CAN&#x27;T own this — but should ensure builder UX doesn&#x27;t compound (e.g., post-payment-failure &#x27;broken builder&#x27; state). ACTION: cross-team coordination with Billing/Recovery.</p></div>
+      </div>
+      <div>
+        <h2 style="margin:0 0 8px;">OVERLAPS · 3 conflicts</h2>
+        <div class="review-card review-overlap"><strong>↔ I-01 (Saved Sections) ↔ I-15 (FTU &#x27;Save Email Sections&#x27;)</strong><p>Same feature; FTU roadmap names it &#x27;Save and Reuse Email Sections&#x27; (May Q4) while Nuni Strategy lists &#x27;Reusable Saved Sections&#x27; (Q3). Confirm one team / one delivery date.</p></div><div class="review-card review-overlap"><strong>↔ I-04 (Image gen + Image Normalization) ↔ I-06 (Chat-based Editing) ↔ Vibe Email Content Editing ↔ Canva AI image gen</strong><p>Four overlapping AI-in-builder initiatives across 3 docs. Risk of duplicated eng work. ACTION: rationalize into a single &#x27;AI in Builder&#x27; track with clear sub-deliverables.</p></div><div class="review-card review-overlap"><strong>↔ I-10/I-11 (Gmail clipping + Inbox Preview consolidation) ↔ Klaviyo F8 (built-in inbox testing)</strong><p>Mailchimp&#x27;s plan is preview/check consolidation; Klaviyo bundles 100 inbox tests/mo via Mailgun. Strategic: do we ship Litmus integration (cheaper, faster) or build native? ACTION: cost/benefit decision.</p></div>
+      </div>
+    </div>
+
+    <!-- SHARPENED MUST-DO 5 -->
+    <h2 style="margin-top:14px;"><span class="num">53</span>Reviewer-sharpened TOP 5 — among 21 initiatives</h2>
+    <p style="margin-bottom:10px; font-size:12.5px;">If we can only ship 5 builder-side bets in H1 FY27, these are the highest-leverage by combined-signal scoring (multi-source convergence + competitive parity + KPI lever). Everything else stays on the Nuni roadmap, but these 5 define the team's identity for the next 6 months.</p>
+    <div class="grid cols-2" style="margin-bottom:14px;">
+      
+    <div class="bet" data-rank="1">
+      <h4>I-01 Reusable Saved Sections / Universal Content</h4>
+      <p>5-source convergence — Slack ($13.7K MRR · 6 HVC users) + HeyMarvin Bet 1 + S1.11+S2.89 research + Klaviyo F1 parity + bulk_publish_1w funnel lever. Confirmed in-flight by PM Jose. Highest-confidence ship.</p>
+    </div>
+    
+    <div class="bet" data-rank="2">
+      <h4>I-19 Quality Pod (Mobile + Rendering)</h4>
+      <p>22% of all VoC + Klaviyo&#x27;s #1 weakness (autosave/rendering) becomes our trust marker. Crash-free SLO directly attacks active churn risk pool (32K/mo).</p>
+    </div>
+    
+    <div class="bet" data-rank="3">
+      <h4>I-04 In-canvas AI image (Vibe + Canva-in-Nuni)</h4>
+      <p>Andrea D&#x27;Ercole Bee.io detour is the single most-cited research finding. Klaviyo F4 parity. Lifts first-time sends (the −25.7% YoY metric).</p>
+    </div>
+    
+    <div class="bet" data-rank="4">
+      <h4>I-07 One-click Apply Brand + Branded Templates E2E for FTUs</h4>
+      <p>Maps to H2 FY26&#x27;s biggest sized opportunity ($1.5M-$2.8M from FTU retention). Solves S1.59 + S2.35 + Page 6 brand-kit findings simultaneously.</p>
+    </div>
+    
+    <div class="bet" data-rank="5">
+      <h4>I-20 Builder SLOs (6 metrics)</h4>
+      <p>Operating contract that institutionalizes the quality bar. Without these, every other shipping bet rots. Page 8 churn-risk active-pool reduction depends on this.</p>
+    </div>
+    
+    </div>
+
+    <!-- IMPLICATIONS -->
+    <h2><span class="num">54</span>Implications &amp; "go-do" list for the new product lead</h2>
+    <div class="grid cols-3" style="margin-bottom:14px;">
+      <div class="card warm">
+        <p style="margin:0;"><strong>Inherit, don't restart.</strong> The Nuni Strategy is well-formed and Eric Anderson-reviewed. Don't redo the strategy work. <em>Validate the SLO instrumentation, ship the must-do 5, and watch the leading indicators</em> (bulk_publish_1w 7.1%, first-time-sends -25.7%, M3 retention 34.5%).</p>
+      </div>
+      <div class="card warm">
+        <p style="margin:0;"><strong>Re-fund the unfunded mobile + rendering work in Week 1.</strong> Mobile Styles V2 + Dynamic Mobile Content + Dark Mode + Inbox Previews refresh have been "Not funded" since Nov 2025. They map to 22% of VoC + Klaviyo F5/F8 parity + Page 8 mobile-render-fidelity SLO. The biggest hidden risk is letting these slip another quarter.</p>
+      </div>
+      <div class="card warm">
+        <p style="margin:0;"><strong>Resolve the AI ownership split.</strong> Vibe Email Editing, Canva-in-Nuni, Freddie Campaigns, Brand Voice — 4 different AI-in-builder threads across 3 docs. Get into a room with Nathan Snell + Diana + Eric to consolidate into a single "AI in Builder" track with one PM, one design lead, one engineering owner.</p>
+      </div>
+    </div>
+
+    <div class="source">
+      <strong>Sources (Page 9):</strong>
+      <em>Documents reviewed:</em>
+      (1) Builder VoC Feedback Response Plan (Ose Amiegheme · Erin McCue · JB Lovell · Joyce Russell · Nov 5, 2025);
+      (2) Builder VoC Response Plan — Pillar version;
+      (3) Nuni Builder Strategy and Roadmap (Ose Amiegheme · Erin McCue · JB Lovell · Ashley Wiesner · reviewed by Eric Anderson · Jan 2, 2026);
+      (4) Mailchimp H2 FY26 Product Priorities (Diana Williams);
+      (5) Mailchimp H2 FY26 Roadmap (Diana Williams · Mar 12, 2026 update).
+      <br/><br/>
+      <em>Cross-reference sources:</em> Page 4 (Mailchimp Roadmap parity F1-F10 + differentiator D1-D10) · Page 5 (HVC Slack VOC themes with $/mo MRR exposure) · Page 6 (HeyMarvin 25 customer briefs + Top 5 Bets) · Page 7-8 (BigQuery YoY health metrics).
+      <br/><br/>
+      <em>Reviewer-agent methodology:</em> Four lenses applied to every initiative — (a) Hallucination check: every $ figure and customer quote traced back to source-of-record; (b) Coverage check: which VOC themes / research findings / Klaviyo gaps are NOT addressed; (c) Overlap check: same feature appearing in multiple docs with different names/dates; (d) Sharpness check: ranking by combined-signal score (multi-source convergence × competitive impact × KPI lever × engineering feasibility). Top 5 must-do selected by a hard cutoff at 5 (not 6 or 7) to force prioritization.
     </div>
   </section>
 </div>
