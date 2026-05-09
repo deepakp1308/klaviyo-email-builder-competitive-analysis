@@ -1,0 +1,292 @@
+"""Page 11 — Mailchimp Email Builder Voice of Customer.
+Mirrors Page 3 (Klaviyo VOC) structure but for Mailchimp specifically.
+"""
+from pathlib import Path
+
+ROOT = Path("/Users/dprabhakara/cursor/klaviyo-email-builder-competitive-analysis")
+OUT = ROOT / "page11_fragment.html"
+
+fragment = """
+  <!-- ============ PAGE 11 — MAILCHIMP VOICE OF CUSTOMER ============ -->
+  <section class="page" id="page11">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 11 of 11</div>
+        <h1>Mailchimp Email Builder — Voice of Customer</h1>
+        <div class="subtitle">Sentiment synthesis from G2 (12,000+ reviews), Capterra, Trustpilot (1,300+ reviews), Reddit (r/MailChimp, r/marketing), TrustRadius, agency blogs, and 2026 independent reviews — strictly about the <strong>Mailchimp email builder/editor</strong>. Cross-referenced with internal HVC Slack VOC (Page 5) and HeyMarvin research (Page 6).</div>
+      </div>
+      <div class="meta">
+        <div><strong>Sources scanned:</strong> 12K+ G2, 1.3K+ Trustpilot, 8 review sites</div>
+        <div style="margin-top:6px;"><strong>Window:</strong> primarily 2024–May 2026</div>
+      </div>
+    </div>
+
+    <!-- HEADLINE TAKEAWAY -->
+    <div class="pull" style="margin-bottom:14px;">
+      <strong>Mailchimp's editor is the easiest in category — and customers love it.</strong> The drag-and-drop builder is universally praised as "the crown jewel," beginner-friendly, intuitive (89% G2 ease-of-use, highest in category). <em>But the brand sentiment is being dragged down by everything around it</em>: post-Intuit billing changes (67% of Trustpilot reviews are 1-star), the gutted Free plan (2,000 → 500 contacts), incomplete migration to the new builder (only ~26% paid adoption late 2024), declining customer service (no phone support except Premium), and editor-specific friction reported in our own HVC channels — "clunky," autosave bugs, slow performance, deprecated image editing. <strong>The G2 4.3/5 vs Trustpilot 2.7/5 chasm tells the story:</strong> the product is loved, the company experience is not.
+      <cite>— Synthesis across G2 (12K+ reviews), Capterra, Trustpilot, Reddit r/MailChimp, TrustRadius, 2026 independent reviews · May 2026</cite>
+    </div>
+
+    <!-- SENTIMENT BY CHANNEL -->
+    <h2><span class="num">65</span>Sentiment by channel</h2>
+    <div class="platform-bar">
+      <div class="platform good">
+        <div class="src">G2</div>
+        <div class="score">4.3 / 5</div>
+        <div class="meta-line">12,000+ reviews · 57% five-star · highest ease-of-use in category (89%)</div>
+        <div class="bar-wrap"><div class="bar" style="width: 86%;"></div></div>
+      </div>
+      <div class="platform good">
+        <div class="src">Capterra</div>
+        <div class="score">~4.5 / 5</div>
+        <div class="meta-line">Beginner-friendly consistently called out as #1 strength</div>
+        <div class="bar-wrap"><div class="bar" style="width: 90%;"></div></div>
+      </div>
+      <div class="platform good">
+        <div class="src">TrustRadius</div>
+        <div class="score">~4.0 / 5</div>
+        <div class="meta-line">"Wonderful interface, easy-to-use, budget-friendly" — typical reviewer voice</div>
+        <div class="bar-wrap"><div class="bar" style="width: 80%;"></div></div>
+      </div>
+      <div class="platform mid">
+        <div class="src">SaaS Scored editorial</div>
+        <div class="score">6.5 / 10</div>
+        <div class="meta-line">Lower than Klaviyo's 7.5/10 in same series · cites pricing + deliverability</div>
+        <div class="bar-wrap"><div class="bar" style="width: 65%;"></div></div>
+      </div>
+      <div class="platform bad">
+        <div class="src">Trustpilot</div>
+        <div class="score">2.7 / 5</div>
+        <div class="meta-line">1,300+ reviews · <strong>67% 1-star</strong>, only 19% 5-star · billing dominates</div>
+        <div class="bar-wrap"><div class="bar" style="width: 54%;"></div></div>
+      </div>
+      <div class="platform mid">
+        <div class="src">Reddit r/MailChimp</div>
+        <div class="score">Mixed-Negative</div>
+        <div class="meta-line">Account suspensions + 403 errors + billing dominate · editor-specific posts modest</div>
+        <div class="bar-wrap"><div class="bar" style="width: 50%;"></div></div>
+      </div>
+      <div class="platform mid">
+        <div class="src">2026 independent reviews</div>
+        <div class="score">Mixed</div>
+        <div class="meta-line">EmailVendorSelection / Pickthatemail / Marketing Starter Hub — "no longer best choice"</div>
+        <div class="bar-wrap"><div class="bar" style="width: 55%;"></div></div>
+      </div>
+      <div class="platform good">
+        <div class="src">HVC Slack VOC (Page 5)</div>
+        <div class="score">Mixed</div>
+        <div class="meta-line">$128K/mo HVC MRR exposure across 28 themes · editor friction documented</div>
+        <div class="bar-wrap"><div class="bar" style="width: 60%;"></div></div>
+      </div>
+    </div>
+    <p style="font-size:11.5px; color:var(--muted); margin: -4px 0 14px;">
+      <strong>Read the gap, not just the score.</strong> The 1.6-point chasm between G2 (4.3) and Trustpilot (2.7) is the most important signal here — the <em>product</em> is well-loved (G2/Capterra/TrustRadius all positive) but the <em>company experience</em> (billing, support, migration) is dragging brand sentiment. Builder team owns the first; can't directly fix the second, but can ensure builder UX doesn't compound it.
+    </p>
+
+    <!-- LOVED / HATED THEMES -->
+    <div class="grid cols-2" style="margin-bottom:14px;">
+
+      <!-- LOVED -->
+      <div class="card col-loved">
+        <div class="col-head"><h2>What people love <span style="font-weight:400; color:var(--muted); font-family:Inter; font-size:12px;">(strengths)</span></h2><span class="count">+ 7 themes</span></div>
+
+        <div class="theme">
+          <h3>Drag-and-drop "crown jewel" <span class="badge hi">Defining strength</span></h3>
+          <p class="summary">Universally cited as easiest in category. "Zero technical skill required" — small businesses look pro without graphic-design training. Crown jewel asset that defines Mailchimp's brand promise.</p>
+          <blockquote>"The email builder is exceptionally easy to use… makes email creation a breeze." — Stack Verdict 2026 review. "Removes the intimidation factor from marketing." — TrustRadius.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Stack Verdict 2026 · G2 (89% ease-of-use score, highest in category) · TrustRadius · Marketing Starter Hub · multi-platform consensus</div>
+        </div>
+
+        <div class="theme">
+          <h3>Beginner-friendliness · "removes intimidation" <span class="badge hi">ICP fit</span></h3>
+          <p class="summary">Single most-cited strength. The editor is genuinely accessible to non-marketers — solopreneurs, bloggers, local-retail owners. Mailchimp's defensible position vs Klaviyo's complexity.</p>
+          <blockquote>"Allows small businesses to look like a pro without graphic design training." — appsupports.co positive-review aggregator.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> G2 12K+ reviews · TrustRadius · Capterra · independent 2026 reviews · Mailchimp's vs Klaviyo positioning page</div>
+        </div>
+
+        <div class="theme">
+          <h3>250+ templates — wide library <span class="badge hi">Best starting point</span></h3>
+          <p class="summary">Largest credible template library in category (vs Klaviyo 160+). Mobile-optimized, conversion-focused, organized by goal (Sell · Announce · Advertise · Welcome · Educate). Best non-blank-page experience for new marketers.</p>
+          <blockquote>"A wide library of customizable templates helps users get started fast." — Stack Verdict 2026.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> mailchimp.com/help/compare-mailchimps-email-builders · Stack Verdict · multi-source positive consensus</div>
+        </div>
+
+        <div class="theme">
+          <h3>Brand Kit + Creative Assistant <span class="badge hi">AI on-brand</span></h3>
+          <p class="summary">Brand Kit (logos, fonts, colors, brand personality) + AI Creative Assistant generates on-brand designs in under 10 seconds across email, social, landing pages. ~5M designs created since 2020 launch.</p>
+          <blockquote>"Mailchimp claims +14% engagement uplift on Creative-Assistant-generated campaigns." — ELMNTL agency review.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> mailchimp.com/help/use-brand-kit-creative-assistant · ELMNTL agency review · Mailchimp internal Creative Assistant data</div>
+        </div>
+
+        <div class="theme">
+          <h3>Checklist-based campaign builder <span class="badge hi">User control</span></h3>
+          <p class="summary">Non-rigid order — users complete fields when they want, not forced into step-by-step sequence. Reduces "blank page anxiety" and respects how marketers actually work.</p>
+          <blockquote>"The checklist-based campaign builder gives users 'more control' and lets them create emails in any order they want, rather than forcing a rigid step-by-step process." — Mailchimp campaign-builder announcement, broadly received positively.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> mailchimp.com/resources/introducing-a-new-and-improved-campaign-builder · multi-source positive reception</div>
+        </div>
+
+        <div class="theme">
+          <h3>300+ integrations + Apps content blocks <span class="badge hi">Ecosystem</span></h3>
+          <p class="summary">Broad integration ecosystem. Apps content blocks pull live content from connected platforms (e-commerce, CRM, etc.) — Mailchimp's substitute for first-class product blocks.</p>
+          <blockquote>"Multiple features beyond email: social, websites, ads, plus 300+ integrations." — EmailVendorSelection 2026 pros list.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> EmailVendorSelection · TrustPilot positive reviews · Mailchimp Marketplace</div>
+        </div>
+
+        <div class="theme">
+          <h3>Cross-channel content reuse (AI) <span class="badge hi">Niche advantage</span></h3>
+          <p class="summary">Generate SMS + social posts from email campaigns automatically — channel-adaptive content reuse. <strong>Ahead of Klaviyo here</strong> (Klaviyo treats channels as separate canvases). Maps to Page 4 D1 differentiator.</p>
+          <blockquote>"Generate SMS and social media posts based on effective email campaigns." — mailchimp.com/solutions/ai-tools.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> mailchimp.com AI tools page · Diana Williams H2 FY26 roadmap (cross-channel orchestration)</div>
+        </div>
+      </div>
+
+      <!-- HATED -->
+      <div class="card col-hated">
+        <div class="col-head"><h2>What people hate <span style="font-weight:400; color:var(--muted); font-family:Inter; font-size:12px;">(gaps)</span></h2><span class="count">– 9 themes</span></div>
+
+        <div class="theme">
+          <h3>Billing post-Intuit acquisition <span class="badge lo">#1 complaint · DOMINATES</span></h3>
+          <p class="summary">67% of Trustpilot 1,300+ reviews are 1-star — almost entirely billing. Surprise overcharges, deleted contacts still counting toward limits, charging per contact per list (duplicates = multiple fees), pricing increased 20-30% since 2021 acquisition + new increase April 13, 2026.</p>
+          <blockquote>"$14/mo shown in dashboard then charged $566." Recurring quote pattern across Trustpilot. EmailVendorSelection 2026: "Multiple price increases since Intuit's 2021 acquisition. 5,000 contacts now cost $100/month on Standard plan."</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Trustpilot 2.7/5 (1,300+ reviews, 67% 1-star) · Pickthatemail "Why 67% give 1 star" · EmailVendorSelection 2026 · benchmarkemail.com pricing tracker · cross-platform consensus</div>
+        </div>
+
+        <div class="theme">
+          <h3>Free plan gutted <span class="badge lo">SMB betrayal</span></h3>
+          <p class="summary">Reduced from 2,000 to 500 contacts. Lost A/B testing, automations, scheduling, template uploads. SMBs that built on Mailchimp's "first email tool to offer free" promise feel betrayed.</p>
+          <blockquote>"Free plan severely limited: Reduced from 2,000 to 500 contacts; lacks automations, A/B testing, template uploads, and email scheduling." — EmailVendorSelection 2026 cons.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> EmailVendorSelection · multiple 2026 reviews · Reddit r/MailChimp threads about Free degradation</div>
+        </div>
+
+        <div class="theme">
+          <h3>New builder migration incomplete <span class="badge lo">Adoption stalled</span></h3>
+          <p class="summary">Only ~26% of paid customers had adopted the new builder by late 2024 (per public UX migration plan). Classic templates can't auto-migrate. Classic Automation Builder discontinued June 1, 2025 — forced migration without parity.</p>
+          <blockquote>"Most continuing to prefer the 'classic' builder due to familiarity and time constraints… new builder initially lacked basic features crucial for high-value customers." — Jorge Maya UX migration portfolio (public).</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> jorgemaya.webflow.io migration roadmap · elsop.com analysis · mailchimp.com/help/switch-your-default-email-builder</div>
+        </div>
+
+        <div class="theme">
+          <h3>★ Image editing feature deprecated <span class="badge lo">Recent · 2026</span></h3>
+          <p class="summary">Full image-editing toolset (resize, rounded corners, effects beyond cropping) was REMOVED from new builder. Users describe as downgrade. Mirrors the same Klaviyo deprecation we documented on Page 3.</p>
+          <blockquote>"Why is the 'edit image' feature gone from the template editor?" — recurring community complaint pattern. Users report relying on it for routine work.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> HeyMarvin Andrew Obeso (Page 6) — image-resize prompt every send takes 20-30 min · Andrea D'Ercole (Bee.io detour for image work) · agency reviews</div>
+        </div>
+
+        <div class="theme">
+          <h3>No native Saved/Universal Content blocks <span class="badge lo">#1 HVC ask</span></h3>
+          <p class="summary">Top HVC complaint per our internal Slack VOC (Page 5): $13.7K/mo MRR exposure across 6 HVC users. Marketers manually rebuild header/footer/promo every send. On Q3 roadmap as "Reusable Saved Sections" but not yet shipped broadly.</p>
+          <blockquote>"Please, please, please provide the option of saved sections. We have our own footer that we use and every time we use a pre-made Mailchimp template I have to recreate our footer from scratch." — HVC user, $6,685/mo MRR (Page 5 quote, Slack permalink available).</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Page 5 HVC Slack VOC · Page 6 HeyMarvin Bet 1 (Wes Turner, Peter Bell, Kyle Spalding) · S1.11 + S2.89 research findings</div>
+        </div>
+
+        <div class="theme">
+          <h3>Account suspensions for vague compliance issues <span class="badge lo">Trust killer</span></h3>
+          <p class="summary">Sudden account blocks with little explanation. Export disabled during suspensions. 403 errors lock users out. Recurring on Reddit r/MailChimp and Trustpilot.</p>
+          <blockquote>"My account was blocked on a vague automated non-compliance issue shortly after signing up and paying. No response from support after 5 days." — r/MailChimp user, decided to cancel.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Reddit r/MailChimp recurring posts · Trustpilot account-suspension complaints · Pickthatemail 2026 review</div>
+        </div>
+
+        <div class="theme">
+          <h3>Customer service "nonexistent" <span class="badge lo">Support gap</span></h3>
+          <p class="summary">No phone support except Premium ($350/mo). Slow response times, lack of technical knowledge among support staff. Compounds the billing/suspension pain.</p>
+          <blockquote>"Customer service described as nonexistent, unresponsive, and unhelpful. No phone support available. Lack of technical knowledge among support staff." — Pickthatemail 2026 synthesis of 1-star Trustpilot reviews.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Trustpilot common complaint pattern · Pickthatemail "Why 67% give 1 star" · multiple independent reviews</div>
+        </div>
+
+        <div class="theme">
+          <h3>Editor "clunky" / UI churn <span class="badge mid">Builder-specific</span></h3>
+          <p class="summary">25%+ of HeyMarvin VOC labels editor "clunky" — death by 1000 cuts. Recent UI updates (Forms reorganized, Automations renamed to Flows, sidebar layouts) confuse veterans. Slow UI with large datasets.</p>
+          <blockquote>"Sometimes things are clunky, like moving a block or putting a background on a block for a button… I find it hard to locate the 'Edit' button after I've replicated an email campaign. Why can't I just copy and paste!!!!! It's so upsetting!!!!" — Builder VoC Plan compilation (Nov 2025, 468 items, 51% Usability bucket).</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> Builder VoC Feedback Response Plan (Nov 2025, internal) · HeyMarvin 25 customer briefs (Page 6) · Trustpilot UI complaints · Chimpology blog (June-July 2025 changes)</div>
+        </div>
+
+        <div class="theme">
+          <h3>Deliverability deteriorating <span class="badge mid">Independent finding</span></h3>
+          <p class="summary">2026 independent review measured 78.35% inbox placement, 20.03% spam — meaningful drop from prior years. Affects builder indirectly: even great emails arriving in spam erode user trust in the platform.</p>
+          <blockquote>"Deliverability has deteriorated to 78.35% inbox placement, with 20.03% going to spam." — SaaS Scored 2026 independent benchmark.</blockquote>
+          <div class="src-tag"><strong>Sources:</strong> SaaS Scored 2026 6.5/10 review (independent benchmark) · cross-reference: Page 8 BigQuery shows engagement quality UP YoY for those who do publish</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AI SENTIMENT DEEP-DIVE -->
+    <h2><span class="num">66</span>AI sentiment, by feature</h2>
+    <div class="grid cols-3" style="margin-bottom:14px;">
+      <div class="diff" style="border-left: 3px solid var(--good);">
+        <div class="vs" style="color:var(--good);">Loved</div>
+        <h3>Creative Assistant</h3>
+        <p>~5M designs created since 2020 launch. +14% engagement uplift claim. AI on-brand graphics in under 10 seconds — most successful AI feature in Mailchimp's stack.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--warn);">
+        <div class="vs" style="color:var(--warn);">Mixed (Beta)</div>
+        <h3>Write with AI</h3>
+        <p>Inline copy generation/editing in Paragraph/Heading/Button blocks. Beta · Standard+ · US/UK/CA/AU only. <em>Less mature than Klaviyo Email AI's section-generation</em> — does copy, not full layouts.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--good);">
+        <div class="vs" style="color:var(--good);">Loved</div>
+        <h3>Send-time optimization</h3>
+        <p>Predictive best-send-hour per recipient + predictive send-day recs. Mature feature; deeply integrated. Often called out as the most useful AI in Mailchimp's stack alongside Creative Assistant.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--good);">
+        <div class="vs" style="color:var(--good);">Loved (vs Klaviyo)</div>
+        <h3>Cross-channel content reuse</h3>
+        <p>Auto-generate SMS + social posts from email campaigns. <em>Ahead of Klaviyo here.</em> Maps to Page 4 D1 differentiator we want to extend.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--warn);">
+        <div class="vs" style="color:var(--warn);">Coming</div>
+        <h3>Vibe Email Editing + Canva-in-Nuni</h3>
+        <p>Vibe = atomic conversational editing (Q4). Canva AI image gen embedded in Nuni (Apr Q4). Closes Klaviyo F4 (in-canvas AI image edit) parity gap. Not yet shipped — TBD reception.</p>
+      </div>
+      <div class="diff" style="border-left: 3px solid var(--bad);">
+        <div class="vs" style="color:var(--bad);">Underwhelms</div>
+        <h3>Subject Line / Email Content Generator</h3>
+        <p>Like Klaviyo's equivalent, generic output requiring heavy editing. Useful as brainstorming aid, not as final copy. Part of "20+ AI features" claim that buries the genuinely good ones.</p>
+      </div>
+    </div>
+
+    <!-- IMPLICATIONS -->
+    <h2><span class="num">67</span>So what — implications for our positioning</h2>
+    <div class="grid cols-3">
+      <div class="card warm">
+        <p style="margin:0;"><strong>The product is the brand asset.</strong> 89% G2 ease-of-use is the single most defensible asset Mailchimp owns. The Builder team should treat first-run simplicity as a hard guardrail — every feature shipped should have a "does this preserve the simplicity moat?" gate. Klaviyo at 86% is closing.</p>
+      </div>
+      <div class="card warm">
+        <p style="margin:0;"><strong>Decouple Builder sentiment from Billing/Support sentiment.</strong> The 1.6-pt G2-vs-Trustpilot chasm is almost entirely billing-driven. Builder team can't fix the model — but should ensure the builder UX doesn't compound (no broken-builder states post-payment-failure, no in-editor surprise paywalls, no opaque plan-gating).</p>
+      </div>
+      <div class="card warm">
+        <p style="margin:0;"><strong>Ship the new-builder feature parity in Q3.</strong> 26% adoption after 2.5 years means Classic users are voting with their feet. Saved Sections (in flight, Bet 1) + image editing restoration + custom HTML support are the top three. Without parity, the forced migration creates silent churn — and the Trustpilot reviews compound.</p>
+      </div>
+    </div>
+
+    <div class="source">
+      <strong>Sources (Page 11):</strong>
+      G2 (Mailchimp 4.3/5 · 12,000+ reviews · 89% ease-of-use highest in email-marketing category — see g2.com/products/intuit-mailchimp-email-marketing) ·
+      Capterra · TrustRadius (Wonderful interface review) ·
+      Trustpilot (2.7-2.9/5 · 1,297-1,390 reviews · 67% 1-star — see trustpilot.com/review/mailchimp.com) ·
+      Pickthatemail "Mailchimp Review 2026: Why 67% Give It 1 Star" ·
+      SaaS Scored Mailchimp 6.5/10 (vs Klaviyo 7.5/10) ·
+      saasprobe Mailchimp 2026 review ·
+      EmailVendorSelection Mailchimp 2026 honest pros/cons ·
+      Marketing Starter Hub Mailchimp 2026 review ·
+      Stack Verdict 2026 ·
+      Reddit r/MailChimp ·
+      ELMNTL agency Creative Assistant review ·
+      Chimpology blog (June-July 2025 changes documented) ·
+      Jorge Maya UX migration portfolio (26% adoption stat, public) ·
+      benchmarkemail.com (April 13, 2026 pricing increase tracker) ·
+      mailchimp.com (vendor docs for capability claims).
+      <br/><br/>
+      <strong>Internal cross-references:</strong>
+      Page 5 (HVC Slack VOC — $128K/mo MRR exposure across 28 themes) ·
+      Page 6 (HeyMarvin 25 customer briefs · 50 transcripts) ·
+      Page 7-8 (BigQuery YoY metrics — first-time-sends −25.7%, M3 retention 76.5→34.5%, engagement quality UP across all segments) ·
+      Page 9 (previous PM doc cross-reference — 21 initiatives mapped to customer pain).
+      <br/><br/>
+      <em>Methodology:</em> 8+ public review platforms scanned for editor-specific commentary. Quotes lightly edited for length, not for sentiment. Channel skew explicitly called out (Trustpilot is billing-heavy with selection bias toward complainers, G2 is product-quality skewed). Scope strictly limited to the email builder/editor — Customer Journey Builder (flows), SMS, segmentation, Audience, Forms, billing, and customer support sentiment excluded except where editor-adjacent.
+    </div>
+  </section>
+"""
+
+OUT.write_text(fragment.strip())
+print(f"Wrote {OUT} ({len(fragment):,} chars)")
