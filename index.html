@@ -568,6 +568,65 @@
   .qa-fail { background: #B91C1C; color: #fff; }
   td.qa-detail { font-size: 11px; color: var(--ink-2); line-height: 1.4; }
 
+  /* Page 12 — Markdown rendered single-page brief */
+  .md-rendered {
+    font-size: 13.5px; line-height: 1.6; color: var(--ink-2);
+    max-width: 880px; margin: 0 auto;
+  }
+  .md-rendered h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 24px; font-weight: 700; line-height: 1.2;
+    margin: 32px 0 12px; padding-top: 18px;
+    border-top: 2px solid var(--line-2);
+    letter-spacing: -0.01em; color: var(--ink);
+  }
+  .md-rendered h1:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+  .md-rendered h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px; font-weight: 700; line-height: 1.3;
+    margin: 24px 0 8px; color: var(--ink);
+    padding-bottom: 4px; border-bottom: 1px solid var(--line);
+  }
+  .md-rendered h3 {
+    font-size: 14.5px; font-weight: 700; margin: 18px 0 6px; color: var(--ink-2);
+  }
+  .md-rendered p { font-size: 13.5px; margin: 0 0 10px; }
+  .md-rendered ul, .md-rendered ol { margin: 6px 0 12px; padding-left: 22px; }
+  .md-rendered li { font-size: 13px; margin-bottom: 4px; line-height: 1.55; }
+  .md-rendered strong { color: var(--ink); }
+  .md-rendered em { color: var(--ink-2); }
+  .md-rendered code {
+    background: #F1F2F4; color: var(--ink-2);
+    padding: 1px 5px; border-radius: 3px; font-size: 12px;
+    font-family: 'SF Mono', Monaco, Consolas, monospace;
+  }
+  .md-rendered pre {
+    background: #F8F7F4; border: 1px solid var(--line);
+    padding: 10px 14px; border-radius: 6px; overflow-x: auto;
+    font-size: 12px; line-height: 1.5;
+  }
+  .md-rendered blockquote {
+    border-left: 3px solid var(--brand);
+    background: #FBFAFF; border-radius: 4px;
+    padding: 8px 12px; margin: 8px 0;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic; color: var(--ink-2);
+  }
+  .md-rendered table {
+    width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12.5px;
+  }
+  .md-rendered th, .md-rendered td {
+    text-align: left; padding: 6px 10px;
+    border-bottom: 1px solid var(--line); vertical-align: top;
+  }
+  .md-rendered th {
+    font-size: 11px; font-weight: 700; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--muted); background: #FAFAFB;
+  }
+  .md-rendered a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+  .md-rendered a:hover { color: var(--ink); }
+  .md-rendered hr { border: 0; border-top: 1px dashed var(--line); margin: 24px 0; }
+
   /* Page 9 — Doc summary cards + cross-ref table + reviewer */
   .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
   @media (max-width: 880px) { .doc-grid { grid-template-columns: 1fr; } }
@@ -683,6 +742,7 @@
       <a class="btn" href="#page9">9 · PM Doc Review + Reviewer</a>
       <a class="btn" href="#page10">10 · Mailchimp Builder Brief</a>
       <a class="btn" href="#page11">11 · Mailchimp VOC</a>
+      <a class="btn" href="#page12">12 · Full Brief</a>
       <button class="btn primary" onclick="window.print()">Print / PDF</button>
     </div>
   </div>
@@ -694,7 +754,7 @@
   <section class="page" id="page1">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 1 of 12</div>
         <h1>Klaviyo's Email Builder</h1>
         <div class="subtitle">The WYSIWYG canvas inside Campaigns where ecommerce marketers compose, design, brand, and personalize one-off email campaigns — drag-and-drop blocks, sections, brand kit, and a stack of in-editor AI tools.</div>
       </div>
@@ -831,7 +891,7 @@
   <section class="page" id="page2">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 2 of 12</div>
         <h1>Differentiation, JTBD, Pricing &amp; Gaps</h1>
         <div class="subtitle">Where Klaviyo's email builder wins, who reaches for it and why, what it costs to unlock the AI layer, and what they still don't do well.</div>
       </div>
@@ -1027,7 +1087,7 @@
   <section class="page" id="page3">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 3 of 12</div>
         <h1>Voice of Customer — what people actually say</h1>
         <div class="subtitle">Sentiment synthesis from Reddit (r/Klaviyo, r/ecommerce, r/ShopifyAppDev, r/graphic_design), Klaviyo Community forum, G2, Capterra, Trustpilot, agency blogs, and YouTube tutorial commentary — strictly about the <strong>email builder/editor</strong>. <strong style="color:var(--brand);">Refreshed May 8, 2026.</strong></div>
       </div>
@@ -1358,7 +1418,7 @@
   <section class="page" id="page4">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 4 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 4 of 12</div>
         <h1>Mailchimp Email Builder — parity, leapfrog, and 3-phase roadmap</h1>
         <div class="subtitle">Emerging-threats landscape, the foundational gaps Mailchimp must close to be a credible front-runner against Klaviyo, the differentiated bets to steal from Klaviyo + the AI-native challengers, and a phased plan to win the omnichannel campaign builder.</div>
       </div>
@@ -1717,7 +1777,7 @@
   <section class="page" id="page5">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 5 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 5 of 12</div>
         <h1>HVC VOC + research-session prioritization — combined-signal plan</h1>
         <div class="subtitle">Two reinforcing data sources for the Mailchimp email builder: <strong>(1)</strong> 18-month HVC Slack VOC across <code>#hvc_feedback</code>, <code>#mc-hvc-escalations</code>, <code>#mc-feedback-summary</code> (themed, MRR-weighted), and <strong>(2)</strong> 33 hand-extracted findings from PM research sessions with strategic HVC accounts (Eric · Jacob · Nina). Combined-signal scored, then sequenced into a 3-phase plan to close the most HVC MRR risk and deepest research conviction first.</div>
       </div>
@@ -1908,7 +1968,7 @@
   <section class="page" id="page6">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 6 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 6 of 12</div>
         <h1>Direct customer research — HeyMarvin synthesis (50 sessions, 25 briefs)</h1>
         <div class="subtitle">Cross-customer view of how customers <em>actually</em> create, design, and ship email campaigns in Mailchimp. Synthesized from 50 transcribed HeyMarvin UX research videos (~25 hours of audio) across 25 individual customer briefs (17 very-high-signal, 10 high, 15 medium). Every claim links to a customer + transcript timestamp. Source repo: <a href="https://github.com/deepakp1308/mailchimp-campaign-builder-research" target="_blank" rel="noopener">mailchimp-campaign-builder-research</a>.</div>
       </div>
@@ -2226,7 +2286,7 @@
   <section class="page" id="page7">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 7 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 7 of 12</div>
         <h1>Email Builder health diagnostic — strategic analytics framework + live BigQuery findings</h1>
         <div class="subtitle">Lay-of-the-land for the new product lead. <strong>What to measure, where to look, and what BigQuery says today (May 8, 2026).</strong> Data sources: <code>bi_aggregate.product_health_weekly</code>, <code>customer_engagements_weekly</code>, <code>funnel_weekly</code>, <code>free_trials_weekly</code>, <code>churn_daily</code>, <code>product_journey_monthly</code> — all fresh through 2026-05-10. (User-level <code>bi_product.product_reporting_email_base</code> is stale since Dec 2023 — flagged for refresh.)</div>
       </div>
@@ -2548,7 +2608,7 @@ GROUP BY 1,2 ORDER BY 2,1;</pre>
   <section class="page" id="page8">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 8 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 8 of 12</div>
         <h1>QA-tested year-over-year diagnostic — Findings · Benefits · Implications · Resolutions</h1>
         <div class="subtitle">Full TY (May'25–Apr'26) vs LY (May'24–Apr'25) BigQuery analysis on the Mailchimp BI warehouse, with end-to-end data-quality tests, regression validation against Page 7 published numbers, and a structured F · B · I · R synthesis on every finding. <strong>Run date: 2026-05-08 · 9 QA tests · 7 YoY metric pulls · 10 structured findings.</strong></div>
       </div>
@@ -2814,7 +2874,7 @@ GROUP BY 1,2 ORDER BY 2,1;</pre>
   <section class="page" id="page9">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 9 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 9 of 12</div>
         <h1>Previous PM's roadmap docs — cross-referenced + reviewer-agent critique</h1>
         <div class="subtitle">5 PDFs reviewed (Builder VoC Plans · Nuni Strategy · H2 FY26 Priorities · H2 FY26 Roadmap). 21 builder-relevant initiatives extracted, each cross-referenced against Slack VOC (Page 5) · HeyMarvin research (Page 6) · Klaviyo competitive gaps (Page 4) · BigQuery health metrics (Page 7-8). <strong>13 initiatives flagged HIGH-confidence (multi-source) → reviewer-agent narrows to TOP 5 must-do-now</strong>.</div>
       </div>
@@ -3232,7 +3292,7 @@ GROUP BY 1,2 ORDER BY 2,1;</pre>
   <section class="page" id="page10">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 10 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 10 of 12</div>
         <h1>Mailchimp's Email Builder</h1>
         <div class="subtitle">The new drag-and-drop campaign builder (codenamed "Nuni" internally) plus the legacy Classic Builder it's replacing — block library, Section Manager, 250+ templates, Brand Kit, Intuit Assist AI tools (Write with AI, Creative Assistant), and the entry-friendly pricing model that defines Mailchimp's strategic position.</div>
       </div>
@@ -3371,7 +3431,7 @@ GROUP BY 1,2 ORDER BY 2,1;</pre>
   <section class="page" id="page10b">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 10b of 11 (continuation)</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 10b of 12 (continuation)</div>
         <h1>Mailchimp Builder — Differentiation, JTBD, Pricing &amp; Gaps</h1>
         <div class="subtitle">Where Mailchimp's email builder genuinely wins (vs Klaviyo, vs Constant Contact, vs MailerLite), who reaches for it and why, what each plan unlocks, and what customers consistently call out as broken or missing.</div>
       </div>
@@ -3575,7 +3635,7 @@ GROUP BY 1,2 ORDER BY 2,1;</pre>
   <section class="page" id="page11">
     <div class="page-head">
       <div>
-        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 11 of 11</div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 11 of 12</div>
         <h1>Mailchimp Email Builder — Voice of Customer</h1>
         <div class="subtitle">Sentiment synthesis from G2 (12,000+ reviews), Capterra, Trustpilot (1,300+ reviews), Reddit (r/MailChimp, r/marketing), TrustRadius, agency blogs, and 2026 independent reviews — strictly about the <strong>Mailchimp email builder/editor</strong>. Cross-referenced with internal HVC Slack VOC (Page 5) and HeyMarvin research (Page 6).</div>
       </div>
@@ -3850,6 +3910,83 @@ GROUP BY 1,2 ORDER BY 2,1;</pre>
       <em>Methodology:</em> 8+ public review platforms scanned for editor-specific commentary. Quotes lightly edited for length, not for sentiment. Channel skew explicitly called out (Trustpilot is billing-heavy with selection bias toward complainers, G2 is product-quality skewed). Scope strictly limited to the email builder/editor — Customer Journey Builder (flows), SMS, segmentation, Audience, Forms, billing, and customer support sentiment excluded except where editor-adjacent.
     </div>
   </section>
+
+<!-- ============ PAGE 12 — FULL BRIEF (SINGLE-PAGE READABLE) ============ -->
+  <section class="page" id="page12">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 12 of 12</div>
+        <h1>Full brief — single-page readable view</h1>
+        <div class="subtitle">All 11 pages of the analysis flattened into one continuously-scrollable document. Useful for stakeholder sharing (one URL covers everything), top-to-bottom reading, copy-paste, and printing the whole brief in a single PDF. The tabbed pages above are the same content split for navigation; this page is the same content joined for consumption.</div>
+      </div>
+      <div class="meta">
+        <div><strong>Doc length:</strong> ~270 KB · ~3,000 lines</div>
+        <div style="margin-top:6px;"><strong>Format:</strong> Markdown rendered inline</div>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="card tinted" style="margin-bottom:14px;">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <a href="full-brief.md" download class="btn primary" style="background: var(--ink); color:#fff; border:1px solid var(--ink); padding:8px 14px; border-radius:8px; font-weight:600; font-size:13px; text-decoration:none;">⬇ Download as Markdown (270 KB)</a>
+        <a href="https://github.com/deepakp1308/klaviyo-email-builder-competitive-analysis/blob/main/full-brief.md" target="_blank" rel="noopener" class="btn" style="background:#fff; color:var(--ink-2); border:1px solid var(--line-2); padding:8px 14px; border-radius:8px; font-weight:600; font-size:13px; text-decoration:none;">View raw on GitHub →</a>
+        <button onclick="window.print()" class="btn" style="background:#fff; color:var(--ink-2); border:1px solid var(--line-2); padding:8px 14px; border-radius:8px; font-weight:600; font-size:13px; cursor:pointer;">🖨 Print full brief as PDF</button>
+        <span style="font-size:11.5px; color:var(--muted); margin-left:auto;">Generated by flattening Pages 1-11 to single readable document.</span>
+      </div>
+    </div>
+
+    <!-- LOADING STATE -->
+    <div id="full-brief-loading" style="text-align:center; padding:60px 20px; color:var(--muted); font-size:14px;">
+      Loading full brief…
+    </div>
+
+    <!-- RENDERED CONTENT -->
+    <div id="full-brief-content" class="md-rendered" style="display:none;"></div>
+
+    <div class="source">
+      <strong>Source:</strong> <code>full-brief.md</code> in the
+      <a href="https://github.com/deepakp1308/klaviyo-email-builder-competitive-analysis" target="_blank" rel="noopener">repo root</a> ·
+      generated from the rendered HTML of Pages 1-11 ·
+      regenerable from the same source files ·
+      ~270 KB (3,060 lines) ·
+      11 pages · 98 numbered sections.
+      <br/><br/>
+      <em>Use case:</em> single-URL stakeholder sharing · printable single-PDF executive read · copy-paste into Notion / Confluence / Google Docs · accessibility (screen-reader linear reading) · offline reading after download · LLM-friendly single-document context.
+    </div>
+  </section>
+
+  <!-- Markdown renderer (marked.js from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    (function() {
+      const loading = document.getElementById('full-brief-loading');
+      const content = document.getElementById('full-brief-content');
+      if (!loading || !content) return;
+      fetch('full-brief.md')
+        .then(r => {
+          if (!r.ok) throw new Error('Failed to fetch full-brief.md (' + r.status + ')');
+          return r.text();
+        })
+        .then(md => {
+          if (typeof marked === 'undefined') throw new Error('marked.js not loaded');
+          // Strip the duplicated "toolbar" lines that appear at the top of the export
+          // (the export captured the toolbar nav as text)
+          const cleaned = md
+            .replace(/^Source URL:.*$/m, '')
+            .replace(/^Title:.*$/m, '')
+            .replace(/Competitive Brief — Klaviyo Email Builder[\s\S]*?Print \/ PDF\s*\n/, '');
+          content.innerHTML = marked.parse(cleaned, { gfm: true, breaks: false });
+          loading.style.display = 'none';
+          content.style.display = 'block';
+        })
+        .catch(err => {
+          loading.innerHTML = '<div style="color: var(--bad); font-weight: 600;">Could not load full brief.</div>' +
+            '<div style="margin-top:8px; font-size:12px;">' + err.message + '</div>' +
+            '<div style="margin-top:14px;"><a href="full-brief.md" download style="color: var(--brand); font-weight:600;">Download the markdown directly →</a></div>';
+        });
+    })();
+  </script>
+
 </div>
 
 <script>
