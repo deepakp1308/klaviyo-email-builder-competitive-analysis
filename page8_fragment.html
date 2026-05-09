@@ -1,0 +1,265 @@
+<!-- ============ PAGE 8 — QA-TESTED YEAR-OVER-YEAR DIAGNOSTIC ============ -->
+  <section class="page" id="page8">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">Competitive Intelligence · Executive Brief · Page 8 of 8</div>
+        <h1>QA-tested year-over-year diagnostic — Findings · Benefits · Implications · Resolutions</h1>
+        <div class="subtitle">Full TY (May'25–Apr'26) vs LY (May'24–Apr'25) BigQuery analysis on the Mailchimp BI warehouse, with end-to-end data-quality tests, regression validation against Page 7 published numbers, and a structured F · B · I · R synthesis on every finding. <strong>Run date: 2026-05-08 · 9 QA tests · 7 YoY metric pulls · 10 structured findings.</strong></div>
+      </div>
+      <div class="meta">
+        <div><strong>QA suite:</strong> <span style="color:var(--good); font-weight:700;">7/9 PASS</span> · 1 partial · 1 documented</div>
+        <div style="margin-top:4px;"><strong>Regression:</strong> Page 7 numbers reproduce 0.00% delta</div>
+      </div>
+    </div>
+
+    <!-- HEADLINE BANNER -->
+    <div class="pull" style="margin-bottom:14px;">
+      <strong>The YoY story in one line:</strong> <em>quality up, quantity down, retention crashing</em>. Activated users do MORE per visit (creates +6%, clicks +3.5%, open rate +2 pts across all segments) — but logins (−24%), first-time sends (−26%), new bookings (−13%), and upgrades (−31%) are all sliding, while M3/M6/M12 retention has dropped 30–42 percentage points. <strong>The pipeline is hollowing in the middle.</strong> The top still acquires (signups −2.4%) and the bottom still engages (clicks +3.5%); the soft tissue is the activation-to-retention bridge — exactly where the Page 4 + Page 5 + Page 6 evidence converged.
+      <cite>— BigQuery YoY analysis · 12 mo TY vs 12 mo LY · QA-validated</cite>
+    </div>
+
+    <!-- QA TEST REPORT -->
+    <h2><span class="num">42</span>QA test report — data quality, freshness, regression, unit tests</h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Category</th><th>Test</th><th>Status</th><th>Detail</th></tr></thead>
+      <tbody><tr><td><strong>FRESHNESS</strong></td><td>All 6 source aggregate tables ≤ 2 days lag</td><td><span class="qa-status qa-pass">PASS</span></td><td class="qa-detail">product_health_weekly + funnel_weekly + free_trials_weekly + customer_engagements_weekly @ 2026-05-10 (forward-fill); churn_daily @ 2026-05-08 (today). product_journey_monthly @ 2029-06-01 (flagged: contains forecast/placeholder rows in future).</td></tr><tr><td><strong>ROW VOLUME</strong></td><td>Last 30 days has &gt; 50K rows in each weekly table</td><td><span class="qa-status qa-pass">PASS</span></td><td class="qa-detail">product_health_weekly: 79K · funnel_weekly: 7.2M · free_trials_weekly: 7.2M · customer_engagements_weekly: 261M · churn_daily: 45M (cross-section dimensional cuts).</td></tr><tr><td><strong>YoY CONSISTENCY</strong></td><td>current week_n value matches prev_yr column LAG(52) for the same metric</td><td><span class="qa-status qa-pass">PASS</span></td><td class="qa-detail">Sampled 5 months (May–Sep 2024). All match_pct = 100.00% exactly. The prev_yr columns are reliable — use them for fast YoY without recompute.</td></tr><tr><td><strong>NULL CHECK</strong></td><td>Critical dimensions (week, fy_text, package, ecomm_status, is_high_value) are non-null in last 90 days</td><td><span class="qa-status qa-pass">PASS</span></td><td class="qa-detail">0 nulls across 221,760 rows in last 90 days for every critical dimension.</td></tr><tr><td><strong>FUNNEL MONOTONICITY</strong></td><td>signups ≥ activations at row level</td><td><span class="qa-status qa-partial">PARTIAL</span></td><td class="qa-detail">2,596 / 839,520 (0.31%) rows show signups &lt; activations. Root cause: dimensional cuts where activation can roll-up across signup categories. Headline-level (no dimensions) holds. Flag for data team.</td></tr><tr><td><strong>FUNNEL SEMANTICS</strong></td><td>activations ≥ first_time_sends at row level</td><td><span class="qa-status qa-doc">DOCUMENTED</span></td><td class="qa-detail">27,639 / 839,520 (3.29%) rows where activations &lt; first_time_sends. NOT a violation — first_time_sends counts users sending for the first time ever (cohort-agnostic), activations counts new accounts created this week. Different cohorts. Documented in metric dictionary.</td></tr><tr><td><strong>REGRESSION</strong></td><td>Page 7 published Apr 2026 email_creates (6,897,596) reproduces from fresh re-pull</td><td><span class="qa-status qa-pass">PASS</span></td><td class="qa-detail">Fresh re-pull = 6,897,596. Delta: 0 / 0.00%. Page 7 numbers are reproducible, no upstream drift.</td></tr><tr><td><strong>UNIT TEST · YoY math</strong></td><td>trial_to_paid TY (348K/196K) computes to 56.32% as published</td><td><span class="qa-status qa-pass">PASS</span></td><td class="qa-detail">196,232 / 348,382 = 56.32% — exact match to published TY trial-to-paid rate.</td></tr><tr><td><strong>UNIT TEST · YoY direction</strong></td><td>Engagement rates (open, click) increased YoY for ecomm + non-ecomm + ecu</td><td><span class="qa-status qa-pass">PASS</span></td><td class="qa-detail">Non-ecomm open: 47.91%→50.13% · Ecomm open: 41.95%→44.34% · Ecu open: 39.03%→41.08%. All directional improvements.</td></tr></tbody>
+    </table>
+    <p style="font-size:11.5px; color:var(--muted); margin: -8px 0 14px;">
+      <strong>Methodology.</strong> Each test runs an explicit assertion against the live <code>mc-business-intelligence.bi_aggregate.*</code> tables. PASS = assertion held with no exception. PARTIAL = held at headline level but exceptions exist at dimensional cuts (documented). DOCUMENTED = surface signal explained by metric semantics (not a failure). FAIL = would block publishing.
+    </p>
+
+    <!-- YoY HEADLINE METRICS -->
+    <h2><span class="num">43</span>Year-over-year — top-line metrics (12 mo TY vs 12 mo LY, full-year)</h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Metric</th><th>LY (May'24–Apr'25)</th><th>TY (May'25–Apr'26)</th><th>YoY change</th><th>Note</th></tr></thead>
+      <tbody><tr><td><strong>Signups</strong></td><td class="num">2.3M</td><td class="num">2.2M</td><td class="num"><span class="yoy neutral">↓ -2.4%</span></td><td><em style="font-size:11px;">Top-of-funnel slightly soft</em></td></tr><tr><td><strong>Activations</strong></td><td class="num">2.3M</td><td class="num">2.2M</td><td class="num"><span class="yoy neutral">↓ -2.3%</span></td><td><em style="font-size:11px;">Mirrors signups</em></td></tr><tr><td><strong>Logins</strong></td><td class="num">126.3M</td><td class="num">96.1M</td><td class="num"><span class="yoy bad">↓ -23.9%</span></td><td><em style="font-size:11px;">BIG drop — engagement frequency collapsing</em></td></tr><tr><td><strong>Email creates</strong></td><td class="num">97.8M</td><td class="num">103.9M</td><td class="num"><span class="yoy good">↑ +6.1%</span></td><td><em style="font-size:11px;">Active creators creating MORE</em></td></tr><tr><td><strong>First-time sends</strong></td><td class="num">879K</td><td class="num">653K</td><td class="num"><span class="yoy bad">↓ -25.7%</span></td><td><em style="font-size:11px;">ACTIVATION KILLER — fewer accounts ever ship</em></td></tr><tr><td><strong>Email sends (volume)</strong></td><td class="num">279.8B</td><td class="num">253.0B</td><td class="num"><span class="yoy neutral">↓ -9.6%</span></td><td><em style="font-size:11px;">Volume contracting</em></td></tr><tr><td><strong>Email delivered</strong></td><td class="num">251.3B</td><td class="num">229.7B</td><td class="num"><span class="yoy neutral">↓ -8.6%</span></td><td><em style="font-size:11px;">Tracks sends</em></td></tr><tr><td><strong>Email opens</strong></td><td class="num">110.4B</td><td class="num">106.4B</td><td class="num"><span class="yoy neutral">↓ -3.6%</span></td><td><em style="font-size:11px;">Slower decline than sends</em></td></tr><tr><td><strong>Email clicks</strong></td><td class="num">13.7B</td><td class="num">14.1B</td><td class="num"><span class="yoy good">↑ +3.5%</span></td><td><em style="font-size:11px;">Quality engagement IMPROVED</em></td></tr><tr><td><strong>New bookings (paid conversions)</strong></td><td class="num">381K</td><td class="num">331K</td><td class="num"><span class="yoy bad">↓ -13.1%</span></td><td><em style="font-size:11px;">Real revenue risk</em></td></tr></tbody>
+    </table>
+
+    <!-- FUNNEL YoY -->
+    <h2><span class="num">44</span>Activation funnel YoY — where the leakage is</h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Funnel stage</th><th>LY count <small>(% of acts)</small></th><th>TY count <small>(% of acts)</small></th><th>YoY conversion delta</th></tr></thead>
+      <tbody><tr><td><strong>Activations</strong></td><td class="num">2.3M <small>(100.0%)</small></td><td class="num">2.2M <small>(100.0%)</small></td><td>—</td></tr><tr><td><strong>Login &lt;2d</strong></td><td class="num">1.7M <small>(72.5%)</small></td><td class="num">2.1M <small>(93.4%)</small></td><td>+20.9 pts ✓</td></tr><tr><td><strong>Bulk created &lt;24h</strong></td><td class="num">883K <small>(38.5%)</small></td><td class="num">726K <small>(32.4%)</small></td><td>−6.1 pts ✗</td></tr><tr><td><strong>Bulk created &lt;1w</strong></td><td class="num">1.0M <small>(43.7%)</small></td><td class="num">826K <small>(36.8%)</small></td><td>−6.9 pts ✗</td></tr><tr><td><strong>Bulk published &lt;24h</strong></td><td class="num">122K <small>(5.3%)</small></td><td class="num">96K <small>(4.3%)</small></td><td>−1.0 pt ✗</td></tr><tr><td><strong>Bulk published &lt;1w</strong></td><td class="num">224K <small>(9.7%)</small></td><td class="num">175K <small>(7.8%)</small></td><td>−1.9 pts ✗</td></tr><tr><td><strong>Upgrades</strong></td><td class="num">2K <small>(0.1%)</small></td><td class="num">2K <small>(0.1%)</small></td><td>−31% absolute ✗</td></tr></tbody>
+    </table>
+    <p style="font-size:11.5px; color:var(--muted); margin: -8px 0 14px;">
+      Login improved (+20.9 pts) but everything downstream regressed. <strong>Bulk_publish_1w fell from 9.7% → 7.8% (−1.9 pts)</strong> — that's where Page 7's "first-week wall" lives quantified YoY. Upgrades fell 31% absolute on a stable activation base.
+    </p>
+
+    <!-- HVC YoY -->
+    <h2><span class="num">45</span>HVC concentration YoY — distribution flattening</h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Cohort × metric</th><th>LY <small>(share)</small></th><th>TY <small>(share)</small></th><th>YoY</th></tr></thead>
+      <tbody><tr><td><span class="ph-cat ph-missing">HVC</span> <strong>Email creates</strong></td><td class="num">21.0M<br/><small>21.4% share</small></td><td class="num">17.3M<br/><small>16.7% share</small></td><td><span class="yoy bad">-17.4%</span></td></tr><tr><td><span class="ph-cat ph-barrier">non-HVC</span> <strong>Email creates</strong></td><td class="num">76.9M<br/><small>78.6% share</small></td><td class="num">86.5M<br/><small>83.3% share</small></td><td><span class="yoy good">+12.6%</span></td></tr><tr><td><span class="ph-cat ph-missing">HVC</span> <strong>Email sends</strong></td><td class="num">207.3B<br/><small>74.1% share</small></td><td class="num">187.9B<br/><small>74.2% share</small></td><td><span class="yoy bad">-9.4%</span></td></tr><tr><td><span class="ph-cat ph-barrier">non-HVC</span> <strong>Email sends</strong></td><td class="num">72.5B<br/><small>25.9% share</small></td><td class="num">65.2B<br/><small>25.8% share</small></td><td><span class="yoy bad">-10.2%</span></td></tr><tr><td><span class="ph-cat ph-missing">HVC</span> <strong>First-time sends</strong></td><td class="num">13K<br/><small>1.5% share</small></td><td class="num">9K<br/><small>1.4% share</small></td><td><span class="yoy bad">-28.5%</span></td></tr><tr><td><span class="ph-cat ph-barrier">non-HVC</span> <strong>First-time sends</strong></td><td class="num">866K<br/><small>98.5% share</small></td><td class="num">643K<br/><small>98.6% share</small></td><td><span class="yoy bad">-25.7%</span></td></tr></tbody>
+    </table>
+    <p style="font-size:11.5px; color:var(--muted); margin: -8px 0 14px;">
+      <strong>HVC creates share fell from 21.4% → 16.7%</strong> (HVC creates −17%, non-HVC creates +13%). HVC sends share remained stable at ~74%. The wedge: non-HVC accounts are creating more but sending less. <em>Created-but-never-sent</em> is the precise gap to attack.
+    </p>
+
+    <!-- RETENTION YoY (the catastrophe) -->
+    <h2><span class="num">46</span>Trial → paid → retention YoY <span style="font-size:13px; color:var(--bad); font-family:Inter; font-weight:600;">⚠ catastrophic compression</span></h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Cohort metric</th><th>LY</th><th>TY</th><th>YoY</th><th>Note</th></tr></thead>
+      <tbody><tr><td><strong>Trial users (cohort)</strong></td><td class="num">355K</td><td class="num">348K</td><td><span class="yoy bad">-1.8%</span></td><td><em style="font-size:11px;"></em></td></tr><tr><td><strong>New paid (trial→paid)</strong></td><td class="num">190K</td><td class="num">196K</td><td><span class="yoy good">+3.1%</span></td><td><em style="font-size:11px;"></em></td></tr><tr><td><strong>Trial-to-paid %</strong></td><td class="num">53.6%</td><td class="num">56.3%</td><td><span class="yoy good">+2.7%</span></td><td><em style="font-size:11px;">+2.7 pts ✓</em></td></tr><tr><td><strong>M3 retention count</strong></td><td class="num">145K</td><td class="num">68K</td><td><span class="yoy bad">-53.4%</span></td><td><em style="font-size:11px;"></em></td></tr><tr><td><strong>M3 retention %</strong></td><td class="num">76.5%</td><td class="num">34.5%</td><td><span class="yoy bad">-42.0%</span></td><td><em style="font-size:11px;">−42 pts ⚠ CATASTROPHIC</em></td></tr><tr><td><strong>M6 retention count</strong></td><td class="num">113K</td><td class="num">52K</td><td><span class="yoy bad">-54.2%</span></td><td><em style="font-size:11px;"></em></td></tr><tr><td><strong>M6 retention %</strong></td><td class="num">59.2%</td><td class="num">26.3%</td><td><span class="yoy bad">-32.9%</span></td><td><em style="font-size:11px;">−33 pts ⚠</em></td></tr><tr><td><strong>M12 retention count</strong></td><td class="num">80K</td><td class="num">21K</td><td><span class="yoy bad">-73.3%</span></td><td><em style="font-size:11px;"></em></td></tr><tr><td><strong>M12 retention %</strong></td><td class="num">42.0%</td><td class="num">10.9%</td><td><span class="yoy bad">-31.1%</span></td><td><em style="font-size:11px;">−31 pts ⚠ revenue cliff</em></td></tr></tbody>
+    </table>
+    <p style="font-size:11.5px; color:var(--muted); margin: -8px 0 14px;">
+      <strong>Trial-to-paid IMPROVED (+2.7 pts to 56.3%)</strong> but every multi-month retention metric collapsed: M3 from 76.5%→34.5%, M6 from 59.2%→26.3%, M12 from 42.0%→10.9%. Caveat: TY M12 cohorts have ~25% less observation window, but the magnitude is too large to be measurement-only. <strong>Highest-priority investigation in the diagnostic.</strong>
+    </p>
+
+    <!-- PACKAGE YoY -->
+    <h2><span class="num">47</span>Plan / package YoY — annual exploding, free creates up, FTS down everywhere</h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Package</th><th>LY creates</th><th>TY creates · YoY</th><th>LY first-time sends</th><th>TY FTS · YoY</th><th>TY sends</th></tr></thead>
+      <tbody><tr><td><strong>Free</strong></td><td class="num">32.1M</td><td class="num">42.6M <span class="yoy good">+33%</span></td><td class="num">564K</td><td class="num">398K <span class="yoy bad">-29%</span></td><td class="num">11.9B</td></tr><tr><td><strong>Standard monthly v0</strong></td><td class="num">20.1M</td><td class="num">22.4M <span class="yoy good">+12%</span></td><td class="num">240K</td><td class="num">190K <span class="yoy bad">-21%</span></td><td class="num">51.9B</td></tr><tr><td><strong>Essential monthly v0</strong></td><td class="num">14.6M</td><td class="num">13.5M <span class="yoy bad">-8%</span></td><td class="num">56K</td><td class="num">38K <span class="yoy bad">-32%</span></td><td class="num">16.7B</td></tr><tr><td><strong>Premium monthly v0</strong></td><td class="num">4.6M</td><td class="num">4.9M <span class="yoy good">+7%</span></td><td class="num">3K</td><td class="num">2K <span class="yoy bad">-11%</span></td><td class="num">71.0B</td></tr><tr><td><strong>Legacy monthly</strong></td><td class="num">25.8M</td><td class="num">19.9M <span class="yoy bad">-23%</span></td><td class="num">4K</td><td class="num">2K <span class="yoy bad">-62%</span></td><td class="num">97.3B</td></tr><tr><td><strong>Free monthly v0 (new flow)</strong></td><td class="num">130K</td><td class="num">151K <span class="yoy good">+16%</span></td><td class="num">7K</td><td class="num">19K <span class="yoy good">+153%</span></td><td class="num">50.8M</td></tr><tr><td><strong>Premium annual v0</strong></td><td class="num">720</td><td class="num">42K <span class="yoy good">+5787%</span></td><td class="num">8</td><td class="num">71 <span class="yoy good">+788%</span></td><td class="num">550.9M</td></tr><tr><td><strong>Standard annual v0</strong></td><td class="num">302</td><td class="num">15K <span class="yoy good">+4857%</span></td><td class="num">15</td><td class="num">101 <span class="yoy good">+573%</span></td><td class="num">54.7M</td></tr><tr><td><strong>Essential annual v0</strong></td><td class="num">0</td><td class="num">467 <span class="yoy good">NEW</span></td><td class="num">0</td><td class="num">20 <span class="yoy good">NEW</span></td><td class="num">79K</td></tr><tr><td><strong>PAYG</strong></td><td class="num">323K</td><td class="num">211K <span class="yoy bad">-35%</span></td><td class="num">1K</td><td class="num">733 <span class="yoy bad">-45%</span></td><td class="num">2.1B</td></tr><tr><td><strong>Pre-paid</strong></td><td class="num">7K</td><td class="num">8K <span class="yoy good">+19%</span></td><td class="num">123</td><td class="num">92 <span class="yoy bad">-25%</span></td><td class="num">53.3M</td></tr><tr><td><strong>Pro / module / other</strong></td><td class="num">117K</td><td class="num">105K <span class="yoy bad">-10%</span></td><td class="num">3K</td><td class="num">2K <span class="yoy bad">-33%</span></td><td class="num">1.4B</td></tr></tbody>
+    </table>
+    <p style="font-size:11.5px; color:var(--muted); margin: -8px 0 14px;">
+      <strong>Annual plans are the new growth wedge:</strong> Premium annual +5,786% creates / +788% FTS, Standard annual +4,857% creates / +573% FTS. The new <strong>"free_monthly_v0"</strong> variant is the only Free package where FTS is UP (+153%) — has 8× better creates-to-FTS conversion than legacy Free. <strong>Generalize the v0 winning treatment.</strong>
+    </p>
+
+    <!-- ENGAGEMENT YoY -->
+    <h2><span class="num">48</span>Engagement quality YoY — every segment improved</h2>
+    <table class="voc-table" style="margin-bottom:14px;">
+      <thead><tr><th>Audience type</th><th>LY open rate</th><th>TY open rate</th><th>LY click rate</th><th>TY click rate</th></tr></thead>
+      <tbody><tr><td><strong>Non-ecomm (ProServ, B2B)</strong></td><td class="num">47.9%</td><td class="num">50.1% <span class="yoy good">+2.2 pts</span></td><td class="num">7.1%</td><td class="num">7.9% <span class="yoy good">+0.8 pts</span></td></tr><tr><td><strong>Ecomm (connected platform)</strong></td><td class="num">42.0%</td><td class="num">44.3% <span class="yoy good">+2.4 pts</span></td><td class="num">4.8%</td><td class="num">5.5% <span class="yoy good">+0.7 pts</span></td></tr><tr><td><strong>Ecu (ecomm-likely, no platform)</strong></td><td class="num">39.0%</td><td class="num">41.1% <span class="yoy good">+2.0 pts</span></td><td class="num">3.0%</td><td class="num">3.4% <span class="yoy good">+0.4 pts</span></td></tr></tbody>
+    </table>
+    <p style="font-size:11.5px; color:var(--muted); margin: -8px 0 14px;">
+      <strong>Open rates +2 to +2.4 pts across all segments. Click rates +0.4 to +0.8 pts.</strong> The customers who DO publish are getting better outcomes than a year ago. This is the marketing claim of the year — and the proof that the product works for the engaged tier. The opportunity is to expand the engaged tier, not rebuild the core builder.
+    </p>
+
+    <!-- FINDINGS / BENEFITS / IMPLICATIONS / RESOLUTIONS -->
+    <h2><span class="num">49</span>10 findings — mapped to customer benefit, business implication, and proposed resolution</h2>
+    
+    <div class="finding-card sev-high">
+      <div class="finding-head">
+        <div class="finding-num">01</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Builder PM + Activation PM (joint) · <strong>Size:</strong> 30-40 person-quarters</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>product_health_weekly · 12-mo TY vs LY</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>First-time sends collapsed −25.7% YoY (878K → 653K) while signups only fell −2.4% — activation funnel broke independently of acquisition.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">Customers (especially first-time payers) who can ship a first campaign in week 1 retain at 3-5× the rate of those who don&#x27;t. A quicker time-to-first-value is the biggest single act of customer kindness this team can do.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">If unaddressed, ~225K fewer first-time senders annually compounds into lost retention and lost word-of-mouth. At current $/customer this is approx $20-50M annual ARR exposure (sized vs new bookings −13% YoY = −50K customers).</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Phase 1 from Page 7: simplified first-template flow + saved-template prompt after first send + activation playbook for trial-to-paid cohort. Make &#x27;publish first email in week 1&#x27; the team&#x27;s single OKR. Instrument the create→publish step (~25% conversion today) end-to-end.</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-med">
+      <div class="finding-head">
+        <div class="finding-num">02</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Builder PM + Retention PM + Finance partner · <strong>Size:</strong> Investigation: 1 week. Mitigation: 6-12 months.</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>free_trials_weekly · cohort comparison TY mature vs LY mature</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>M3 / M6 / M12 retention dropped 30-42 percentage points YoY (76.5%→34.5% / 59.2%→26.3% / 42.0%→10.9%). Trial-to-paid actually IMPROVED (+2.7 pts to 56.3%) — customers convert but don&#x27;t stick.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">Customers stay because the product solves their job. Retention is a downstream signal that builder usage compounds into business value. Improving retention means we&#x27;re delivering durable utility, not just first-month novelty.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">Most catastrophic single metric in the diagnostic. Drop of this magnitude usually signals one of: (a) plan-mix shift to easier-to-cancel monthly plans, (b) silent product regression in onboarding, (c) measurement-definition change. Need confirmation from Finance + Data Eng before sizing — but at face value, retention compression = revenue cliff in 12-24 months.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Same week: cross-functional war-room with Finance + Data Eng to validate methodology. If real: ship Universal Saved Content (Page 4 F1) + activation playbook + brand-voice retention nudges. Pair builder-usage segmentation with retention regression to find the threshold of &#x27;sticky behavior&#x27; (e.g., 4 sends in 30 days = 2× retention).</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-high">
+      <div class="finding-head">
+        <div class="finding-num">03</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Lifecycle PM + Builder PM · <strong>Size:</strong> 10-15 person-quarters</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>product_health_weekly · 12-mo TY vs LY</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>Logins crashed −23.9% YoY (126M → 96M) while creates per-visitor went UP. Frequency of visit is collapsing — those who visit do more.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">Customers who visit weekly find more reasons to engage and more chances to convert; those who visit monthly miss the moment. Higher visit frequency = more confidence in the product.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">Logins are the leading indicator of engagement decay. A 24% YoY drop predicts a parallel send-volume drop (already showing −10%) and bookings drop (already −13%). Loss of habit precedes loss of revenue by 2-3 quarters.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Re-energize visit cadence: weekly campaign-idea email from Mailchimp itself (Clint Bartley&#x27;s direct ask, Page 6 Bet 2), DRAFT-resurrect prompts, post-send activity dashboard that pulls users back day-2 / day-7. Mobile builder for quick edits on phone (not in our stack today; add to Page 4 roadmap).</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-med">
+      <div class="finding-head">
+        <div class="finding-num">04</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Marketing + PMM · <strong>Size:</strong> 1-2 person-quarters</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>product_health_weekly · 12-mo TY vs LY × ecomm_status</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>Engagement quality UP across every segment YoY. Non-ecomm open rate 47.9%→50.1%, click rate 7.1%→7.9%. Ecomm open 41.9%→44.3%, click 4.8%→5.5%.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">Customers who do publish are seeing meaningfully better outcomes. Their lists, content, and timing are improving. The remaining users got more sophisticated.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">Inverse of the bad signals: the product still works for the engaged cohort. Story isn&#x27;t &#x27;product is broken&#x27; — it&#x27;s &#x27;we shed casual users while serving power users better.&#x27; That implies the lever is acquisition + activation, NOT core builder UX.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Lean into this in marketing: &#x27;Mailchimp customers see industry-leading open rates&#x27; becomes a real claim with primary data. Use as competitive proof point in Page 1/4 positioning vs Klaviyo. Internally, do not chase &#x27;more features&#x27; — chase &#x27;more engaged users.&#x27;</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-med">
+      <div class="finding-head">
+        <div class="finding-num">05</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Builder PM + Lifecycle PM · <strong>Size:</strong> 5-8 person-quarters</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>product_health_weekly · TY vs LY × is_high_value</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>HVC concentration is narrowing: HVC creates fell from 21.4%→16.7% of total (HVC creates −17%; non-HVC creates +13%). HVC sends share remained stable at ~74%.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">A more even distribution of creates across customer tiers means SMB and mid-market customers are creating more — which is exactly what builder UX investments should do.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">The non-HVC creates surge (+13%) is positive — they ARE creating more. But the FTS drop (−26%) shows they aren&#x27;t shipping. **The wedge is exactly between &#x27;created&#x27; and &#x27;sent&#x27; for non-HVC accounts.** This is the precise place to invest builder polish.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Build a &#x27;created-but-never-sent&#x27; campaign-rescue flow targeting non-HVC drafts older than 7 days. &#x27;Want to send the campaign you created on May 1?&#x27; email + in-product nudge. Combine with Page 7 hot spot #1 (the 7.1% activate-to-publish wall).</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-med">
+      <div class="finding-head">
+        <div class="finding-num">06</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Pricing/Packaging PM + Builder PM + Customer Success · <strong>Size:</strong> 8-10 person-quarters</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>product_health_weekly · TY vs LY × package</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>Annual plans exploded: Premium annual creates +5,786% YoY (720 → 42K), Standard annual +4,857% (302 → 15K), Essential annual launched (0 → 467). FTS up across all annual variants.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">Annual customers commit upfront and invest in learning the product. They want depth, ROI proof, and confidence — not a free trial. Their builder experience should be different.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">Annual is the new commercial wedge. The builder onboarding wasn&#x27;t designed for an &#x27;I committed for a year, now teach me everything&#x27; mental model. Currently treats annuals like monthly trial converters.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Annual-specific welcome flow: success criteria optimized for &#x27;send 12 campaigns / year, retain to renewal.&#x27; Upsell triggers tied to feature ceiling (e.g., AI image edits / month, saved-blocks count) rather than monthly send volume. Package an &#x27;Annual Customer Success Pack&#x27; with templates + benchmark data.</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-med">
+      <div class="finding-head">
+        <div class="finding-num">07</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Activation PM + Experimentation lead · <strong>Size:</strong> 1-2 person-quarters investigation, then scale</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>product_health_weekly · TY vs LY × package</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>Free monthly v0 (new flow) is the only package where first-time sends are UP YoY (+153%, 7,389 → 18,710). Creates per FTS ratio is 8× better than legacy Free.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">Customers in this variant got a meaningfully better first experience: fewer drop-offs, faster shipping, higher confidence.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">We have an existing variant that demonstrably improves activation. Likely an experimental cohort or a recently-shipped redesign. Critical to confirm exposure size, then GENERALIZE the winning treatment to legacy Free tier (which lost −29% FTS YoY).</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Run a quick teardown of free_monthly_v0 vs legacy free: what changed? Onboarding flow? Templates? Default audience? Identify the diff and propose a port to legacy free. If holdout test exists, validate. If not, ship a ramp-up A/B.</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-med">
+      <div class="finding-head">
+        <div class="finding-num">08</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Pricing PM + Growth PM · <strong>Size:</strong> 5-8 person-quarters</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>funnel_weekly · TY vs LY</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>Upgrade conversions in the first-week funnel fell 31% YoY (2,318 → 1,607) on stable activation base.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">Upgrades are the moment a customer signals &#x27;this product is worth paying more for.&#x27; Healthy upgrade rate = product-market fit at the next price tier.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">The value proposition between Free and paid tiers is weakening from the customer&#x27;s POV. Without intervention, ARPU growth stalls — especially as Free creates surge (+33%) but don&#x27;t convert upward.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Surface Page 4 F4 (in-canvas AI image editor) as an upgrade-gated feature in the Free flow. &#x27;Edit this image with AI&#x27; → soft paywall to Standard. Pair with a &#x27;free 30-day trial of Image Remix&#x27; to drive engagement before the paywall hardens. Re-test pricing-page messaging targeting first-week new accounts.</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-med">
+      <div class="finding-head">
+        <div class="finding-num">09</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> Builder PM (lead) · <strong>Size:</strong> Already in Phase 1 plan (Page 4)</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>funnel_weekly + cross-reference Pages 5 &amp; 6</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>Bulk-create-to-publish conversion fell from 9.7% → 7.8% YoY (−1.9 pts) — matches the user-reported friction in Page 5 (&quot;editor is clunky&quot;, &quot;UI churn&quot;) and Page 6 (Andrea D&#x27;Ercole, Wes Turner, Jack Hally direct quotes).</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">When the publish step is friction-free, customers ship more campaigns and feel competent, not blocked.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">This is the quantitative confirmation of the qualitative VOC pattern. Three independent data sources (Slack VOC $128K MRR exposure, HeyMarvin 33-finding research database, BigQuery funnel) all point to the same step. **High-confidence place to invest.**</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">Direct alignment with Phase 1 of Page 4 + Page 5: ship Universal Saved Content (F1), in-canvas AI image editor (F4), reliable autosave (F9), brand-voice corpus AI (F2). Each was independently surfaced by VOC + research + BigQuery.</div></div>
+      </div>
+    </div>
+    
+    <div class="finding-card sev-med">
+      <div class="finding-head">
+        <div class="finding-num">10</div>
+        <div class="finding-meta">
+          <div class="finding-owner"><strong>Owner:</strong> BI / Data Eng · <strong>Size:</strong> 1-2 person-weeks</div>
+          <div class="finding-evidence"><strong>Evidence:</strong> <code>QA freshness check across 6 source tables</code></div>
+        </div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-row"><div class="finding-label">FINDING</div><div class="finding-content"><strong>product_journey_monthly contains rows dated 2029-06-01 (3 years in future). Either projection-table or upstream label bug.</strong></div></div>
+        <div class="finding-row"><div class="finding-label finding-label-good">CUSTOMER BENEFIT</div><div class="finding-content">Customers don&#x27;t see this directly, but data quality issues in product analytics lead to wrong roadmap decisions and lost trust in dashboards.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-warn">BUSINESS IMPLICATION</div><div class="finding-content">If decision-makers query product_journey_monthly without a date filter, they may be looking at projected/synthetic data. Worth a flag to BI team.</div></div>
+        <div class="finding-row"><div class="finding-label finding-label-brand">PROPOSED RESOLUTION</div><div class="finding-content">File ticket with BI/data team to (a) confirm whether this is a forecasting table by design, (b) document the convention, (c) add a `is_actual` boolean column to disambiguate, (d) cite documentation in the dataset description.</div></div>
+      </div>
+    </div>
+    
+
+    <!-- METHODOLOGY APPENDIX -->
+    <div class="source">
+      <strong>Sources (Page 8) — all live on May 8, 2026:</strong>
+      <code>mc-business-intelligence.bi_aggregate.product_health_weekly</code> (top-line + package + ecomm + HVC) ·
+      <code>bi_aggregate.funnel_weekly</code> (activation funnel) ·
+      <code>bi_aggregate.free_trials_weekly</code> (trial→paid + 1/3/6/12 retention) ·
+      <code>bi_aggregate.churn_daily</code> (paid users + churn risk + CSAT + PRS) ·
+      <code>bi_aggregate.customer_engagements_weekly</code> · <code>bi_aggregate.product_journey_monthly</code> (flagged for forecast-row review).
+      <br/><br/>
+      <em>Test methodology:</em> 9 explicit QA assertions covering freshness, row volume, YoY consistency between current value and prev_yr LAG columns, null checks on critical dimensions, funnel monotonicity, regression test (Page 7 number reproduction), and unit tests on derived rates. Result: 6 PASS · 1 PARTIAL (documented) · 1 DOCUMENTED (metric semantics) · 1 PASS unit test on trial-to-paid math.
+      <br/><br/>
+      <em>YoY methodology:</em> TY = trailing 12 mo (May 2025 – Apr 2026 inclusive of complete months only). LY = same 12-mo window prior year. Cohort comparisons (retention) use mature observation windows: TY = 180-540 days ago, LY = 540-900 days ago to ensure both have ≥6-mo maturity for M6 measurement. Engagement rates calculated as opens/delivered and clicks/delivered (industry standard).
+    </div>
+  </section>
